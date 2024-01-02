@@ -1,0 +1,63 @@
+#navigation-modal
+  transition: opacity 0.2s, visibility 0s 0.2s
+  height: 100%
+  left: 0
+  opacity: 0
+  position: fixed
+  text-align: center
+  top: 0
+  visibility: hidden
+  width: 100%
+  z-index: 1000
+  overscroll-behavior: contain
+  background: var(--background-color)
+
+  &[aria-hidden="false"]
+    transition: opacity 0.2s
+    opacity: 1
+    visibility: visible
+
+  .overlay_content
+    height: 100%
+    overflow-y: scroll
+    padding: 0 0 90px
+
+  .navigation-modal-header
+    padding: 16px
+    display: flex
+    align-items: center
+    justify-content: flex-start
+
+  .close-mobile-navigation
+    cursor: pointer
+    color: var(--text-color)
+    height: 36px
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 8px
+    width: 36px
+
+    &:hover
+      color: var(--link-hover-color)
+
+    svg
+      fill: currentColor
+
+  .navigation-modal-content
+    padding: 0 16px
+
+  .overlay-page-list
+    text-align: left
+    font-size: 20px
+    font-weight: 700
+    display: flex
+    flex-direction: column
+    gap: 24px
+    margin: 16px 0 32px
+
+  .overlay-social-links
+    margin-left: -8px
+
+    .social-icons
+      justify-content: flex-start

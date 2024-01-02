@@ -1,0 +1,264 @@
+.products-header
+  display: grid
+  gap: 24px
+  margin-bottom: 48px
+
+  .page-title
+    margin: 0
+    text-align: center
+
+.category-navigation
+  ul
+    list-style: none
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    line-height: 2em
+    justify-content: center
+    column-gap: 24px
+    row-gap: 16px
+
+    a
+      outline-offset: 4px
+
+.product-list
+  --gap: calc(var(--spacing-unit) * 3)
+  --row-gap: 32px
+  --columns: #{"{{ theme.max_products_per_row }}"}
+  --spacing-unit: 8px
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
+  margin: var(--spacing-unit) 0 0
+  gap: var(--gap)
+  row-gap: var(--row-gap)
+  margin-top: 36px
+
+  &--center
+    justify-content: center
+
+  @media screen and (max-width: $break-small)
+    --columns: #{"{{ theme.max_products_per_row_mobile }}"}
+    --gap: calc(var(--spacing-unit) * 2)
+
+  &--alternating
+    row-gap: 80px
+
+    .product-list-thumb
+      width: 100%
+
+    .product-list-link
+      display: grid
+      grid-template-columns: 1fr 360px
+      column-gap: 64px
+
+      @media screen and (max-width: $break-medium)
+        grid-template-columns: 1fr 1fr
+
+      @media screen and (max-width: $break-small)
+        grid-template-columns: 1fr
+
+    .product-list-thumb-name
+      font-size: 1.5em
+
+    .product-list-thumb-info
+      display: flex
+      align-items: flex-start
+      justify-content: center
+      margin: 0
+      flex-direction: column
+      gap: 12px
+      padding: 0
+
+      @media screen and (max-width: $break-small)
+        align-items: center
+        padding: 24px 0 0
+
+    .product-list-shop-now
+      margin-top: 12px
+      max-width: 100%
+      text-decoration: none !important
+
+      @media screen and (max-width: $break-small)
+        display: none
+
+    .product-list-thumb:nth-child(even)
+
+      .product-list-link
+        grid-template-columns: 360px 1fr
+
+        @media screen and (max-width: $break-medium)
+          grid-template-columns: 1fr 1fr
+
+        @media screen and (max-width: $break-small)
+          grid-template-columns: 1fr
+
+      .product-list-thumb-info
+        grid-row: 1
+
+        @media screen and (max-width: $break-small)
+          align-items: center
+          grid-row: 2
+
+.product-list-thumb
+  position: relative
+  text-decoration: none
+  width: calc((100% / var(--columns)) - var(--gap) + (var(--gap) / var(--columns)))
+
+a.product-list-link
+  text-decoration: none
+  outline-offset: 4px
+  position: relative
+
+  @media (hover: hover)
+    &--hover
+      color: var(--button-text-color)
+
+      .product-list-image-container
+        .product-list-thumb-status
+          display: none
+
+      .product-list-thumb-info
+        position: absolute
+        border-radius: var(--border-radius)
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        opacity: 0
+        visibility: hidden
+        z-index: 2
+        padding: 24px
+        background: var(--product-hover-background-color)
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        transition: opacity .2s ease, visibility .2s ease
+
+        .product-list-thumb-status
+          display: block
+          position: relative
+          top: auto
+          right: auto
+
+      &:hover, &:focus
+        .product-list-thumb-info
+          opacity: 1
+          visibility: visible
+
+
+.product-list-image-container
+  margin: 0
+  overflow: hidden
+  padding-bottom: 100%
+  position: relative
+  width: 100%
+
+  &-default
+    padding-bottom: 0
+
+.product-list-image
+  border-radius: var(--border-radius)
+  transform: translate3d(0, 0, 0)
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  transition: transform 0.3s ease-in-out
+  z-index: 1
+
+  &.grid-default
+    position: relative
+
+  &.grid-cover
+    object-fit: cover
+
+  &.grid-contain
+    object-fit: contain
+
+.product-list-thumb-status
+  background: var(--secondary-background-color)
+  border-radius: var(--border-radius-sm)
+  color: var(--text-color)
+  top: 16px
+  right: 16px
+  font-size: .925em
+  line-height: 1em
+  letter-spacing: 1.12px
+  font-weight: 500
+  position: absolute
+  text-transform: uppercase
+  padding: 6px
+  z-index: 2
+
+.product-list-thumb-info
+  line-height: normal
+  padding: 16px 0 0
+  position: relative
+  text-align: center
+  display: grid
+  gap: 8px
+
+  .product-list-thumb-status
+    display: none
+
+.product-list-thumb-name
+  word-break: break-word
+  font-size: 1.25em
+  font-weight: 700
+
+  @media screen and (max-width: $break-small)
+    font-size: 1em
+
+.product-list-thumb-price
+  font-size: 1em
+  font-weight: 400
+
+.pagination
+  display: flex
+  align-items: center
+  justify-content: center
+  color: var(--text-color)
+  position: relative
+  text-align: center
+  width: 100%
+  gap: 24px
+  line-height: 2em
+  margin-top: 80px
+
+  .page-link
+    display: flex
+    align-items: center
+    gap: 12px
+    padding: 0 8px
+
+    &.disabled
+      display: none
+
+    svg
+      width: 10px
+      height: 16px
+
+  .previous, .next
+    display: none
+
+.page-numbers
+  display: flex
+  gap: 24px
+
+  > a, span
+    padding: 0 8px
+
+.pagination-arrow
+  display: block
+  fill: currentColor
+  height: 17px
+  width: 17px
+
+  &.prev-arrow
+    margin-right: auto
+
+  &.next-arrow
+    margin-left: auto
