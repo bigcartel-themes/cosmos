@@ -82,6 +82,10 @@
                       {{ product.default_price | money: theme.money_format }}
                     {% endif %}
                   </div>
+                  {% if theme.featured_products_layout == 'alternating' %}
+                    <button class="button product-list-shop-now">Shop Now</button>
+                  {% endif %}
+
                   {% if product_status != blank %}<div class="product-list-thumb-status">{{ product_status }}</div>{% endif %}
                 </div>
               </a>
