@@ -1,9 +1,21 @@
 .home-hero
+  display: grid
   position: relative
-  margin-bottom: 80px
+  place-items: center
+  align-items: center
+  justify-content: center
+  align-content: center
+  grid-template-columns: 1fr
+  grid-template-rows: 1fr
+  margin-bottom: var(--margin-size)
+  overflow: hidden
+
+  > *
+    grid-area: 1/1
 
   &--no-image
     min-height: 600px
+    padding: 48px 0
 
   &--full-page
     height: 600px
@@ -19,27 +31,40 @@
   &--constrained
     border-radius: var(--border-radius)
 
+    @media screen and (max-width: $break-small)
+      border-radius: 0
+
     .home-hero-content, .home-hero-overlay, .home-hero-image
       border-radius: var(--border-radius)
+
+      @media screen and (max-width: $break-small)
+        border-radius: 0
+
+  @media screen and (max-width: $break-small)
+    min-height: auto
+    height: auto
 
 .home-hero-image
   object-fit: contain
   width: 100%
 
+  @media screen and (max-width: $break-small)
+    object-fit: cover
+    height: 100%
+
 .home-hero-overlay
-  background-color: var(--hero-background-color)
+  background-color: var(--hero-overlay-color)
   content: ""
   height: 100%
-  position: absolute
-  top: 0
+  position: relative
   width: 100%
-  z-index: 1
+  z-index: 2
   opacity: #{"{{ theme.hero_overlay_opacity }}"}
   pointer-events: none
 
 .home-hero-content
   color: var(--hero-text-color)
-  position: absolute
+  position: relative
   display: flex
   align-items: center
   justify-content: center
@@ -47,16 +72,17 @@
   width: 100%
   flex-direction: column
   gap: 40px
-  padding: 0 20px
+  padding: 48px
   max-width: 1200px
   margin: 0 auto
   top: 0
-  z-index: 2
+  z-index: 3
 
 .home-hero-text
-  font-size: 2em
+  font-size: 2rem
   font-weight: 700
   text-align: center
+  max-width: calc(1080px + calc(var(--side-padding) * 2))
 
 .home-hero-button
   border: 2px solid var(--hero-text-color)
@@ -73,20 +99,20 @@
 
   &:hover, &:focus
     background-color: var(--hero-text-color)
-    color: var(--hero-background-color)
+    color: var(--hero-overlay-color)
     text-decoration: none
 
 a.all-products-button
   margin-top: 48px
 
 .featured-categories
-  margin-top: 80px
+  margin-top: var(--margin-size)
 
   h2
     text-align: center
     margin-bottom: 48px
     font-weight: 600
-    font-size: 2em
+    font-size: 2rem
 
 .category-list
   --gap: calc(var(--spacing-unit) * 3)

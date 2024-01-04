@@ -31,19 +31,20 @@
 
   &__status
     border-radius: var(--border-radius-sm)
-    color: var(--text-color)
-    background-color: var(--secondary-background-color)
+    color: var(--product-status-text-color)
+    background-color: var(--product-status-background-color)
     text-transform: uppercase
-    font-size: .875em
+    font-size: .875rem
     line-height: normal
+    font-weight: 500
     display: inline-block
-    padding: 10px
+    padding: 5px 6px
 
   h1
     margin-bottom: 0 !important
 
 .related-products-container
-  margin-top: 80px
+  margin-top: var(--margin-size)
 
   @media screen and (max-width: $break-medium)
     margin-top: 48px

@@ -1,10 +1,10 @@
 {
   "name": "Cosmos",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "images": [
     {
-      "variable": "header_image",
-      "label": "Header image",
+      "variable": "logo_image",
+      "label": "Logo image",
       "description": "Transparent background recommended"
     },
     {
@@ -83,57 +83,82 @@
   "colors": [
     {
       "variable": "background_color",
-      "label": "Background Color",
+      "label": "Background",
       "default": "#FFFFFF"
     },
     {
-      "variable": "secondary_background_color",
-      "label": "Secondary Background Color",
-      "default": "#F3F3F5"
-    },
-    {
       "variable": "text_color",
-      "label": "Text Color",
+      "label": "Text",
       "default": "#111111"
     },
     {
       "variable": "link_hover_color",
-      "label": "Link Hover Color",
+      "label": "Link Hover",
       "default": "#5900FF"
     },
     {
       "variable": "header_text_color",
-      "label": "Header Text Color",
-      "default": "#111111"
-    },
-    {
-      "variable": "button_background_color",
-      "label": "Button Background Color",
-      "default": "#111111"
-    },
-    {
-      "variable": "button_hover_background_color",
-      "label": "Button Hover Background Color",
-      "default": "#5900FF"
-    },
-    {
-      "variable": "button_text_color",
-      "label": "Button Text Color",
-      "default": "#FFFFFF"
-    },
-    {
-      "variable": "product_hover_background_color",
-      "label": "Product Hover Background Color",
+      "label": "Header Text",
       "default": "#111111"
     },
     {
       "variable": "border_color",
-      "label": "Border Color",
+      "label": "Borders",
       "default": "#EAEBEF"
     },
     {
+      "variable": "button_background_color",
+      "label": "Button Background",
+      "default": "#111111"
+    },
+    {
+      "variable": "button_hover_background_color",
+      "label": "Button Hover Background",
+      "default": "#5900FF"
+    },
+    {
+      "variable": "button_text_color",
+      "label": "Button Text",
+      "default": "#FFFFFF"
+    },
+    {
+      "variable": "announcement_background_color",
+      "label": "Announcement Background",
+      "default": "#F3F3F5"
+    },
+    {
+      "variable": "announcement_text_color",
+      "label": "Announcement Text",
+      "default": "#111111"
+    },
+    {
+      "variable": "product_status_background_color",
+      "label": "Product Status Background",
+      "default": "#F3F3F5"
+    },
+    {
+      "variable": "product_status_text_color",
+      "label": "Product Status Text",
+      "default": "#111111"
+    },
+    {
+      "variable": "hero_overlay_color",
+      "label": "Hero Overlay",
+      "default": "#111111"
+    },
+    {
       "variable": "hero_text_color",
-      "label": "Hero Text Color",
+      "label": "Hero Text",
+      "default": "#FFFFFF"
+    },
+    {
+      "variable": "product_hover_background_color",
+      "label": "Product Hover Overlay",
+      "default": "#111111"
+    },
+    {
+      "variable": "product_hover_text_color",
+      "label": "Product Hover Text",
       "default": "#FFFFFF"
     }
   ],
@@ -172,16 +197,16 @@
       "description": "The number of custom page links show in the main navigation."
     },
     {
-      "variable": "header_image_height",
-      "label": "Header image height",
+      "variable": "logo_image_height",
+      "label": "Logo image height",
       "type": "select",
       "options": [
-        ["Small", "200"],
-        ["Medium", "400"],
-        ["Large", "600"]
+        ["Small", "120"],
+        ["Medium", "180"],
+        ["Large", "240"]
       ],
-      "default": "200",
-      "description": "Controls the maximum height of your header image"
+      "default": "180",
+      "description": "Controls the maximum height of your logo"
     },
     {
       "variable": "hero_image_width",
@@ -189,7 +214,7 @@
       "type": "select",
       "options": [
         ["Full page", "full-page"],
-        ["Constrainted", "constrained"]
+        ["Constrained", "constrained"]
       ],
       "default": "full-page",
       "description": "Sets the width of your hero image."
@@ -210,8 +235,7 @@
       "variable": "hero_welcome_text",
       "label": "Hero welcome text",
       "type": "text",
-      "description": "Displays a welcome message over your hero image.",
-      "default": "Welcome to my cool shop!"
+      "description": "Displays a welcome message over your hero image."
     },
     {
       "variable": "hero_button_text",
@@ -280,10 +304,10 @@
       "label": "Category image style",
       "type": "select",
       "options": [
-        ["Over image", "over-image"],
-        ["Below image", "below-image"]
+        ["Show on hover", "hover"],
+        ["Under image", "under_image"]
       ],
-      "default": "below-image",
+      "default": "under_image",
       "description": "Shows a category’s name over the image with an overlay, or under the image"
     },
     {
@@ -330,7 +354,7 @@
         ["Show on hover", "hover"],
         ["Under image", "under_image"]
       ],
-      "default": "under_image",
+      "default": "hover",
       "description": "Shows a product's name & price on hover, or under the image"
     },
     {

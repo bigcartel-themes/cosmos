@@ -3,10 +3,6 @@
   gap: 24px
   margin-bottom: 48px
 
-  .page-title
-    margin: 0
-    text-align: center
-
 .category-navigation
   ul
     list-style: none
@@ -16,7 +12,6 @@
     line-height: 2em
     justify-content: center
     column-gap: 24px
-    row-gap: 16px
 
     a
       outline-offset: 4px
@@ -42,7 +37,7 @@
     --gap: calc(var(--spacing-unit) * 2)
 
   &--alternating
-    row-gap: 80px
+    row-gap: var(--margin-size)
 
     .product-list-thumb
       width: 100%
@@ -59,7 +54,7 @@
         grid-template-columns: 1fr
 
     .product-list-thumb-name
-      font-size: 1.5em
+      font-size: 1.5rem
 
     .product-list-thumb-info
       display: flex
@@ -129,7 +124,7 @@ a.product-list-link
         visibility: hidden
         z-index: 2
         padding: 24px
-        background: var(--product-hover-background-color)
+        background: var(--product-hover-overlay-color)
         display: flex
         align-items: center
         justify-content: center
@@ -179,12 +174,12 @@ a.product-list-link
     object-fit: contain
 
 .product-list-thumb-status
-  background: var(--secondary-background-color)
+  background: var(--product-status-background-color)
   border-radius: var(--border-radius-sm)
-  color: var(--text-color)
+  color: var(--product-status-text-color)
   top: 16px
   right: 16px
-  font-size: .925em
+  font-size: .925rem
   line-height: 1em
   letter-spacing: 1.12px
   font-weight: 500
@@ -206,14 +201,14 @@ a.product-list-link
 
 .product-list-thumb-name
   word-break: break-word
-  font-size: 1.25em
+  font-size: 1.25rem
   font-weight: 700
 
   @media screen and (max-width: $break-small)
-    font-size: 1em
+    font-size: 1rem
 
 .product-list-thumb-price
-  font-size: 1em
+  font-size: 1rem
   font-weight: 400
 
 .pagination
@@ -226,7 +221,7 @@ a.product-list-link
   width: 100%
   gap: 24px
   line-height: 2em
-  margin-top: 80px
+  margin-top: var(--margin-size)
 
   .page-link
     display: flex

@@ -1,32 +1,42 @@
 \:root
   --background-color: #{'{{ theme.background_color }}'}
-  --secondary-background-color: #{'{{ theme.secondary_background_color }}'}
 
   --text-color: #{'{{ theme.text_color }}'}
   --link-hover-color: #{'{{ theme.link_hover_color }}'}
 
   --header-text-color: #{'{{ theme.header_text_color }}'}
+
   --button-background-color: #{'{{ theme.button_background_color }}'}
   --button-hover-background-color: #{'{{ theme.button_hover_background_color }}'}
   --button-text-color: #{'{{ theme.button_text_color }}'}
 
-  --product-hover-background-color: #{'rgba(var(--product-hover-background-color-rgb), .8)'}
+  --product-hover-overlay-color: #{'rgba(var(--product-hover-overlay-color-rgb), .8)'}
+  --product-hover-text-color: #{'{{ theme.product_hover_text_color }}'}
+
   --border-color: #{'{{ theme.border_color }}'}
 
-  --hero-background-color: #000000
+  --hero-overlay-color: #{'{{ theme.hero_overlay_color }}'}
   --hero-text-color: #{'{{ theme.hero_text_color }}'}
 
   --error-background-color: #950f1e
   --error-text-color: #FFFFFF
 
+  --announcement-background-color: #{'{{ theme.announcement_background_color }}'}
+  --announcement-text-color: #{'{{ theme.announcement_text_color }}'}
+
+  --product-status-background-color: #{'{{ theme.product_status_background_color }}'}
+  --product-status-text-color: #{'{{ theme.product_status_text_color }}'}
+
   --primary-font: #{"{{ theme.primary_font | font_family }}"}
   --secondary-font: #{"{{ theme.secondary_font | font_family }}"}
 
-  --announcement-background-color: var(--secondary-background-color)
-  --announcement-text-color: var(--text-color)
-
   --border-radius: 4px
   --border-radius-sm: 2px
+
+  --margin-size: 64px
+
+  --logo-max-height: #{"{{ theme.logo_image_height | append: 'px' }}"}
+  --logo-max-height-mobile: 120px
 
 html, body
   height: 100%
@@ -38,7 +48,8 @@ body
   flex-direction: column
   background: var(--background-color)
   color: var(--text-color)
-  font: normal 100%/1.5 var(--secondary-font)
+  line-height: 1.5
+  font-family: var(--secondary-font)
   background-image: #{"{% if theme.images.background_image != blank %}url(\'{{ theme.images.background_image.url | constrain: 200, 200 }}\'){% else %}none{% endif %}"}
   background-repeat: repeat
   background-size: 200px 200px
@@ -69,23 +80,30 @@ a.skip-link
     top: 20px
 
 header
+  --side-padding: 40px
   display: flex
   align-items: center
   justify-content: center
   font-size: 3.75rem
   font-weight: 600
-  padding: 80px 0
+  max-width: calc(1080px + calc(var(--side-padding) * 2))
+  padding: var(--margin-size) var(--side-padding)
+  text-align: center
+  width: 100%
+  margin: 0 auto
 
   @media screen and (max-width: $break-small)
-    padding: 48px 0
+    --side-padding: 16px
+    padding: 48px var(--side-padding)
 
 .top-nav
   display: flex
-  padding: 16px 40px
+  padding: 16px 32px
   gap: 32px
   font-size: 1.25em
-  font-weight: 700
+  font-weight: 600
   line-height: 1em
+  font-family: var(--primary-font)
 
   @media screen and (max-width: $break-small)
     padding: 16px
@@ -145,18 +163,28 @@ header
   align-items: center
   justify-content: center
   text-align: center
+  font-family: var(--primary-font)
+  font-weight: 700
+  word-break: break-word
+
+.store-logo
+  max-height: var(--logo-max-height)
+
+  @media screen and (max-width: $break-small)
+    max-height: var(--logo-max-height-mobile)
 
 h1, h2, h3, h4, h5, h6
   font-family: var(--primary-font)
+  font-weight: 700
 
 #main
   flex: 1
-  padding-bottom: 80px
+  padding-bottom: var(--margin-size)
 
   .content-wrapper
     --side-padding: 40px
     margin: 0 auto
-    max-width: calc(1080px + 32px)
+    max-width: calc(1080px + calc(var(--side-padding) * 2))
     padding: 0 var(--side-padding)
 
     @media screen and (max-width: $break-small)
@@ -181,11 +209,19 @@ h1, h2, h3, h4, h5, h6
       max-width: 768px
       width: 100%
 
+    &--products
+      h1.page-title
+        margin-bottom: 0
+
     &--contact
       max-width: calc(600px + calc(var(--side-padding) * 2))
 
     &--product
       max-width: calc(1200px + calc(var(--side-padding) * 2))
+
+    &--cart
+      h1.page-title
+        margin-bottom: 48px
 
   h1
     font-size: 2rem
@@ -206,6 +242,7 @@ footer
   flex-shrink: 0
   padding: 40px 64px
   gap: 24px
+  font-family: var(--primary-font)
 
 .footer-nav
   &--links
@@ -338,8 +375,8 @@ footer
 
 .message-banner
   border-radius: var(--border-radius)
-  background-color: var(--secondary-background-color)
-  color: var(--text-color)
+  background-color: var(--announcement-background-color)
+  color: var(--announcement-text-color)
   padding: 16px
   margin-bottom: 32px
   text-align: left

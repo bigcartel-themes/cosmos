@@ -133,15 +133,14 @@
     </div>
     <header>
       <a href="/" title="{{ store.name | escape }}" class="header-store-link header-store-link--{% if theme.header_logo != blank %}logo{% else %}text{% endif %}">
-        {% if theme.header_image != blank %}
-          {% assign header_image_height_1x = theme.header_image_height %}
-          {% assign header_image_height_2x = header_image_height_1x | times: 2 %}
+        {% if theme.logo_image != blank %}
+          {% assign logo_image_height_1x = theme.logo_image_height %}
+          {% assign logo_image_height_2x = logo_image_height_1x | times: 2 %}
           <img
             class="store-logo"
-            srcset="{{ theme.images.header_image.url | constrain: '', header_image_height_1x }}, {{ theme.images.header_image.url | constrain: '', header_image_height_2x }} 2x"
-            src="{{ theme.images.header_image.url | constrain: '', header_image_height_1x }}"
+            srcset="{{ theme.images.logo_image.url | constrain: '', logo_image_height_1x }}, {{ theme.images.logo_image.url | constrain: '', logo_image_height_2x }} 2x"
+            src="{{ theme.images.logo_image.url | constrain: '', logo_image_height_1x }}"
             alt="{{ store.name }} Home"
-            style="max-height: {{ header_image_height_1x }}px"
           >
         {% else %}
           {{ store.name }}
@@ -261,7 +260,7 @@
         textColor: '{{ theme.product_hover_background_color }}',
         backgroundColor: '{{ theme.background_color }}',
         headerTextColor: '{{ theme.header_text_color }}',
-        productHoverBackgroundColor: '{{ theme.product_hover_background_color }}',
+        productHoverOverlayColor: '{{ theme.product_hover_overlay_color }}',
       }
     </script>
     {% if theme.announcement_message_text != blank %}

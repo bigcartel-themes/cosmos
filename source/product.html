@@ -180,8 +180,6 @@
   </section>
 </div>
 
-
-
 {% assign current_id = product.id %}
 {% if page.full_url contains '/product/' %}
   {% if theme.show_related_products %}
@@ -252,9 +250,9 @@
   {% endif %}
 {% endif %}
 {% if product_divs != blank %}
-  <aside class="related-products-container" data-num-products="4" role="complementary" aria-label="Related products">
+  <aside class="related-products-container" data-num-products="4" role="complementary" aria-label="Related Products">
     <div class="all-similar-products" style="display: none">{{ product_divs }}</div>
-    <h2 class="similar-products-title">Related products</h2>
+    <h2 class="similar-products-title">Related Products</h2>
     <div class="product-list-container">
       <div class="similar-product-list product-list"></div>
     </div>
