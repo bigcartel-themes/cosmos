@@ -137,32 +137,34 @@
         {% if product.has_default_option %}
           {{ product.option | hidden_option_input }}
         {% else %}
-          {% if product.has_option_groups %}
-            <div class="product_option_groups">
-              <input id="option" name="cart[add][id]" type="hidden" value="0">
-              {% for option_group in product.option_groups %}
-                <div class="select">
-                  <select data-unavailable-text="(Unavailable)" data-sold-text="(Sold out)" data-group-id="{{ option_group.id }}" data-group-name="{{ option_group.name | escape }}" class="product_option_group" name="option_group[{{ option_group.id }}]" aria-label="Select {{ option_group.name | escape }}" required>
-                    <option value="" disabled="disabled" selected>Select {{ option_group.name }}</option>
-                    {% for value in option_group.values %}
-                      <option value="{{ value.id }}" data-name="{{ value.name | escape }}">{{ value.name }}</option>
-                    {% endfor %}
-                  </select>
-                  <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0.98 1.01 14.02 8.02"> <path d="M7.28125 8.71875L1.28125 2.71875C0.875 2.34375 0.875 1.6875 1.28125 1.3125C1.65625 0.90625 2.3125 0.90625 2.6875 1.3125L8 6.59375L13.2812 1.3125C13.6562 0.90625 14.3125 0.90625 14.6875 1.3125C15.0938 1.6875 15.0938 2.34375 14.6875 2.71875L8.6875 8.71875C8.3125 9.125 7.65625 9.125 7.28125 8.71875Z"></path> </svg>
-                </div>
-              {% endfor %}
-            </div>
-          {% else %}
-            <div class="select">
-              <select class="product_option_select" id="option" name="cart[add][id]" aria-label="Select variant" required>
-                <option value="" disabled="disabled" selected>Select variant</option>
-                {% for option in product.options %}
-                  <option value="{{ option.id }}" data-price="{{ option.price }}"{% if option.sold_out %} disabled="disabled" disabled-type="sold-out"{% endif %}>{{ option.name }} {% if option.sold_out %} (Sold out){% endif %}</option>
+          <div class="product-selects">
+            {% if product.has_option_groups %}
+              <div class="product_option_groups">
+                <input id="option" name="cart[add][id]" type="hidden" value="0">
+                {% for option_group in product.option_groups %}
+                  <div class="select">
+                    <select data-unavailable-text="(Unavailable)" data-sold-text="(Sold out)" data-group-id="{{ option_group.id }}" data-group-name="{{ option_group.name | escape }}" class="product_option_group" name="option_group[{{ option_group.id }}]" aria-label="Select {{ option_group.name | escape }}" required>
+                      <option value="" disabled="disabled" selected>Select {{ option_group.name }}</option>
+                      {% for value in option_group.values %}
+                        <option value="{{ value.id }}" data-name="{{ value.name | escape }}">{{ value.name }}</option>
+                      {% endfor %}
+                    </select>
+                    <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0.98 1.01 14.02 8.02"> <path d="M7.28125 8.71875L1.28125 2.71875C0.875 2.34375 0.875 1.6875 1.28125 1.3125C1.65625 0.90625 2.3125 0.90625 2.6875 1.3125L8 6.59375L13.2812 1.3125C13.6562 0.90625 14.3125 0.90625 14.6875 1.3125C15.0938 1.6875 15.0938 2.34375 14.6875 2.71875L8.6875 8.71875C8.3125 9.125 7.65625 9.125 7.28125 8.71875Z"></path> </svg>
+                  </div>
                 {% endfor %}
-              </select>
-              <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0.98 1.01 14.02 8.02"> <path d="M7.28125 8.71875L1.28125 2.71875C0.875 2.34375 0.875 1.6875 1.28125 1.3125C1.65625 0.90625 2.3125 0.90625 2.6875 1.3125L8 6.59375L13.2812 1.3125C13.6562 0.90625 14.3125 0.90625 14.6875 1.3125C15.0938 1.6875 15.0938 2.34375 14.6875 2.71875L8.6875 8.71875C8.3125 9.125 7.65625 9.125 7.28125 8.71875Z"></path> </svg>
-            </div>
-          {% endif %}
+              </div>
+            {% else %}
+              <div class="select">
+                <select class="product_option_select" id="option" name="cart[add][id]" aria-label="Select variant" required>
+                  <option value="" disabled="disabled" selected>Select variant</option>
+                  {% for option in product.options %}
+                    <option value="{{ option.id }}" data-price="{{ option.price }}"{% if option.sold_out %} disabled="disabled" disabled-type="sold-out"{% endif %}>{{ option.name }} {% if option.sold_out %} (Sold out){% endif %}</option>
+                  {% endfor %}
+                </select>
+                <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0.98 1.01 14.02 8.02"> <path d="M7.28125 8.71875L1.28125 2.71875C0.875 2.34375 0.875 1.6875 1.28125 1.3125C1.65625 0.90625 2.3125 0.90625 2.6875 1.3125L8 6.59375L13.2812 1.3125C13.6562 0.90625 14.3125 0.90625 14.6875 1.3125C15.0938 1.6875 15.0938 2.34375 14.6875 2.71875L8.6875 8.71875C8.3125 9.125 7.65625 9.125 7.28125 8.71875Z"></path> </svg>
+              </div>
+            {% endif %}
+          </div>
         {% endif %}
         <button class="button add-to-cart-button" name="submit" type="submit" data-add-title="Add to cart" data-sold-title="Sold out">Add to cart</button>
         {{ store | instant_checkout_button: 'dark', '44px' }}
