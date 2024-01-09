@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "images": [
     {
       "variable": "logo_image",
@@ -13,52 +13,247 @@
       "description": "Minimum image resolution of 1200px by 600px recommended"
     }
   ],
-  "color_presets": [
+
+  "style_presets": [
     {
-      "name": "Light",
-      "description": "This is a description of Light",
-      "fonts": [
+      "name": "Classic",
+      "styles": [
         {
-          "variable": "header_font",
-          "value": "Inconsolata"
+          "name": "Classic #1",
+          "fonts": [
+            {
+              "variable": "primary_font",
+              "value": "DM Sans"
+            },
+            {
+              "variable": "secondary_font",
+              "value": "DM Sans"
+            }
+          ],
+          "colors": [
+            {
+              "variable": "background_color",
+              "value": "#FFFFFF"
+            },
+            {
+              "variable": "text_color",
+              "value": "#111111"
+            },
+            {
+              "variable": "link_hover_color",
+              "value": "#5900FF"
+            },
+            {
+              "variable": "header_text_color",
+              "value": "#111111"
+            },
+            {
+              "variable": "border_color",
+              "value": "#EAEBEF"
+            },
+            {
+              "variable": "button_background_color",
+              "value": "#111111"
+            },
+            {
+              "variable": "button_hover_background_color",
+              "value": "#5900FF"
+            },
+            {
+              "variable": "button_text_color",
+              "value": "#FFFFFF"
+            },
+            {
+              "variable": "announcement_background_color",
+              "value": "#F3F3F5"
+            },
+            {
+              "variable": "announcement_text_color",
+              "value": "#111111"
+            },
+            {
+              "variable": "product_status_background_color",
+              "value": "#F3F3F5"
+            },
+            {
+              "variable": "product_status_text_color",
+              "value": "#111111"
+            },
+            {
+              "variable": "hero_overlay_color",
+              "value": "#111111"
+            },
+            {
+              "variable": "hero_text_color",
+              "value": "#FFFFFF"
+            },
+            {
+              "variable": "product_hover_background_color",
+              "value": "#111111"
+            },
+            {
+              "variable": "product_hover_text_color",
+              "value": "#FFFFFF"
+            }
+          ]
         },
         {
-          "variable": "text_font",
-          "value": "Helvetica"
-        }
-      ],
-      "colors": [
-        {
-          "variable": "background_color",
-          "value": "#FFFFFF"
+          "name": "Classic #2",
+          "fonts": [
+            {
+              "variable": "primary_font",
+              "value": "Lora"
+            },
+            {
+              "variable": "secondary_font",
+              "value": "Roboto"
+            }
+          ],
+          "colors": [
+            {
+              "variable": "background_color",
+              "value": "#141415"
+            },
+            {
+              "variable": "text_color",
+              "value": "#F8F8F8"
+            },
+            {
+              "variable": "link_hover_color",
+              "value": "#AEAEAE"
+            },
+            {
+              "variable": "header_text_color",
+              "value": "#F8F8F8"
+            },
+            {
+              "variable": "border_color",
+              "value": "#494949"
+            },
+            {
+              "variable": "button_background_color",
+              "value": "#F8F8F8"
+            },
+            {
+              "variable": "button_hover_background_color",
+              "value": "#AEAEAE"
+            },
+            {
+              "variable": "button_text_color",
+              "value": "#141415"
+            },
+            {
+              "variable": "announcement_background_color",
+              "value": "#242424"
+            },
+            {
+              "variable": "announcement_text_color",
+              "value": "#F8F8F8"
+            },
+            {
+              "variable": "product_status_background_color",
+              "value": "#F8F8F8"
+            },
+            {
+              "variable": "product_status_text_color",
+              "value": "#141415"
+            },
+            {
+              "variable": "hero_overlay_color",
+              "value": "#141415"
+            },
+            {
+              "variable": "hero_text_color",
+              "value": "#F8F8F8"
+            },
+            {
+              "variable": "product_hover_background_color",
+              "value": "#141415"
+            },
+            {
+              "variable": "product_hover_text_color",
+              "value": "#F8F8F8"
+            }
+          ]
         },
         {
-          "variable": "text_color",
-          "value": "#111111"
-        }
-      ]
-    },
-    {
-      "name": "Dark",
-      "description": "This is a description of Dark theme",
-      "fonts": [
-        {
-          "variable": "header_font",
-          "value": "Helvetica"
-        },
-        {
-          "variable": "text_font",
-          "value": "Inconsolata"
-        }
-      ],
-      "colors": [
-        {
-          "variable": "background_color",
-          "value": "#000000"
-        },
-        {
-          "variable": "text_color",
-          "value": "#111111"
+          "name": "Classic #3",
+          "fonts": [
+            {
+              "variable": "primary_font",
+              "value": "Cabin"
+            },
+            {
+              "variable": "secondary_font",
+              "value": "Cabin"
+            }
+          ],
+          "colors": [
+            {
+              "variable": "background_color",
+              "value": "#F8F8FA"
+            },
+            {
+              "variable": "text_color",
+              "value": "#2A2A2C"
+            },
+            {
+              "variable": "link_hover_color",
+              "value": "#203BE1"
+            },
+            {
+              "variable": "header_text_color",
+              "value": "#2A2A2C"
+            },
+            {
+              "variable": "border_color",
+              "value": "#C0C2CE"
+            },
+            {
+              "variable": "button_background_color",
+              "value": "#203BE1"
+            },
+            {
+              "variable": "button_hover_background_color",
+              "value": "#2A2A2C"
+            },
+            {
+              "variable": "button_text_color",
+              "value": "#F8F8FA"
+            },
+            {
+              "variable": "announcement_background_color",
+              "value": "#E5E6EC"
+            },
+            {
+              "variable": "announcement_text_color",
+              "value": "#2A2A2C"
+            },
+            {
+              "variable": "product_status_background_color",
+              "value": "#E5E6EC"
+            },
+            {
+              "variable": "product_status_text_color",
+              "value": "#F8F8FA"
+            },
+            {
+              "variable": "hero_overlay_color",
+              "value": "#2A2A2C"
+            },
+            {
+              "variable": "hero_text_color",
+              "value": "#F8F8FA"
+            },
+            {
+              "variable": "product_hover_background_color",
+              "value": "#2A2A2C"
+            },
+            {
+              "variable": "product_hover_text_color",
+              "value": "#F8F8FA"
+            }
+          ]
         }
       ]
     }
@@ -251,7 +446,7 @@
       "label": "Featured products",
       "type": "select",
       "options": "0..100",
-      "default": 12,
+      "default": 1,
       "description": "The number of products displayed on the Home page"
     },
     {
@@ -272,6 +467,17 @@
       ],
       "default": "alternating",
       "description": "Sets a layout style for featured products on the Home page"
+    },
+    {
+      "variable": "alternating_product_image_style",
+      "label": "Alternating product image style",
+      "type": "select",
+      "options": [
+        ["Fixed height", "fixed-height"],
+        ["Original dimensions", "original-dimensions"]
+      ],
+      "default": "original-dimensions",
+      "description": "Sets the display of images for featured products in alternating layout style"
     },
     {
       "variable": "all_products_button_text",

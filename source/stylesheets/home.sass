@@ -115,20 +115,4 @@ a.all-products-button
     font-size: 2rem
 
 .category-list
-  --gap: calc(var(--spacing-unit) * 3)
-  --row-gap: 32px
   --columns: #{"{{ theme.max_categories_per_row }}"}
-  --spacing-unit: 8px
-  display: flex
-  flex-wrap: wrap
-  justify-content: flex-start
-  margin: var(--spacing-unit) 0 0
-  gap: var(--gap)
-  row-gap: var(--row-gap)
-  margin-top: 36px
-
-  &--center
-    justify-content: center
-
-  @media screen and (max-width: $break-small)
-    --gap: var(--spacing-unit)
