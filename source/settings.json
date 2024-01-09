@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "images": [
     {
       "variable": "logo_image",
@@ -406,7 +406,7 @@
         ["Full page", "full-page"],
         ["Constrained", "constrained"]
       ],
-      "default": "full-page",
+      "default": "constrained",
       "description": "Sets the width of your hero image."
     },
     {
