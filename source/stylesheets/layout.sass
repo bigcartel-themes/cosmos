@@ -50,9 +50,6 @@ body
   color: var(--text-color)
   line-height: 1.5
   font-family: var(--secondary-font)
-  background-image: #{"{% if theme.images.background_image != blank %}url(\'{{ theme.images.background_image.url | constrain: 200, 200 }}\'){% else %}none{% endif %}"}
-  background-repeat: repeat
-  background-size: 200px 200px
 
 a
   color: var(--text-color)

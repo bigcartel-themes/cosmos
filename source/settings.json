@@ -8,11 +8,6 @@
       "description": "Transparent background recommended"
     },
     {
-      "variable": "background_image",
-      "label": "Repeating background image",
-      "description": "200px by 200px image recommended"
-    },
-    {
       "variable": "hero_image",
       "label": "Hero image",
       "description": "Minimum image resolution of 1200px by 600px recommended"

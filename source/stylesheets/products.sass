@@ -46,7 +46,6 @@
       display: grid
       grid-template-columns: 1fr 360px
       column-gap: 64px
-      display: block
 
       @media screen and (max-width: $break-medium)
         grid-template-columns: 1fr 1fr
@@ -109,6 +108,7 @@ a.product-list-link
   @media (hover: hover)
     &--hover
       color: var(--button-text-color)
+      display: block
 
       .product-list-image-container
         .product-list-thumb-status

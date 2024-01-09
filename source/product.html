@@ -251,10 +251,13 @@
 {% endif %}
 {% if product_divs != blank %}
   <aside class="related-products-container" data-num-products="4" role="complementary" aria-label="Related Products">
-    <div class="all-similar-products" style="display: none">{{ product_divs }}</div>
-    <h2 class="similar-products-title">Related Products</h2>
+    <div class="all-related-products" style="display: none">{{ product_divs }}</div>
+    <div class="related-products-header">
+      <h2 class="related-products-title">Related Products</h2>
+      <a class="related-products-view-all-link" href="/products">View All Products</a>
+    </div>
     <div class="product-list-container">
-      <div class="similar-product-list product-list"></div>
+      <div class="related-product-list product-list"></div>
     </div>
   </aside>
 {% endif %}

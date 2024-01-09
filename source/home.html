@@ -105,7 +105,7 @@
       {% if theme.home_page_categories_header %}
         <h2 class="featured-categories-header">{{ theme.home_page_categories_header }}</h2>
       {% endif %}
-      <div class="product-list {% if categories.active.size < 3 %}justify-center{% endif %}">
+      <div class="product-list product-list--center">
         {% for category in categories.active %}
           <div class="product-list-thumb">
             <a class="product-list-link" href="{{ category.url }}" title="View {{ category.name | escape }}">
