@@ -505,7 +505,7 @@
       "label": "Category image style",
       "type": "select",
       "options": [
-        ["Show on hover", "hover"],
+        ["Over image", "hover"],
         ["Under image", "under_image"]
       ],
       "default": "under_image",
