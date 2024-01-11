@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "images": [
     {
       "variable": "logo_image",
@@ -342,7 +342,7 @@
       "default": "#FFFFFF"
     },
     {
-      "variable": "product_hover_background_color",
+      "variable": "product_hover_overlay_color",
       "label": "Product Hover Overlay",
       "default": "#111111"
     },
@@ -379,14 +379,6 @@
       "default": "We're working on our shop right now.<br /><br />Please check back soon."
     },
     {
-      "variable": "nav_items",
-      "label": "Navigation items",
-      "type": "select",
-      "options": "0..6",
-      "default": 2,
-      "description": "The number of custom page links show in the main navigation."
-    },
-    {
       "variable": "logo_image_height",
       "label": "Logo image height",
       "type": "select",
@@ -399,6 +391,14 @@
       "description": "Controls the maximum height of your logo"
     },
     {
+      "variable": "nav_items",
+      "label": "Navigation items",
+      "type": "select",
+      "options": "0..6",
+      "default": 2,
+      "description": "The number of custom page links show in the main navigation"
+    },
+    {
       "variable": "hero_image_width",
       "label": "Hero image width",
       "type": "select",
@@ -407,7 +407,7 @@
         ["Constrained", "constrained"]
       ],
       "default": "constrained",
-      "description": "Sets the width of your hero image."
+      "description": "Sets the width of your hero image"
     },
     {
       "variable": "hero_overlay_opacity",
@@ -419,26 +419,26 @@
         ["50%", ".5"]
       ],
       "default": ".5",
-      "description": "Darkens the homepage hero. Helps legibility of your hero welcome text and button."
+      "description": "Darkens the Home page hero. Helps legibility of your hero welcome text and button"
     },
     {
       "variable": "hero_welcome_text",
       "label": "Hero welcome text",
       "type": "text",
-      "description": "Displays a welcome message over your hero image."
+      "description": "Displays a welcome message over your hero image"
     },
     {
       "variable": "hero_button_text",
       "label": "Hero button text",
       "type": "text",
-      "description": "Displays over your hero image and links to your Products page.",
+      "description": "Displays over your hero image and links to your Products page",
       "default": "Shop now"
     },
     {
       "variable": "featured_header",
-      "label": "Featured header",
+      "label": "Featured products header",
       "type": "text",
-      "description": "Featured products header on the Home page",
+      "description": "Displays above featured products on the Home page",
       "default": "Featured Products"
     },
     {
@@ -446,7 +446,7 @@
       "label": "Featured products",
       "type": "select",
       "options": "0..100",
-      "default": 1,
+      "default": 12,
       "description": "The number of products displayed on the Home page"
     },
     {
@@ -483,7 +483,7 @@
       "variable": "all_products_button_text",
       "label": "All products button text",
       "type": "text",
-      "description": "Displays underneath featured products and links to your Product Page.",
+      "description": "Displays underneath featured products and links to your Product Page",
       "default": "All Products"
     },
     {
@@ -491,13 +491,13 @@
       "label": "Display categories on Home page",
       "type": "boolean",
       "default": true,
-      "description": "Displays categories as a grid on the homepage."
+      "description": "Displays categories as a grid on the Home page"
     },
     {
       "variable": "home_page_categories_header",
       "label": "Categories header",
       "type": "text",
-      "description": "Displays above categories on the homepage.",
+      "description": "Displays above categories on the Home page",
       "default": "Categories"
     },
     {
@@ -518,22 +518,6 @@
       "options": "1..4",
       "default": 3,
       "description": "The maximum number of Home page categories displayed per row"
-    },
-    {
-      "variable": "max_products_per_row",
-      "label": "Maximum products per row",
-      "type": "select",
-      "options": "1..4",
-      "default": 3,
-      "description": "The maximum number of products displayed per row on larger screens"
-    },
-    {
-      "variable": "max_products_per_row_mobile",
-      "label": "Maximum products per row (mobile)",
-      "type": "select",
-      "options": "1..2",
-      "default": 2,
-      "description": "The number of products displayed per row on smaller screens"
     },
     {
       "variable": "grid_image_style",
@@ -557,6 +541,22 @@
       ],
       "default": "under_image",
       "description": "Shows a product's name & price on hover, or under the image"
+    },
+    {
+      "variable": "max_products_per_row",
+      "label": "Maximum products per row",
+      "type": "select",
+      "options": "1..4",
+      "default": 3,
+      "description": "The maximum number of products displayed per row on larger screens"
+    },
+    {
+      "variable": "max_products_per_row_mobile",
+      "label": "Maximum products per row (mobile)",
+      "type": "select",
+      "options": "1..2",
+      "default": 2,
+      "description": "The number of products displayed per row on smaller screens"
     },
     {
       "variable": "products_per_page",

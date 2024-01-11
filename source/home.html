@@ -1,9 +1,9 @@
-{% if theme.hero_image != blank or theme.hero_welcome_text != blank or theme.hero_button_text != blank %}
+{% if theme.hero_image != blank or theme.hero_welcome_text != blank %}
   <div class="home-hero home-hero--{{ theme.hero_image_width }} {% unless theme.hero_image != blank %}home-hero--no-image{% endunless %}">
     {% if theme.hero_image != blank %}
       <img
         alt=""
-        class="home-hero-image blur-up"
+        class="home-hero-image lazyload blur-up"
         src="{{ theme.images.hero_image.url | constrain: 400 }}"
         data-srcset="
           {{ theme.images.hero_image.url | constrain: 800 }} 800w,
