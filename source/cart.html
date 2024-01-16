@@ -26,12 +26,7 @@
         <input type="hidden" name="utf8" value='✓'>
         <ul class="cart-items">
           {% for item in cart.items %}
-            {% capture aria_label_name %}
-              {{ item.product.name | escape }}
-              {% unless item.product.has_default_option %}
-                - {{ item.option.name | escape }}
-              {% endunless %}
-            {% endcapture %}
+            {% capture aria_label_name %}{{ item.product.name | escape }}{% unless item.product.has_default_option %} - {{ item.option.name | escape }}{% endunless %}{% endcapture %}
             <li class="cart-item" data-item-id="{{ item.id }}">
 
               <div class="cart-item-image-holder">
@@ -78,7 +73,7 @@
       </div>
       <div class="cart-footer">
         <div class="cart-subtotal" aria-live="polite" aria-atomic="true">
-          <span class="cart-subtotal__label">Subtotal:</span>
+          <span class="cart-subtotal__label">Subtotal</span>
           <span class="cart-subtotal__amount">{{ cart.total | money: theme.money_format }}</span>
         </div>
         <div class="cart-submit">
