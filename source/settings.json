@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "images": [
     {
       "variable": "logo_image",
@@ -13,267 +13,256 @@
       "description": "Minimum image resolution of 1200px by 600px recommended"
     }
   ],
-
-  "preset_styles": [
-    {
-      "name": "Classic",
-      "preview_styles": {
-        "title_font": "primary_font",
-        "body_font": "secondary_font",
-        "text_color": "text_color",
-        "background_color": "background_color"
-      },
-      "styles": [
-        {
-          "name": "Classic #1",
-          "fonts": {
-            "primary_font": "DM Sans",
-            "secondary_font": "DM Sans"
-          },
-          "colors": {
-            "background_color": "#FFFFFF",
-            "text_color": "#111111",
-            "link_hover_color": "#5900FF",
-            "header_text_color": "#111111",
-            "border_color": "#EAEBEF",
-            "button_background_color": "#111111",
-            "button_hover_background_color": "#5900FF",
-            "button_text_color": "#FFFFFF",
-            "announcement_background_color": "#F3F3F5",
-            "announcement_text_color": "#111111",
-            "product_status_background_color": "#F3F3F5",
-            "product_status_text_color": "#111111",
-            "hero_overlay_color": "#111111",
-            "hero_text_color": "#FFFFFF",
-            "product_hover_overlay_color": "#111111",
-            "product_hover_text_color": "#FFFFFF"
-          }
-        },
-        {
-          "name": "Classic #2",
-          "fonts": {
-            "primary_font": "Lora",
-            "secondary_font": "Roboto"
-          },
-          "colors": {
-            "background_color": "#141415",
-            "text_color": "#F8F8F8",
-            "link_hover_color": "#AEAEAE",
-            "header_text_color": "#F8F8F8",
-            "border_color": "#494949",
-            "button_background_color": "#F8F8F8",
-            "button_hover_background_color": "#AEAEAE",
-            "button_text_color": "#141415",
-            "announcement_background_color": "#242424",
-            "announcement_text_color": "#F8F8F8",
-            "product_status_background_color": "#F8F8F8",
-            "product_status_text_color": "#141415",
-            "hero_overlay_color": "#141415",
-            "hero_text_color": "#F8F8F8",
-            "product_hover_overlay_color": "#141415",
-            "product_hover_text_color": "#F8F8F8"
-          }
-        },
-        {
-          "name": "Classic #3",
-          "fonts": {
-            "primary_font": "Cabin",
-            "secondary_font": "Cabin"
-          },
-          "colors": {
-            "background_color": "#F8F8FA",
-            "text_color": "#2A2A2C",
-            "link_hover_color": "#203BE1",
-            "header_text_color": "#2A2A2C",
-            "border_color": "#C0C2CE",
-            "button_background_color": "#203BE1",
-            "button_hover_background_color": "#2A2A2C",
-            "button_text_color": "#F8F8FA",
-            "announcement_background_color": "#E5E6EC",
-            "announcement_text_color": "#2A2A2C",
-            "product_status_background_color": "#E5E6EC",
-            "product_status_text_color": "#2A2A2C",
-            "hero_overlay_color": "#2A2A2C",
-            "hero_text_color": "#F8F8FA",
-            "product_hover_overlay_color": "#2A2A2C",
-            "product_hover_text_color": "#F8F8FA"
-          }
-        }
-      ]
+  "preset_styles": {
+    "preview": {
+      "title_font": "primary_font",
+      "body_font": "secondary_font",
+      "text_color": "text_color",
+      "background_color": "background_color"
     },
-    {
-      "name": "Elegant",
-      "preview_styles": {
-        "title_font": "primary_font",
-        "body_font": "secondary_font",
-        "text_color": "text_color",
-        "background_color": "background_color"
+    "presets": [
+      {
+        "group_name": "Classic",
+        "styles": [
+          {
+            "style_name": "Classic #1",
+            "fonts": {
+              "primary_font": "DM Sans",
+              "secondary_font": "DM Sans"
+            },
+            "colors": {
+              "background_color": "#FFFFFF",
+              "text_color": "#111111",
+              "link_hover_color": "#5900FF",
+              "header_text_color": "#111111",
+              "border_color": "#EAEBEF",
+              "button_background_color": "#111111",
+              "button_hover_background_color": "#5900FF",
+              "button_text_color": "#FFFFFF",
+              "announcement_background_color": "#F3F3F5",
+              "announcement_text_color": "#111111",
+              "product_status_background_color": "#F3F3F5",
+              "product_status_text_color": "#111111",
+              "hero_overlay_color": "#111111",
+              "hero_text_color": "#FFFFFF",
+              "product_hover_overlay_color": "#111111",
+              "product_hover_text_color": "#FFFFFF"
+            }
+          },
+          {
+            "style_name": "Classic #2",
+            "fonts": {
+              "primary_font": "Lora",
+              "secondary_font": "Roboto"
+            },
+            "colors": {
+              "background_color": "#141415",
+              "text_color": "#F8F8F8",
+              "link_hover_color": "#AEAEAE",
+              "header_text_color": "#F8F8F8",
+              "border_color": "#494949",
+              "button_background_color": "#F8F8F8",
+              "button_hover_background_color": "#AEAEAE",
+              "button_text_color": "#141415",
+              "announcement_background_color": "#242424",
+              "announcement_text_color": "#F8F8F8",
+              "product_status_background_color": "#F8F8F8",
+              "product_status_text_color": "#141415",
+              "hero_overlay_color": "#141415",
+              "hero_text_color": "#F8F8F8",
+              "product_hover_overlay_color": "#141415",
+              "product_hover_text_color": "#F8F8F8"
+            }
+          },
+          {
+            "style_name": "Classic #3",
+            "fonts": {
+              "primary_font": "Cabin",
+              "secondary_font": "Cabin"
+            },
+            "colors": {
+              "background_color": "#F8F8FA",
+              "text_color": "#2A2A2C",
+              "link_hover_color": "#203BE1",
+              "header_text_color": "#2A2A2C",
+              "border_color": "#C0C2CE",
+              "button_background_color": "#203BE1",
+              "button_hover_background_color": "#2A2A2C",
+              "button_text_color": "#F8F8FA",
+              "announcement_background_color": "#E5E6EC",
+              "announcement_text_color": "#2A2A2C",
+              "product_status_background_color": "#E5E6EC",
+              "product_status_text_color": "#2A2A2C",
+              "hero_overlay_color": "#2A2A2C",
+              "hero_text_color": "#F8F8FA",
+              "product_hover_overlay_color": "#2A2A2C",
+              "product_hover_text_color": "#F8F8FA"
+            }
+          }
+        ]
       },
-      "styles": [
-        {
-          "name": "Elegant #1",
-          "fonts": {
-            "primary_font": "Prata",
-            "secondary_font": "Source Sans Pro"
+      {
+        "group_name": "Elegant",
+        "styles": [
+          {
+            "style_name": "Elegant #1",
+            "fonts": {
+              "primary_font": "Prata",
+              "secondary_font": "Source Sans Pro"
+            },
+            "colors": {
+              "background_color": "#F1F1F1",
+              "text_color": "#0F1B27",
+              "link_hover_color": "#8A5A5A",
+              "header_text_color": "#0F1B27",
+              "border_color": "#C7C7C7",
+              "button_background_color": "#DBD1D1",
+              "button_hover_background_color": "#C0AFAF",
+              "button_text_color": "#0F1B27",
+              "announcement_background_color": "#DBD1D1",
+              "announcement_text_color": "#0F1B27",
+              "product_status_background_color": "#DBD1D1",
+              "product_status_text_color": "#0F1B27",
+              "hero_overlay_color": "#0F1B27",
+              "hero_text_color": "#F1F1F1",
+              "product_hover_overlay_color": "#0F1B27",
+              "product_hover_text_color": "#F1F1F1"
+            }
           },
-          "colors": {
-            "background_color": "#F1F1F1",
-            "text_color": "#0F1B27",
-            "link_hover_color": "#8A5A5A",
-            "header_text_color": "#0F1B27",
-            "border_color": "#C7C7C7",
-            "button_background_color": "#DBD1D1",
-            "button_hover_background_color": "#C0AFAF",
-            "button_text_color": "#0F1B27",
-            "announcement_background_color": "#DBD1D1",
-            "announcement_text_color": "#0F1B27",
-            "product_status_background_color": "#DBD1D1",
-            "product_status_text_color": "#0F1B27",
-            "hero_overlay_color": "#0F1B27",
-            "hero_text_color": "#F1F1F1",
-            "product_hover_overlay_color": "#0F1B27",
-            "product_hover_text_color": "#F1F1F1"
-          }
-        },
-        {
-          "name": "Elegant #2",
-          "fonts": {
-            "primary_font": "Cormorant",
-            "secondary_font": "Raleway"
+          {
+            "style_name": "Elegant #2",
+            "fonts": {
+              "primary_font": "Cormorant",
+              "secondary_font": "Raleway"
+            },
+            "colors": {
+              "background_color": "#F5F4EE",
+              "text_color": "#262522",
+              "link_hover_color": "#7C3C17",
+              "header_text_color": "#262522",
+              "border_color": "#C3C0B0",
+              "button_background_color": "#262522",
+              "button_hover_background_color": "#7C3C17",
+              "button_text_color": "#F5F4EE",
+              "announcement_background_color": "#F1DBCE",
+              "announcement_text_color": "#262522",
+              "product_status_background_color": "#F1DBCE",
+              "product_status_text_color": "#262522",
+              "hero_overlay_color": "#262522",
+              "hero_text_color": "#F5F4EE",
+              "product_hover_overlay_color": "#262522",
+              "product_hover_text_color": "#F5F4EE"
+            }
           },
-          "colors": {
-            "background_color": "#F5F4EE",
-            "text_color": "#262522",
-            "link_hover_color": "#7C3C17",
-            "header_text_color": "#262522",
-            "border_color": "#C3C0B0",
-            "button_background_color": "#262522",
-            "button_hover_background_color": "#7C3C17",
-            "button_text_color": "#F5F4EE",
-            "announcement_background_color": "#F1DBCE",
-            "announcement_text_color": "#262522",
-            "product_status_background_color": "#F1DBCE",
-            "product_status_text_color": "#262522",
-            "hero_overlay_color": "#262522",
-            "hero_text_color": "#F5F4EE",
-            "product_hover_overlay_color": "#262522",
-            "product_hover_text_color": "#F5F4EE"
+          {
+            "style_name": "Elegant #3",
+            "fonts": {
+              "primary_font": "Marcellus",
+              "secondary_font": "Inter"
+            },
+            "colors": {
+              "background_color": "#222121",
+              "text_color": "#FFF5E5",
+              "link_hover_color": "#CAB696",
+              "header_text_color": "#FFF5E5",
+              "border_color": "#605553",
+              "button_background_color": "#CAB696",
+              "button_hover_background_color": "#FFF5E5",
+              "button_text_color": "#222121",
+              "announcement_background_color": "#332F2F",
+              "announcement_text_color": "#FFF5E5",
+              "product_status_background_color": "#CAB696",
+              "product_status_text_color": "#222121",
+              "hero_overlay_color": "#222121",
+              "hero_text_color": "#FFF5E5",
+              "product_hover_overlay_color": "#222121",
+              "product_hover_text_color": "#FFF5E5"
+            }
           }
-        },
-        {
-          "name": "Elegant #3",
-          "fonts": {
-            "primary_font": "Marcellus",
-            "secondary_font": "Inter"
-          },
-          "colors": {
-            "background_color": "#222121",
-            "text_color": "#FFF5E5",
-            "link_hover_color": "#CAB696",
-            "header_text_color": "#FFF5E5",
-            "border_color": "#605553",
-            "button_background_color": "#CAB696",
-            "button_hover_background_color": "#FFF5E5",
-            "button_text_color": "#222121",
-            "announcement_background_color": "#332F2F",
-            "announcement_text_color": "#FFF5E5",
-            "product_status_background_color": "#CAB696",
-            "product_status_text_color": "#222121",
-            "hero_overlay_color": "#222121",
-            "hero_text_color": "#FFF5E5",
-            "product_hover_overlay_color": "#222121",
-            "product_hover_text_color": "#FFF5E5"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Playful",
-      "preview_styles": {
-        "title_font": "primary_font",
-        "body_font": "secondary_font",
-        "text_color": "text_color",
-        "background_color": "background_color"
+        ]
       },
-      "styles": [
-        {
-          "name": "Playful #1",
-          "fonts": {
-            "primary_font": "Syne",
-            "secondary_font": "Inter"
+      {
+        "group_name": "Playful",
+        "styles": [
+          {
+            "style_name": "Playful #1",
+            "fonts": {
+              "primary_font": "Syne",
+              "secondary_font": "Inter"
+            },
+            "colors": {
+              "background_color": "#FFFFFF",
+              "text_color": "#0000FF",
+              "link_hover_color": "#000098",
+              "header_text_color": "#0000FF",
+              "border_color": "#E0E1E7",
+              "button_background_color": "#FFE500",
+              "button_hover_background_color": "#EBD300",
+              "button_text_color": "#000098",
+              "announcement_background_color": "#0000FF",
+              "announcement_text_color": "#FFFFFF",
+              "product_status_background_color": "#FF0000",
+              "product_status_text_color": "#FFFFFF",
+              "hero_overlay_color": "#000000",
+              "hero_text_color": "#FFFFFF",
+              "product_hover_overlay_color": "#0000FF",
+              "product_hover_text_color": "#FFFFFF"
+            }
           },
-          "colors": {
-            "background_color": "#FFFFFF",
-            "text_color": "#0000FF",
-            "link_hover_color": "#000098",
-            "header_text_color": "#0000FF",
-            "border_color": "#E0E1E7",
-            "button_background_color": "#FFE500",
-            "button_hover_background_color": "#EBD300",
-            "button_text_color": "#000098",
-            "announcement_background_color": "#0000FF",
-            "announcement_text_color": "#FFFFFF",
-            "product_status_background_color": "#FF0000",
-            "product_status_text_color": "#FFFFFF",
-            "hero_overlay_color": "#000000",
-            "hero_text_color": "#FFFFFF",
-            "product_hover_overlay_color": "#0000FF",
-            "product_hover_text_color": "#FFFFFF"
-          }
-        },
-        {
-          "name": "Playful #2",
-          "fonts": {
-            "primary_font": "Fraunces",
-            "secondary_font": "Poppins"
+          {
+            "style_name": "Playful #2",
+            "fonts": {
+              "primary_font": "Fraunces",
+              "secondary_font": "Poppins"
+            },
+            "colors": {
+              "background_color": "#5E2498",
+              "text_color": "#FFFFFF",
+              "link_hover_color": "#FFE462",
+              "header_text_color": "#FFFFFF",
+              "border_color": "#360665",
+              "button_background_color": "#D01A67",
+              "button_hover_background_color": "#B0094F",
+              "button_text_color": "#FFFFFF",
+              "announcement_background_color": "#51168B",
+              "announcement_text_color": "#FFFFFF",
+              "product_status_background_color": "#FFE462",
+              "product_status_text_color": "#5E2498",
+              "hero_overlay_color": "#360665",
+              "hero_text_color": "#FFFFFF",
+              "product_hover_overlay_color": "#360665",
+              "product_hover_text_color": "#FFFFFF"
+            }
           },
-          "colors": {
-            "background_color": "#5E2498",
-            "text_color": "#FFFFFF",
-            "link_hover_color": "#FFE462",
-            "header_text_color": "#FFFFFF",
-            "border_color": "#360665",
-            "button_background_color": "#D01A67",
-            "button_hover_background_color": "#B0094F",
-            "button_text_color": "#FFFFFF",
-            "announcement_background_color": "#51168B",
-            "announcement_text_color": "#FFFFFF",
-            "product_status_background_color": "#FFE462",
-            "product_status_text_color": "#5E2498",
-            "hero_overlay_color": "#360665",
-            "hero_text_color": "#FFFFFF",
-            "product_hover_overlay_color": "#360665",
-            "product_hover_text_color": "#FFFFFF"
+          {
+            "style_name": "Playful #3",
+            "fonts": {
+              "primary_font": "Quicksand",
+              "secondary_font": "Quicksand"
+            },
+            "colors": {
+              "background_color": "#FFE9F4",
+              "text_color": "#243588",
+              "link_hover_color": "#0C143B",
+              "header_text_color": "#243588",
+              "border_color": "#E1ADC7",
+              "button_background_color": "#243588",
+              "button_hover_background_color": "#0C143B",
+              "button_text_color": "#FFE9F4",
+              "announcement_background_color": "#FFD8EB",
+              "announcement_text_color": "#0C143B",
+              "product_status_background_color": "#FFFA8D",
+              "product_status_text_color": "#0C143B",
+              "hero_overlay_color": "#243588",
+              "hero_text_color": "#FFE9F4",
+              "product_hover_overlay_color": "#243588",
+              "product_hover_text_color": "#FFE9F4"
+            }
           }
-        },
-        {
-          "name": "Playful #3",
-          "fonts": {
-            "primary_font": "Quicksand",
-            "secondary_font": "Quicksand"
-          },
-          "colors": {
-            "background_color": "#FFE9F4",
-            "text_color": "#243588",
-            "link_hover_color": "#0C143B",
-            "header_text_color": "#243588",
-            "border_color": "#E1ADC7",
-            "button_background_color": "#243588",
-            "button_hover_background_color": "#0C143B",
-            "button_text_color": "#FFE9F4",
-            "announcement_background_color": "#FFD8EB",
-            "announcement_text_color": "#0C143B",
-            "product_status_background_color": "#FFFA8D",
-            "product_status_text_color": "#0C143B",
-            "hero_overlay_color": "#243588",
-            "hero_text_color": "#FFE9F4",
-            "product_hover_overlay_color": "#243588",
-            "product_hover_text_color": "#FFE9F4"
-          }
-        }
-      ]
-    }
-  ],
+        ]
+      }
+    ]
+  },
   "fonts": [
     {
       "variable": "primary_font",
