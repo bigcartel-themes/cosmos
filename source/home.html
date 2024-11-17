@@ -35,7 +35,7 @@
         {% endif %}
         {% if products != blank %}
           <div class="product-list-container">
-            <div class="product-list product-list--{{ theme.featured_products_layout }} {% if num_results < 3 %}product-list--center{% endif %}">
+            <div class="product-list product-list--{{ theme.featured_products_layout }} {% if num_results < 3 %}product-list--center{% endif %}" data-bc-hook="product-collection">
               {% for product in products %}
                 {% assign image_width = product.image.width | times: 1.0 %}
                 {% assign image_height = product.image.height | times: 1.0 %}
@@ -58,9 +58,10 @@
                     image-square
                   {% endif %}
                 {% endcapture %}
-                <div class="product-list-thumb {{ product.css_class }}">
+                {% capture status_class %}{% if product.status == 'active' and product.on_sale %}status-primary{% else %}status-secondary{% endif %}{% endcapture %}
+                <div class="product-list-thumb {{ product.css_class }}" data-bc-hook="product-item" data-bc-product-id="{{ product.id }}">
                   <a class="product-list-link {% if theme.featured_products_layout != 'alternating' %}product-list-link--{{ theme.product_grid_info }}{% endif %} {{ theme.alternating_product_image_style }}" href="{{ product.url }}" title="View {{ product.name | escape }}">
-                    <div class="product-list-image-container product-list-image-container-{{ theme.grid_image_style }}">
+                    <div class="product-list-image-container product-list-image-container-{{ theme.grid_image_style }}" data-bc-hook="product-thumbnail-container">
                       <img
                         alt=""
                         class="blur-up product-list-image lazyload grid-{{ theme.grid_image_style }}"
@@ -76,12 +77,13 @@
                           {{ product.image | product_image_url | constrain: 960 }} 960w
                         "
                         data-sizes="auto"
+                        data-bc-hook="product-thumbnail"
                       >
                       {% if product_status != blank %}<div class="product-list-thumb-status">{{ product_status }}</div>{% endif %}
                     </div>
-                    <div class="product-list-thumb-info">
-                      <div class="product-list-thumb-name">{{ product.name }}</div>
-                      <div class="product-list-thumb-price">
+                    <div class="product-list-thumb-info" data-bc-hook="product-header">
+                      <div class="product-list-thumb-name" data-bc-hook="product-name">{{ product.name }}</div>
+                      <div class="product-list-thumb-price" data-bc-hook="product-price">
                         {% if product.variable_pricing %}
                           {{ product.min_price | money: theme.money_format }} - {{ product.max_price | money: theme.money_format }}
                         {% else %}
