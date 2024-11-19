@@ -474,7 +474,7 @@
         ["Alternating", "alternating"],
         ["Standard grid", "standard-grid"]
       ],
-      "default": "alternating",
+      "default": "standard-grid",
       "description": "Sets a layout style for featured products on the Home page"
     },
     {
