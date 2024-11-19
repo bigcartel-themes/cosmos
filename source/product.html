@@ -7,6 +7,7 @@
 	{% when 'coming-soon' %}
 		{% assign product_status = 'Coming soon' %}
 {% endcase %}
+{% capture status_class %}{% if product.status == 'active' and product.on_sale %}status-primary{% else %}status-secondary{% endif %}{% endcapture %}
 
 {% if product.categories != blank %}
   <div class="product-breadcrumb">
@@ -127,7 +128,7 @@
           {{ product.default_price | money: theme.money_format }}
         {% endif %}
       {% endcapture %}
-      {% if product_status != blank %}<div class="product-detail__status">{{ product_status }}</div>{% endif %}
+      {% if product_status != blank %}<div class="product-detail__status {{ status_class }}">{{ product_status }}</div>{% endif %}
       <h1 class="page-title page-title--left product-detail__title">{{ product.name }}</h1>
       <div class="product-detail__pricing">{{ product_pricing }}</div>
     </div>

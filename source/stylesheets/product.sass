@@ -48,8 +48,6 @@
 
   &__status
     border-radius: var(--border-radius-sm)
-    color: var(--product-status-text-color)
-    background-color: var(--product-status-background-color)
     text-transform: uppercase
     font-size: .875rem
     line-height: normal
@@ -57,6 +55,14 @@
     display: inline-block
     padding: 6px
     letter-spacing: 1.1px
+
+    &.status-primary
+    background: var(--product-status-background-color-primary)
+    color: var(--product-status-text-color-primary)
+
+    &.status-secondary
+      background: var(--product-status-background-color-secondary)
+      color: var(--product-status-text-color-secondary)
 
   h1
     margin-bottom: 0 !important
