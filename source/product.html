@@ -129,7 +129,11 @@
       {% endcapture %}
       {% if product_status != blank %}<div class="product-detail__status">{{ product_status }}</div>{% endif %}
       <h1 class="page-title page-title--left product-detail__title">{{ product.name }}</h1>
-      <div class="product-detail__pricing">{{ product_pricing }}</div>
+      <div class="product-detail__pricing">
+        {% unless product.status == 'sold-out' and theme.show_sold_out_product_prices == false %}
+          {{ product_pricing }}
+        {% endunless %}
+      </div>
     </div>
     {% if product.status == 'active' %}
       <form method="post" class="product-form {% if theme.show_sold_out_product_options %}show-sold-out{% else %}hide-sold-out{% endif %}" action="/cart" accept-charset="utf8">
@@ -235,11 +239,13 @@
                   <div class="product-list-thumb-info">
                     <div class="product-list-thumb-name">{{ product.name }}</div>
                     <div class="product-list-thumb-price">
-                      {% if product.variable_pricing %}
-                        {{ product.min_price | money: theme.money_format }} - {{ product.max_price | money: theme.money_format }}
-                      {% else %}
-                        {{ product.default_price | money: theme.money_format }}
-                      {% endif %}
+                      {% unless product.status == 'sold-out' and theme.show_sold_out_product_prices == false %}
+                        {% if product.variable_pricing %}
+                          {{ product.min_price | money: theme.money_format }} - {{ product.max_price | money: theme.money_format }}
+                        {% else %}
+                          {{ product.default_price | money: theme.money_format }}
+                        {% endif %}
+                      {% endunless %}
                     </div>
                   </div>
                 </a>
