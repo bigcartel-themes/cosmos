@@ -131,7 +131,7 @@
         </a>
       </div>
     </div>
-    <header>
+    <header data-bc-hook="header">
       <a href="/" title="{{ store.name | escape }}" class="header-store-link header-store-link--{% if theme.header_logo != blank %}logo{% else %}text{% endif %}">
         {% if theme.logo_image != blank %}
           {% assign logo_image_height_1x = theme.logo_image_height %}
@@ -147,7 +147,7 @@
         {% endif %}
       </a>
     </header>
-    <main id="main">
+    <main id="main" data-bc-hook="main">
       <div class="content-wrapper content-wrapper--{{ page.permalink }} {{ theme.hero_image_width }}">
         {% if page.category == 'custom' %}
           <div class="custom-page">
@@ -159,7 +159,7 @@
         {% endif %}
       </div>
     </main>
-    <footer>
+    <footer data-bc-hook="footer">
       <nav class="footer-nav--links" aria-label="Secondary">
         <ul>
           <li><a href="/">{{ pages.home.name }}</a></li>
