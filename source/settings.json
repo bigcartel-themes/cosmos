@@ -41,8 +41,10 @@
               "button_text_color": "#FFFFFF",
               "announcement_background_color": "#F3F3F5",
               "announcement_text_color": "#111111",
-              "product_status_background_color": "#F3F3F5",
-              "product_status_text_color": "#111111",
+              "product_status_text_color_primary": "#F3F3F5",
+              "product_status_background_color_primary": "#5900FF",
+              "product_status_text_color_secondary": "#222222",
+              "product_status_background_color_secondary": "#FFFFFF",
               "hero_overlay_color": "#111111",
               "hero_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#111111",
@@ -66,8 +68,10 @@
               "button_text_color": "#141415",
               "announcement_background_color": "#242424",
               "announcement_text_color": "#F8F8F8",
-              "product_status_background_color": "#F8F8F8",
-              "product_status_text_color": "#141415",
+              "product_status_text_color_primary": "#f8f8f8",
+              "product_status_background_color_primary": "#cf3917",
+              "product_status_text_color_secondary": "#111111",
+              "product_status_background_color_secondary": "#FFFFFF",
               "hero_overlay_color": "#141415",
               "hero_text_color": "#F8F8F8",
               "product_hover_overlay_color": "#141415",
@@ -91,8 +95,10 @@
               "button_text_color": "#F8F8FA",
               "announcement_background_color": "#E5E6EC",
               "announcement_text_color": "#2A2A2C",
-              "product_status_background_color": "#E5E6EC",
-              "product_status_text_color": "#2A2A2C",
+              "product_status_text_color_primary": "#F8F8FA",
+              "product_status_background_color_primary": "#203BE1",
+              "product_status_text_color_secondary": "#111111",
+              "product_status_background_color_secondary": "#FFFFFF",
               "hero_overlay_color": "#2A2A2C",
               "hero_text_color": "#F8F8FA",
               "product_hover_overlay_color": "#2A2A2C",
@@ -113,16 +119,18 @@
             "colors": {
               "background_color": "#F1F1F1",
               "text_color": "#0F1B27",
-              "link_hover_color": "#8A5A5A",
+              "link_hover_color": "#B08989",
               "header_text_color": "#0F1B27",
               "border_color": "#C7C7C7",
-              "button_background_color": "#DBD1D1",
+              "button_background_color": "#B08989",
               "button_hover_background_color": "#C0AFAF",
               "button_text_color": "#0F1B27",
               "announcement_background_color": "#DBD1D1",
               "announcement_text_color": "#0F1B27",
-              "product_status_background_color": "#DBD1D1",
-              "product_status_text_color": "#0F1B27",
+              "product_status_text_color_primary": "#F1F1F1",
+              "product_status_background_color_primary": "#B08989",
+              "product_status_text_color_secondary": "#111111",
+              "product_status_background_color_secondary": "#FFFFFF",
               "hero_overlay_color": "#0F1B27",
               "hero_text_color": "#F1F1F1",
               "product_hover_overlay_color": "#0F1B27",
@@ -146,8 +154,10 @@
               "button_text_color": "#F5F4EE",
               "announcement_background_color": "#F1DBCE",
               "announcement_text_color": "#262522",
-              "product_status_background_color": "#F1DBCE",
-              "product_status_text_color": "#262522",
+              "product_status_text_color_primary": "#FFFFFF",
+              "product_status_background_color_primary": "#995542",
+              "product_status_text_color_secondary": "#111111",
+              "product_status_background_color_secondary": "#FFFFFF",
               "hero_overlay_color": "#262522",
               "hero_text_color": "#F5F4EE",
               "product_hover_overlay_color": "#262522",
@@ -171,8 +181,10 @@
               "button_text_color": "#222121",
               "announcement_background_color": "#332F2F",
               "announcement_text_color": "#FFF5E5",
-              "product_status_background_color": "#CAB696",
-              "product_status_text_color": "#222121",
+              "product_status_text_color_primary": "#222121",
+              "product_status_background_color_primary": "#CAB696",
+              "product_status_text_color_secondary": "#111111",
+              "product_status_background_color_secondary": "#FFFFFF",
               "hero_overlay_color": "#222121",
               "hero_text_color": "#FFF5E5",
               "product_hover_overlay_color": "#222121",
@@ -201,8 +213,10 @@
               "button_text_color": "#000098",
               "announcement_background_color": "#0000FF",
               "announcement_text_color": "#FFFFFF",
-              "product_status_background_color": "#FF0000",
-              "product_status_text_color": "#FFFFFF",
+              "product_status_text_color_primary": "#FFFFFF",
+              "product_status_background_color_primary": "#FF0000",
+              "product_status_text_color_secondary": "#111111",
+              "product_status_background_color_secondary": "#FFFFFF",
               "hero_overlay_color": "#000000",
               "hero_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#0000FF",
@@ -218,7 +232,7 @@
             "colors": {
               "background_color": "#5E2498",
               "text_color": "#FFFFFF",
-              "link_hover_color": "#FFE462",
+              "link_hover_color": "#ffe048",
               "header_text_color": "#FFFFFF",
               "border_color": "#360665",
               "button_background_color": "#D01A67",
@@ -226,8 +240,10 @@
               "button_text_color": "#FFFFFF",
               "announcement_background_color": "#51168B",
               "announcement_text_color": "#FFFFFF",
-              "product_status_background_color": "#FFE462",
-              "product_status_text_color": "#5E2498",
+              "product_status_text_color_primary": "#5E2498",
+              "product_status_background_color_primary": "#ffe048",
+              "product_status_text_color_secondary": "#111111",
+              "product_status_background_color_secondary": "#FFFFFF",
               "hero_overlay_color": "#360665",
               "hero_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#360665",
@@ -251,8 +267,10 @@
               "button_text_color": "#FFE9F4",
               "announcement_background_color": "#FFD8EB",
               "announcement_text_color": "#0C143B",
-              "product_status_background_color": "#FFFA8D",
-              "product_status_text_color": "#0C143B",
+              "product_status_text_color_primary": "#FFFA8D",
+              "product_status_background_color_primary": "#0C143B",
+              "product_status_text_color_secondary": "#111111",
+              "product_status_background_color_secondary": "#FFFFFF",
               "hero_overlay_color": "#243588",
               "hero_text_color": "#FFE9F4",
               "product_hover_overlay_color": "#243588",
@@ -288,12 +306,12 @@
     },
     {
       "variable": "link_hover_color",
-      "label": "Link Hover",
+      "label": "Link hover",
       "default": "#5900FF"
     },
     {
       "variable": "header_text_color",
-      "label": "Header Text",
+      "label": "Header text",
       "default": "#111111"
     },
     {
@@ -303,57 +321,67 @@
     },
     {
       "variable": "button_background_color",
-      "label": "Button Background",
+      "label": "Button background",
       "default": "#111111"
     },
     {
       "variable": "button_hover_background_color",
-      "label": "Button Hover Background",
+      "label": "Button hover background",
       "default": "#5900FF"
     },
     {
       "variable": "button_text_color",
-      "label": "Button Text",
+      "label": "Button text",
       "default": "#FFFFFF"
     },
     {
       "variable": "announcement_background_color",
-      "label": "Announcement Background",
+      "label": "Announcement background",
       "default": "#F3F3F5"
     },
     {
       "variable": "announcement_text_color",
-      "label": "Announcement Text",
+      "label": "Announcement text",
       "default": "#111111"
     },
     {
-      "variable": "product_status_background_color",
-      "label": "Product Status Background",
+      "variable": "product_status_background_color_primary",
+      "label": "Product status background (primary)",
       "default": "#F3F3F5"
     },
     {
-      "variable": "product_status_text_color",
-      "label": "Product Status Text",
+      "variable": "product_status_text_color_primary",
+      "label": "Product status text (primary)",
       "default": "#111111"
     },
     {
+      "variable": "product_status_background_color_secondary",
+      "label": "Product status background (secondary)",
+      "default": "#FFFFFF"
+    },
+    {
+      "variable": "product_status_text_color_secondary",
+      "label": "Product status text (secondary)",
+      "default": "#222222"
+    },
+    {
       "variable": "hero_overlay_color",
-      "label": "Hero Overlay",
+      "label": "Hero overlay",
       "default": "#111111"
     },
     {
       "variable": "hero_text_color",
-      "label": "Hero Text",
+      "label": "Hero text",
       "default": "#FFFFFF"
     },
     {
       "variable": "product_hover_overlay_color",
-      "label": "Product Hover Overlay",
+      "label": "Product hover overlay",
       "default": "#111111"
     },
     {
       "variable": "product_hover_text_color",
-      "label": "Product Hover Text",
+      "label": "Product hover text",
       "default": "#FFFFFF"
     }
   ],
