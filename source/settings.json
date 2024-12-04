@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "images": [
     {
       "variable": "logo_image",
@@ -33,7 +33,9 @@
             "colors": {
               "background_color": "#FFFBF5",
               "text_color": "#4E4E4E",
+              "link_text_color": "#4E4E4E",
               "link_hover_color": "#E15C2A",
+              "shop_name_text_color": "#4E4E4E",
               "header_text_color": "#4E4E4E",
               "border_color": "#D9D4CA",
               "button_background_color": "#E15C2A",
@@ -60,7 +62,9 @@
             "colors": {
               "background_color": "#FFFFFF",
               "text_color": "#111111",
+              "link_text_color": "#111111",
               "link_hover_color": "#5900FF",
+              "shop_name_text_color": "#111111",
               "header_text_color": "#111111",
               "border_color": "#EAEBEF",
               "button_background_color": "#111111",
@@ -87,7 +91,9 @@
             "colors": {
               "background_color": "#141415",
               "text_color": "#F8F8F8",
+              "link_text_color": "#F8F8F8",
               "link_hover_color": "#AEAEAE",
+              "shop_name_text_color": "#F8F8F8",
               "header_text_color": "#F8F8F8",
               "border_color": "#494949",
               "button_background_color": "#F8F8F8",
@@ -114,7 +120,9 @@
             "colors": {
               "background_color": "#F8F8FA",
               "text_color": "#2A2A2C",
+              "link_text_color": "#2A2A2A",
               "link_hover_color": "#203BE1",
+              "shop_name_text_color": "#2A2A2C",
               "header_text_color": "#2A2A2C",
               "border_color": "#C0C2CE",
               "button_background_color": "#203BE1",
@@ -146,7 +154,9 @@
             "colors": {
               "background_color": "#F1F1F1",
               "text_color": "#0F1B27",
+              "link_text_color": "#0F1B27",
               "link_hover_color": "#B08989",
+              "shop_name_text_color": "#0F1B27",
               "header_text_color": "#0F1B27",
               "border_color": "#C7C7C7",
               "button_background_color": "#B08989",
@@ -173,7 +183,9 @@
             "colors": {
               "background_color": "#F5F4EE",
               "text_color": "#262522",
+              "link_text_color": "#262522",
               "link_hover_color": "#7C3C17",
+              "shop_name_text_color": "#262522",
               "header_text_color": "#262522",
               "border_color": "#C3C0B0",
               "button_background_color": "#262522",
@@ -200,7 +212,9 @@
             "colors": {
               "background_color": "#222121",
               "text_color": "#FFF5E5",
+              "link_text_color": "#FFF5E5",
               "link_hover_color": "#CAB696",
+              "shop_name_text_color": "#FFF5E5",
               "header_text_color": "#FFF5E5",
               "border_color": "#605553",
               "button_background_color": "#CAB696",
@@ -227,7 +241,9 @@
             "colors": {
               "background_color": "#FFFFFF",
               "text_color": "#2E3A46",
+              "link_text_color": "#2E3A46",
               "link_hover_color": "#5C86CC",
+              "shop_name_text_color": "#2E3A46",
               "header_text_color": "#2E3A46",
               "border_color": "#E4E8ED",
               "button_background_color": "#5C86CC",
@@ -259,7 +275,9 @@
             "colors": {
               "background_color": "#0E0E0E",
               "text_color": "#F4F4F4",
+              "link_text_color": "#F4F4F4",
               "link_hover_color": "#FF6FD8",
+              "shop_name_text_color": "#F4F4F4",
               "header_text_color": "#F4F4F4",
               "border_color": "#5A5A5A",
               "button_background_color": "#1FBF73",
@@ -286,7 +304,9 @@
             "colors": {
               "background_color": "#FFFFFF",
               "text_color": "#0000FF",
+              "link_text_color": "#0000FF",
               "link_hover_color": "#000098",
+              "shop_name_text_color": "#0000FF",
               "header_text_color": "#0000FF",
               "border_color": "#E0E1E7",
               "button_background_color": "#FFE500",
@@ -313,7 +333,9 @@
             "colors": {
               "background_color": "#5E2498",
               "text_color": "#FFFFFF",
+              "link_text_color": "#FFFFFF",
               "link_hover_color": "#ffe048",
+              "shop_name_text_color": "#FFFFFF",
               "header_text_color": "#FFFFFF",
               "border_color": "#360665",
               "button_background_color": "#D01A67",
@@ -340,7 +362,9 @@
             "colors": {
               "background_color": "#FFE9F4",
               "text_color": "#243588",
+              "link_text_color": "#243588",
               "link_hover_color": "#0C143B",
+              "shop_name_text_color": "#243588",
               "header_text_color": "#243588",
               "border_color": "#E1ADC7",
               "button_background_color": "#243588",
@@ -386,9 +410,19 @@
       "default": "#4E4E4E"
     },
     {
+      "variable": "link_text_color",
+      "label": "Links",
+      "default": "#4E4E4E"
+    },
+    {
       "variable": "link_hover_color",
       "label": "Link hover",
       "default": "#E15C2A"
+    },
+    {
+      "variable": "shop_name_text_color",
+      "label": "Shop name text",
+      "default": "#4E4E4E"
     },
     {
       "variable": "header_text_color",
@@ -842,7 +876,7 @@
     "title_position": "center",
     "title_font_size": "42px",
     "title_font_weight": "normal",
-    "title_color": "{{ header_text_color }}",
+    "title_color": "{{ shop_name_text_color }}",
     "secondary_font": "{{ secondary_font }}",
     "secondary_font_size": "15px",
     "content_border_radius": "0",
@@ -858,7 +892,7 @@
     "content_header_color": "{{ text_color }}",
     "content_color": "{{ text_color }}",
     "link_font_size": "15px",
-    "link_color": "{{ text_color }}",
+    "link_color": "{{ link_text_color }}",
     "link_hover_color": "{{ link_hover_color }}",
     "error_border_width": "0",
     "error_font_size": "16px",

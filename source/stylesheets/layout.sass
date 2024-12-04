@@ -2,8 +2,10 @@
   --background-color: #{'{{ theme.background_color }}'}
 
   --text-color: #{'{{ theme.text_color }}'}
+  --link-text-color: #{'{{ theme.link_text_color }}'}
   --link-hover-color: #{'{{ theme.link_hover_color }}'}
 
+  --shop-name-text-color: #{'{{ theme.shop_name_text_color }}'}
   --header-text-color: #{'{{ theme.header_text_color }}'}
 
   --button-background-color: #{'{{ theme.button_background_color }}'}
@@ -55,7 +57,7 @@ body
   font-family: var(--secondary-font)
 
 a
-  color: var(--text-color)
+  color: var(--link-text-color)
   text-decoration: none
 
   &:hover, &:focus
@@ -169,7 +171,7 @@ header
   font-weight: 700
   overflow-wrap: break-word
   word-break: break-word
-  color: var(--header-text-color)
+  color: var(--shop-name-text-color)
 
 .store-logo
   max-height: var(--logo-max-height)
