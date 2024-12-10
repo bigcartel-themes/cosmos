@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "images": [
     {
       "variable": "logo_image",
@@ -269,6 +269,35 @@
           {
             "style_name": "Playful #1",
             "fonts": {
+              "primary_font": "Doto",
+              "secondary_font": "Source Code Pro"
+            },
+            "colors": {
+              "background_color": "#222222",
+              "text_color": "#DDDDDD",
+              "link_text_color": "#DDDDDD",
+              "link_hover_color": "#E7E71C",
+              "shop_name_text_color": "#E7E71C",
+              "header_text_color": "#E7E71C",
+              "border_color": "#4E4E4E",
+              "button_background_color": "#E7E71C",
+              "button_hover_background_color": "#C5C519",
+              "button_text_color": "#222222",
+              "announcement_background_color": "#1C71E7",
+              "announcement_text_color": "#DDDDDD",
+              "product_status_text_color": "#222222",
+              "product_status_background_color": "#E7E71C",
+              "product_status_text_color_secondary": "#222222",
+              "product_status_background_color_secondary": "#DDDDDD",
+              "hero_overlay_color": "#4E4E4E",
+              "hero_text_color": "#DDDDDD",
+              "product_hover_overlay_color": "#4E4E4E",
+              "product_hover_text_color": "#DDDDDD"
+            }
+          },
+          {
+            "style_name": "Playful #2",
+            "fonts": {
               "primary_font": "Fraunces",
               "secondary_font": "Fraunces"
             },
@@ -296,7 +325,7 @@
             }
           },
           {
-            "style_name": "Playful #2",
+            "style_name": "Playful #3",
             "fonts": {
               "primary_font": "Syne",
               "secondary_font": "Inter"
@@ -325,7 +354,7 @@
             }
           },
           {
-            "style_name": "Playful #3",
+            "style_name": "Playful #4",
             "fonts": {
               "primary_font": "Fraunces",
               "secondary_font": "Poppins"
@@ -354,7 +383,7 @@
             }
           },
           {
-            "style_name": "Playful #4",
+            "style_name": "Playful #5",
             "fonts": {
               "primary_font": "Quicksand",
               "secondary_font": "Quicksand"
