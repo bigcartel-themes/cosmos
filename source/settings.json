@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "images": [
     {
       "variable": "logo_image",
@@ -273,7 +273,7 @@
               "secondary_font": "Source Code Pro"
             },
             "colors": {
-              "background_color": "#222222",
+              "background_color": "#000000",
               "text_color": "#DDDDDD",
               "link_text_color": "#DDDDDD",
               "link_hover_color": "#E7E71C",
@@ -282,13 +282,13 @@
               "border_color": "#4E4E4E",
               "button_background_color": "#E7E71C",
               "button_hover_background_color": "#C5C519",
-              "button_text_color": "#222222",
+              "button_text_color": "#000000",
               "announcement_background_color": "#1C71E7",
               "announcement_text_color": "#DDDDDD",
-              "product_status_text_color": "#222222",
-              "product_status_background_color": "#E7E71C",
-              "product_status_text_color_secondary": "#222222",
-              "product_status_background_color_secondary": "#DDDDDD",
+              "product_status_text_color": "#E7E71C",
+              "product_status_background_color": "#3F3F3F",
+              "product_status_text_color_secondary": "#DDDDDD",
+              "product_status_background_color_secondary": "#414141",
               "hero_overlay_color": "#4E4E4E",
               "hero_text_color": "#DDDDDD",
               "product_hover_overlay_color": "#4E4E4E",
