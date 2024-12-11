@@ -11,7 +11,11 @@
   margin-bottom: 24px
 
   a
-    text-decoration: underline
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+      text-underline-offset: 3px
 
 .reset-selection-button-container
   text-align: center
@@ -83,7 +87,10 @@
   .related-products-view-all-link
     margin-left: auto
     font-weight: 700
-    text-decoration: underline
+
+    &:hover
+      text-decoration: underline
+      text-underline-offset: 3px
 
 .related-product-list
   --columns: 4

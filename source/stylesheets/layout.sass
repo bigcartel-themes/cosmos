@@ -65,6 +65,7 @@ a
 
   &:hover
     text-decoration: underline
+    text-underline-offset: 3px
 
 a.skip-link
   transition: top .2s ease
@@ -74,7 +75,8 @@ a.skip-link
   left: 24px
   padding: 16px 24px
   position: absolute
-  text-decoration: underline
+  text-decoration: underline  
+  text-underline-offset: 3px
   top: -150px
   z-index: 100
 
@@ -93,6 +95,10 @@ header
   text-align: center
   width: 100%
   margin: 0 auto
+
+  a
+    &:hover
+      text-decoration: none
 
   @media screen and (max-width: $break-small)
     --side-padding: 16px
@@ -124,8 +130,7 @@ header
       text-decoration: none
 
     &:hover
-      border-bottom: 2px solid var(--link-hover-color)
-
+      border-bottom: 1px solid var(--link-hover-color)
   &--links
     @media screen and (max-width: $break-small)
       display: none
@@ -266,6 +271,9 @@ footer
       a
         display: block
 
+        &:hover
+          text-underline-offset: 3px
+
       @media screen and (max-width: $break-small)
         flex-direction: column
         row-gap: 24px
@@ -289,6 +297,9 @@ footer
     padding-top: 1px
     width: 80px
 
+  &:hover
+    text-decoration: none
+
 .custom-page--content, .product-detail__description
 
   p
@@ -311,6 +322,7 @@ footer
 
   a
     text-decoration: underline
+    text-underline-offset: 3px
 
 .select
   border-radius: var(--border-radius)
@@ -427,6 +439,7 @@ button.button, a.button, div.button
     border: 0
     color: var(--text-color)
     text-decoration: underline
+    text-underline-offset: 3px
     font-weight: normal
 
     &:hover, &:focus

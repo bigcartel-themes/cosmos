@@ -235,7 +235,7 @@
                       "
                       data-sizes="auto"
                     >
-                    {% if product_status != blank %}<div class="product-list-thumb-status">{{ product_status }}</div>{% endif %}
+                    {% if product_status != blank %}<div class="product-list-thumb-status {{ status_class }}">{{ product_status }}</div>{% endif %}
                   </div>
                   <div class="product-list-thumb-info">
                     <div class="product-list-thumb-name">{{ product.name }}</div>
