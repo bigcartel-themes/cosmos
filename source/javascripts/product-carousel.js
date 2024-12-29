@@ -21,8 +21,8 @@ if (productSlideshowContainer) {
         destroy: themeOptions.desktopProductPageImages == 'carousel' || themeOptions.desktopProductPageImages == 'thumbnails' ? false : true,
       },
     }
-  });
-
+  }).mount(window.splide.Extensions);
+  
   let thumbnails = document.getElementsByClassName('product-thumbnails--item');
   let current;
 
@@ -64,7 +64,6 @@ if (productSlideshowContainer) {
       thumbnail.setAttribute('aria-current', 'true');
     }
   });
-  splide.mount();
 }
 const thumbScrollers = document.querySelectorAll('.thumb-scroller');
 const thumbContainer = document.querySelector('.product-thumbnails--list');

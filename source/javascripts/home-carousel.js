@@ -6,6 +6,6 @@ if (homeSlideshowContainer) {
       type: 'slide',
       keyboard: true,
     } );
-    splide.mount();
+    splide.mount(window.splide.Extensions);
   });
 }
