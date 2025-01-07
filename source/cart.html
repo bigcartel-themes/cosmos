@@ -71,15 +71,22 @@
           {% endfor %}
         </ul>
       </div>
-      <div class="cart-footer">
-        <div class="cart-subtotal" aria-live="polite" aria-atomic="true">
-          <span class="cart-subtotal__label">Subtotal</span>
-          <span class="cart-subtotal__amount">{{ cart.total | money: theme.money_format }}</span>
+      <div class="cart-footer-container">
+        <div class="cart-footer">
+          <div class="cart-subtotal" aria-live="polite" aria-atomic="true">
+            <span class="cart-subtotal__label">Subtotal</span>
+            <span class="cart-subtotal__amount">{{ cart.total | money: theme.money_format }}</span>
+          </div>
+          <div class="cart-submit">
+            <button type="submit" name="checkout" class="button button--checkout">Checkout</button>
+            <a class="button button--minimal" href="/products">Continue Shopping</a>
+          </div>
         </div>
-        <div class="cart-submit">
-          <button type="submit" name="checkout" class="button button--checkout">Checkout</button>
-          <a class="button button--minimal" href="/products">Continue Shopping</a>
-        </div>
+        {% if cart.shareable_link %}
+          <div class="cart-footer-secondary">
+            <a href="{{ cart.shareable_link }}" class="button button--minimal copy-cart-link" data-clipboard-text="{{ cart.shareable_link }}">Share this cart</a>
+          </div>
+        {% endif %}
       </div>
     </div>
   </form>
