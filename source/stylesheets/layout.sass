@@ -131,8 +131,9 @@ header
 
     &:hover
       border-bottom: 1px solid var(--link-hover-color)
+
   &--links
-    @media screen and (max-width: $break-small)
+    @media screen and (max-width: #{"{% if theme.nav_items < 3 %} #{$break-small} {% else %} #{$break-medium} {% endif %}"})
       display: none
 
     ul
@@ -154,7 +155,7 @@ header
 .mobile-menu
   display: none
 
-  @media screen and (max-width: $break-small)
+  @media screen and (max-width: #{"{% if theme.nav_items < 3 %} #{$break-small} {% else %} #{$break-medium} {% endif %}"})
     display: flex
     align-items: center
     justify-content: center
