@@ -248,60 +248,145 @@ h1, h2, h3, h4, h5, h6
       text-align: left
 
 footer
-  display: flex
-  align-items: center
-  justify-content: center
-  flex-direction: column
-  flex-shrink: 0
-  padding: 40px 64px
-  gap: 24px
+  padding: 64px 0
   font-family: var(--primary-font)
+  width: 100%
+
+  @media screen and (max-width: $break-small)
+    padding: 32px 0
+
+  .wrapper
+    display: flex
+    gap: 32px
+    align-items: flex-start
+    justify-content: center
+    flex-wrap: wrap
+    max-width: 1200px
+    padding: 50px
+    margin: 0 auto
+
+    @media screen and (max-width: $break-small)
+      padding: 0 16px
+
+    @media screen and (max-width: $break-extra-small)
+      flex-direction: column
+      padding: 36px
 
 .footer-nav
-  &--links
-    ul
+  display: flex
+  flex-direction: column
+  flex: 1
+  max-width: 300px
+  padding-top: 10px
+  position: relative
+  width: 100%
+
+  @media screen and (max-width: $break-extra-small)
+    text-align: center
+    max-width: 100%
+
+  ul
+    display: flex
+    flex-direction: column
+    gap: 12px
+
+    @media screen and (max-width: $break-small)
+      display: block
+      column-gap: 32px
+      column-count: 2
+      column-width: 40vw
+
+    li
       display: flex
-      align-items: center
-      justify-content: center
-      column-gap: 24px
-      row-gap: 8px
-      font-weight: 700
-      flex-wrap: wrap
-
-      a
-        display: block
-
-        &:hover
-          text-underline-offset: 3px
+      align-items: flex-start
+      justify-content: flex-start
 
       @media screen and (max-width: $break-small)
-        flex-direction: column
-        row-gap: 24px
+        padding-bottom: 16px
 
-.bigcartel-credit
-  font-size: .875rem
-  line-height: 1em
-  align-items: center
+      a
+        color: var(--text-color)
+        display: block
+        font-size: 1em
+
+        &:hover, &:focus
+          text-decoration: underline
+
+    &.social-links
+      a
+        color: var(--text-color)
+        display: flex
+        align-items: center
+        gap: 12px
+
+        svg
+          flex-shrink: 0
+          fill: currentColor
+          height: 16px
+          position: relative
+          width: 16px
+
+.social-icons
+  display: flex
+  gap: 20px
+  list-style: none
+  margin: 0
+  padding: 0
+  flex-wrap: wrap
   justify-content: center
-  display: inline-flex
-  gap: 8px
-  outline-offset: 4px
-  padding: 2px 0
 
-  &__text
-    position: relative
+  @media screen and (max-width: $break-extra-small)
+    gap: 16px
 
-  &__lockup
-    display: block
-    fill: currentColor
-    padding-top: 1px
-    width: 80px
+  a
+    color: var(--text-color)
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-shrink: 0
+    width: 36px
+    height: 36px
 
-  &:hover
+    &:hover
+      color: var(--link-hover-color)
+
+    svg
+      fill: currentColor
+      height: 22px
+      width: 22px
+
+      &.tumblr-icon
+        width: 14px
+
+.credit-container
+  margin-left: auto
+  position: relative
+  padding-top: 10px
+  margin: 0
+
+  .bigcartel-credit
+    line-height: 1em
+    font-size: .875rem
+    display: flex
+    align-items: center
+    gap: 8px
+    outline-offset: 4px
+    padding: 2px 0
     text-decoration: none
 
-.custom-page--content, .product-detail__description
+    &__text
+      position: relative
 
+    &__lockup
+      display: block
+      fill: currentColor
+      padding-top: 1px
+      width: 86px
+
+    &:hover
+      text-decoration: none
+
+.custom-page--content, .product-detail__description
   p
     margin: revert
 
