@@ -134,7 +134,9 @@
           {% for page in pages.all limit: theme.nav_items %}
             <li>{{ page | link_to }}</li>
           {% endfor %}
-          <li><a href="/contact">{{ pages.contact.name }}</a></li>
+          {% if theme.nav_items < 3 %}
+            <li><a href="/contact">{{ pages.contact.name }}</a></li>
+          {% endif %}
         </ul>
       </nav>
       <div class="top-nav--icons">
