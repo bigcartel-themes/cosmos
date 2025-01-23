@@ -239,11 +239,10 @@
     {% endcomment %}
     {% assign final_permalinks_array = final_product_permalinks | split: ',' %}
     {% if final_permalinks_array.size > 0 %}
-      <aside class="related-products-container" data-num-products="{{ related_products_limit }}" role="complementary" aria-label="Related Products">
-        <div class="all-related-products" style="display: none"></div>
+      <aside class="related-products-container" data-num-products="{{ related_products_limit }}" role="complementary" aria-label="{{ theme.related_products_header | default: 'You might also like' }}">
         <div class="related-products-header">
-          <h2 class="related-products-title">{{ theme.related_products_header | default: 'Related Products' }}</h2>
-          <a class="related-products-view-all-link" href="/products">View All Products</a>
+          <h2 class="related-products-title">{{ theme.related_products_header | default: 'You might also like' }}</h2>
+          <a class="related-products-view-all-link" href="/products">View all products</a>
         </div>
         <div class="product-list-container">
           <div class="related-product-list product-list">
@@ -254,15 +253,16 @@
                 {% assign image_width = matched_product.image.width | times: 1.0 %}
                 {% assign image_height = matched_product.image.height | times: 1.0 %}
                 {% assign aspect_ratio = image_width | divided_by: image_height %}
-                {% assign product_status = '' %}
+                {% assign matched_product_status = '' %}
                 {% case matched_product.status %}
                   {% when 'active' %}
-                    {% if matched_product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+                    {% if matched_product.on_sale %}{% assign matched_product_status = 'On sale' %}{% endif %}
                   {% when 'sold-out' %}
-                    {% assign product_status = 'Sold out' %}
+                    {% assign matched_product_status = 'Sold out' %}
                   {% when 'coming-soon' %}
-                    {% assign product_status = 'Coming soon' %}
+                    {% assign matched_product_status = 'Coming soon' %}
                 {% endcase %}
+                {% capture matched_product_status_class %}{% if matched_product.status == 'active' and matched_product.on_sale %}status-primary{% else %}status-secondary{% endif %}{% endcapture %}
                 {% capture image_class %}
                   {% if matched_product.image.height > matched_product.image.width %}
                     image-tall
@@ -291,7 +291,7 @@
                         "
                         data-sizes="auto"
                       >
-                      {% if product_status != blank %}<div class="product-list-thumb-status {{ status_class }}">{{ product_status }}</div>{% endif %}
+                      {% if matched_product_status != blank %}<div class="product-list-thumb-status {{ matched_product_status_class }}">{{ matched_product_status }}</div>{% endif %}
                     </div>
                     <div class="product-list-thumb-info">
                       <div class="product-list-thumb-name">{{ matched_product.name }}</div>
