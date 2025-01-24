@@ -614,22 +614,19 @@
       "default": "Shop now"
     },
     {
+      "variable": "featured_header",
+      "label": "Featured products header",
+      "type": "text",
+      "description": "Displays above featured products on the Home page",
+      "default": "Featured Products"
+    },
+    {
       "variable": "featured_products",
       "label": "Featured products",
       "type": "select",
       "options": "0..100",
       "default": 12,
       "description": "The number of products displayed on the Home page"
-    },
-    {
-      "variable": "featured_header",
-      "label": "Featured products header",
-      "type": "text",
-      "description": "Displays above featured products on the Home page",
-      "default": "Featured Products",
-      "requires": [
-        "featured_products gt 0"
-      ]
     },
     {
       "variable": "featured_order",
