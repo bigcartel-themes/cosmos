@@ -282,9 +282,16 @@ footer
   position: relative
   width: 100%
 
-  @media screen and (max-width: $break-extra-small)
-    text-align: center
-    max-width: 100%
+  .footer-nav-title
+    font-weight: 700
+    font-size: 1.1em
+    margin-bottom: 16px
+
+    a
+      color: inherit
+
+      &:hover
+        text-decoration: underline
 
   ul
     display: flex
@@ -296,6 +303,9 @@ footer
       column-gap: 32px
       column-count: 2
       column-width: 40vw
+
+    @media screen and (max-width: $break-extra-small)
+      column-gap: 20px
 
     li
       display: flex

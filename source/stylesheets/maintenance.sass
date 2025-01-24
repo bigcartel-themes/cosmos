@@ -14,16 +14,21 @@
     margin: 0 auto
     padding: 50px
     border: 1px solid var(--border-color)
+    width: 50%
 
     h1
       font-size: 3.75rem
 
+    @media screen and (max-width: $break-medium)
+      padding: 40px 20px
+      width: 80%
+
     @media screen and (max-width: $break-small)
       padding: 40px 20px
+      width: 100%
 
       h1 
         font-size: 3rem
-    
 
   .maintenance-message
     padding: 10px
