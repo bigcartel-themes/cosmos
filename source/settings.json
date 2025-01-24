@@ -612,13 +612,6 @@
       "default": "Shop now"
     },
     {
-      "variable": "featured_header",
-      "label": "Featured products header",
-      "type": "text",
-      "description": "Displays above featured products on the Home page",
-      "default": "Featured Products"
-    },
-    {
       "variable": "featured_products",
       "label": "Featured products",
       "type": "select",
@@ -627,16 +620,25 @@
       "description": "The number of products displayed on the Home page"
     },
     {
+      "variable": "featured_header",
+      "label": "Featured products header",
+      "type": "text",
+      "description": "Displays above featured products on the Home page",
+      "default": "Featured Products",
+      "requires": [
+        "featured_products gt 0"
+      ]
+    },
+    {
       "variable": "featured_order",
       "label": "Featured products order",
       "type": "select",
-      "options": [
-        ["Regular", "regular"],
-        ["Top Selling", "sales"],
-        ["Newest", "newest"]
-      ],
-      "default": "regular",
-      "description": "The order of products on the Home page"
+      "options": "product_orders",
+      "default": "position",
+      "description": "The order of products on the Home page",
+      "requires": [
+        "featured_products gt 0"
+      ]
     },
     {
       "variable": "featured_products_layout",
@@ -647,7 +649,10 @@
         ["Standard grid", "standard-grid"]
       ],
       "default": "standard-grid",
-      "description": "Sets a layout style for featured products on the Home page"
+      "description": "Sets a layout style for featured products on the Home page",
+      "requires": [
+        "featured_products gt 0"
+      ]
     },
     {
       "variable": "alternating_product_image_style",
@@ -658,7 +663,11 @@
         ["Original dimensions", "original-dimensions"]
       ],
       "default": "original-dimensions",
-      "description": "Sets the display of images for featured products in alternating layout style"
+      "description": "Sets the display of images for featured products in alternating layout style",
+      "requires": [
+        "featured_products gt 0",
+        "featured_products_layout eq 'alternating'"
+      ]
     },
     {
       "variable": "all_products_button_text",
@@ -679,7 +688,10 @@
       "label": "Categories header",
       "type": "text",
       "description": "Displays above categories on the Home page",
-      "default": "Categories"
+      "default": "Categories",
+      "requires": [
+        "show_home_page_categories eq true"
+      ]
     },
     {
       "variable": "category_image_style",
@@ -690,7 +702,10 @@
         ["Under image", "under_image"]
       ],
       "default": "under_image",
-      "description": "Shows a category’s name over the image with an overlay, or under the image"
+      "description": "Shows a category’s name over the image with an overlay, or under the image",
+      "requires": [
+        "show_home_page_categories eq true"
+      ]
     },
     {
       "variable": "max_categories_per_row",
@@ -698,7 +713,10 @@
       "type": "select",
       "options": "1..4",
       "default": 3,
-      "description": "The maximum number of Home page categories displayed per row"
+      "description": "The maximum number of Home page categories displayed per row",
+      "requires": [
+        "show_home_page_categories eq true"
+      ]
     },
     {
       "variable": "grid_image_style",
@@ -746,29 +764,6 @@
       "options": "1..100",
       "default": 48,
       "description": "The number of products shown at a time on the Products page"
-    },
-    {
-      "variable": "show_search",
-      "label": "Show search",
-      "type": "boolean",
-      "default": true,
-      "description": "Shows the product search area"
-    },
-    {
-      "variable": "show_sold_out_product_options",
-      "label": "Show sold out product variants",
-      "type": "boolean",
-      "default": true,
-      "description": "Shows sold out product variants in the Product page dropdowns",
-      "requires": "inventory"
-    },
-    {
-      "variable": "show_sold_out_product_prices",
-      "label": "Show prices for sold out products",
-      "type": "boolean",
-      "default": true,
-      "description": "Show the price of sold out products on product grids and product pages",
-      "requires": "inventory"
     },
     {
       "variable": "product_image_zoom",
@@ -833,18 +828,35 @@
       "variable": "related_products_order",
       "label": "Related products order",
       "type": "select",
-      "options": [
-        ["Top Selling", "sales"],
-        ["Newest", "newest"],
-        ["Most views", "views"],
-        ["Recently updated", "updated_newest_to_oldest"],
-        ["Shop display order", "regular"]
-      ],
-      "default": "sales",
+      "options": "product_orders",
+      "default": "top-selling",
       "description": "The order of related products on the Product pages",
       "requires": [
         "show_related_products eq true"
       ]
+    },
+    {
+      "variable": "show_search",
+      "label": "Show search",
+      "type": "boolean",
+      "default": true,
+      "description": "Shows the product search area"
+    },
+    {
+      "variable": "show_sold_out_product_options",
+      "label": "Show sold out product variants",
+      "type": "boolean",
+      "default": true,
+      "description": "Shows sold out product variants in the Product page dropdowns",
+      "requires": [ "inventory" ]
+    },
+    {
+      "variable": "show_sold_out_product_prices",
+      "label": "Show prices for sold out products",
+      "type": "boolean",
+      "default": true,
+      "description": "Show the price of sold out products on product grids and product pages",
+      "requires": [ "inventory" ]
     },
     {
       "variable": "money_format",
