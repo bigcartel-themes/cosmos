@@ -133,7 +133,7 @@ header
       border-bottom: 1px solid var(--link-hover-color)
 
   &--links
-    @media screen and (max-width: #{"{% if theme.nav_items < 3 %} #{$break-small} {% else %} #{$break-medium} {% endif %}"})
+    @media screen and (max-width: $break-small)
       display: none
 
     ul
@@ -155,7 +155,7 @@ header
 .mobile-menu
   display: none
 
-  @media screen and (max-width: #{"{% if theme.nav_items < 3 %} #{$break-small} {% else %} #{$break-medium} {% endif %}"})
+  @media screen and (max-width: $break-small)
     display: flex
     align-items: center
     justify-content: center
@@ -241,6 +241,9 @@ h1, h2, h3, h4, h5, h6
     font-size: 2rem
     font-weight: 700
 
+    @media screen and (max-width: $break-small)
+      font-size: 1.75rem
+
   .page-title
     margin-bottom: 32px
     text-align: center
@@ -282,6 +285,9 @@ footer
   position: relative
   width: 100%
 
+  @media screen and (max-width: $break-small)
+    max-width: 100%
+  
   .footer-nav-title
     font-weight: 700
     font-size: 1.1em
@@ -379,11 +385,15 @@ footer
     line-height: 1em
     font-size: .875rem
     display: flex
-    align-items: center
+    flex-direction: column
     gap: 8px
     outline-offset: 4px
     padding: 2px 0
     text-decoration: none
+
+    @media screen and (max-width: $break-extra-small)
+      flex-direction: row
+      align-items: center
 
     &__text
       position: relative
