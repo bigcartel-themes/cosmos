@@ -194,9 +194,11 @@
             <ul class="footer-nav--primary">
               <li><a href="/">{{ pages.home.name }}</a></li>
               <li><a href="/products">{{ pages.products.name }}</a></li>
-              {% for category in categories.active %}
-                <li>{{ category | link_to }}</li>
-              {% endfor %}
+              {% if theme.show_categories_in_footer %}
+                {% for category in categories.active %}
+                  <li>{{ category | link_to }}</li>
+                {% endfor %}
+              {% endif %}
             </ul>
           </div>
         </nav>
