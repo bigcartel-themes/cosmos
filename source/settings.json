@@ -869,6 +869,27 @@
       "description": "Sets the display of prices in your shop"
     },
     {
+      "variable": "footer_text",
+      "label": "Footer text",
+      "type": "text",
+      "max_length": 2048,
+      "description": "Show a custom message to your shop's footer"
+    },
+    {
+      "variable": "footer_text_position",
+      "label": "Footer text position",
+      "type": "select",
+      "options": [
+        ["Start of footer", "start"],
+        ["End of footer", "end"]
+      ],
+      "default": "after",
+      "description": "Choose where to show your footer message (beginning or end)",
+      "requires": [
+        "footer_text NEQ ''"
+      ]
+    },
+    {
       "variable": "instagram_url",
       "label": "Instagram URL",
       "type": "text",

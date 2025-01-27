@@ -184,6 +184,9 @@
       </div>
     </main>
     <footer data-bc-hook="footer">
+      {% if theme.footer_text != blank and theme.footer_text_position == "start" %}
+        <div class="footer-custom-content">{{ theme.footer_text }} </div>
+      {% endif %}
       <div class="wrapper">
         <nav class="footer-nav footer-nav--links" aria-label="Secondary">
           <div class="footer-nav--container">
@@ -286,6 +289,9 @@
       {% endif %}
         <div class="credit-container">{{ powered_by_big_cartel }}</div>
       </div>
+      {% if theme.footer_text != blank and theme.footer_text_position == "end" %}
+        <div class="footer-custom-content">{{ theme.footer_text }} </div>
+      {% endif %}
     </footer>
     {% if theme.show_search %}
       <div id="search-modal" role="dialog" aria-modal="true" aria-hidden="true">
