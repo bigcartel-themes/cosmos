@@ -222,7 +222,7 @@
                 image-square
               {% endif %}
             {% endcapture %}
-            <div class="product-list-thumb {{ matched_product.css_class }}">
+            <div class="product-list-thumb {{ related_product.css_class }}">
               <a class="product-list-link" href="{{ related_product.url }}" title="View {{ related_product.name | escape }}">
                 <div class="product-list-image-container product-list-image-container-{{ theme.grid_image_style }}">
                   <img
