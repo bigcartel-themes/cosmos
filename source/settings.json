@@ -47,6 +47,7 @@
               "product_status_background_color": "#E15C2A",
               "product_status_text_color_secondary": "#4E4E4E",
               "product_status_background_color_secondary": "#FFE8D6",
+              "inventory_status_text_color": "#E15C2A",
               "hero_overlay_color": "#4E4E4E",
               "hero_text_color": "#FFFBF5",
               "product_hover_overlay_color": "#B84C22",
@@ -76,6 +77,7 @@
               "product_status_background_color": "#5900FF",
               "product_status_text_color_secondary": "#222222",
               "product_status_background_color_secondary": "#FFFFFF",
+              "inventory_status_text_color": "#5900FF",
               "hero_overlay_color": "#111111",
               "hero_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#111111",
@@ -105,6 +107,7 @@
               "product_status_background_color": "#cf3917",
               "product_status_text_color_secondary": "#111111",
               "product_status_background_color_secondary": "#FFFFFF",
+              "inventory_status_text_color": "#cf3917",
               "hero_overlay_color": "#141415",
               "hero_text_color": "#F8F8F8",
               "product_hover_overlay_color": "#141415",
@@ -134,6 +137,7 @@
               "product_status_background_color": "#203BE1",
               "product_status_text_color_secondary": "#111111",
               "product_status_background_color_secondary": "#FFFFFF",
+              "inventory_status_text_color": "#203BE1",
               "hero_overlay_color": "#2A2A2C",
               "hero_text_color": "#F8F8FA",
               "product_hover_overlay_color": "#2A2A2C",
@@ -168,6 +172,7 @@
               "product_status_background_color": "#B08989",
               "product_status_text_color_secondary": "#111111",
               "product_status_background_color_secondary": "#FFFFFF",
+              "inventory_status_text_color": "#B08989",
               "hero_overlay_color": "#0F1B27",
               "hero_text_color": "#F1F1F1",
               "product_hover_overlay_color": "#0F1B27",
@@ -197,6 +202,7 @@
               "product_status_background_color": "#995542",
               "product_status_text_color_secondary": "#111111",
               "product_status_background_color_secondary": "#FFFFFF",
+              "inventory_status_text_color": "#995542",
               "hero_overlay_color": "#262522",
               "hero_text_color": "#F5F4EE",
               "product_hover_overlay_color": "#262522",
@@ -226,6 +232,7 @@
               "product_status_background_color": "#CAB696",
               "product_status_text_color_secondary": "#111111",
               "product_status_background_color_secondary": "#FFFFFF",
+              "inventory_status_text_color": "#CAB696",
               "hero_overlay_color": "#222121",
               "hero_text_color": "#FFF5E5",
               "product_hover_overlay_color": "#222121",
@@ -255,6 +262,7 @@
               "product_status_background_color": "#5C86CC",
               "product_status_text_color_secondary": "#2E3A46",
               "product_status_background_color_secondary": "#E4E8ED",
+              "inventory_status_text_color": "#5C86CC",
               "hero_overlay_color": "#2E3A46",
               "hero_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#3A5C99",
@@ -289,6 +297,7 @@
               "product_status_background_color": "#3F3F3F",
               "product_status_text_color_secondary": "#DDDDDD",
               "product_status_background_color_secondary": "#414141",
+              "inventory_status_text_color": "#E7E71C",
               "hero_overlay_color": "#4E4E4E",
               "hero_text_color": "#DDDDDD",
               "product_hover_overlay_color": "#4E4E4E",
@@ -318,6 +327,7 @@
               "product_status_background_color": "#FF6FD8",
               "product_status_text_color_secondary": "#111111",
               "product_status_background_color_secondary": "#CDCDCD",
+              "inventory_status_text_color": "#FF6FD8",
               "hero_overlay_color": "#FF6FD8",
               "hero_text_color": "#F4F4F4",
               "product_hover_overlay_color": "#1FBF73",
@@ -347,6 +357,7 @@
               "product_status_background_color": "#FF0000",
               "product_status_text_color_secondary": "#111111",
               "product_status_background_color_secondary": "#FFFFFF",
+              "inventory_status_text_color": "#FF0000",
               "hero_overlay_color": "#000000",
               "hero_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#0000FF",
@@ -376,6 +387,7 @@
               "product_status_background_color": "#ffe048",
               "product_status_text_color_secondary": "#111111",
               "product_status_background_color_secondary": "#FFFFFF",
+              "inventory_status_text_color": "#ffe048",
               "hero_overlay_color": "#360665",
               "hero_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#360665",
@@ -405,6 +417,7 @@
               "product_status_background_color": "#0C143B",
               "product_status_text_color_secondary": "#111111",
               "product_status_background_color_secondary": "#FFFFFF",
+              "inventory_status_text_color": "#0C143B",
               "hero_overlay_color": "#243588",
               "hero_text_color": "#FFE9F4",
               "product_hover_overlay_color": "#243588",
@@ -507,6 +520,11 @@
       "variable": "product_status_text_color_secondary",
       "label": "Product status text (secondary)",
       "default": "#4E4E4E"
+    },
+    {
+      "variable": "inventory_status_text_color",
+      "label": "Inventory status",
+      "default": "#E15C2A"
     },
     {
       "variable": "hero_overlay_color",
@@ -878,6 +896,51 @@
       "default": true,
       "description": "Show the price of sold out products on product grids and product pages",
       "requires": [ "inventory" ]
+    },
+    {
+      "variable": "show_low_inventory_messages",
+      "label": "Show product stock alerts",
+      "type": "boolean",
+      "default": true,
+      "description": "Show shoppers alerts on Product pages when it's running low on stock",
+      "requires": [ "inventory" ]
+    },
+    {
+      "variable": "low_inventory_threshold",
+      "label": "Low stock alert",
+      "options": "1..100",
+      "type": "select",
+      "default": "10",
+      "description": "When stock drops below this number, shoppers will see low stock message. 'Almost sold out' message shows at half this amount",
+      "requires": [
+        "inventory",
+        "show_low_inventory_messages eq true"
+      ]
+    },
+    {
+      "variable": "low_inventory_message",
+      "label": "Low stock message",
+      "type": "text",
+      "max_length": 50,
+      "description": "Message shown when stock drops below your alert level",
+      "default": "Limited quantities available",
+      "requires": [
+        "inventory",
+        "show_low_inventory_messages eq true"
+      ]
+    },
+    {
+      "variable": "almost_sold_out_message",
+      "label": "Almost sold out message",
+      "type": "text",
+      "max_length": 50,
+      "description": "Message shown when stock drops below half your alert level",
+      "default": "Only a few left!",
+      "requires": [
+        "inventory",
+        "show_low_inventory_messages eq true",
+        "low_inventory_threshold gt 1"
+      ]
     },
     {
       "variable": "money_format",
