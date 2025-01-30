@@ -665,7 +665,7 @@
       "description": "Sets the display of images for featured products in alternating layout style",
       "requires": [
         "featured_products gt 0",
-        "featured_products_layout eq 'alternating'"
+        "featured_products_layout eq alternating"
       ]
     },
     {
@@ -687,7 +687,7 @@
       "label": "Categories header",
       "type": "text",
       "description": "Displays above categories on the Home page",
-      "default": "Categories",
+      "default": "Featured Categories",
       "requires": [
         "show_home_page_categories eq true"
       ]
@@ -912,10 +912,10 @@
         ["Start of footer", "start"],
         ["End of footer", "end"]
       ],
-      "default": "after",
-      "description": "Choose where to show your footer message (beginning or end)",
+      "default": "end",
+      "description": "Choose where to show your footer message",
       "requires": [
-        "footer_text NEQ ''"
+        "footer_text present"
       ]
     },
     {
