@@ -187,11 +187,11 @@
   </section>
 </div>
 
-{% if page.full_url contains '/product/' %}
-  {% if theme.show_related_products %}
-    {% assign related_products_header = theme.related_products_header | default: 'You might also like' %}
-    {% assign related_products_collection = product.related_products %}
+{% if theme.show_related_products %}
+  {% assign related_products_header = theme.related_products_header | default: 'You might also like' %}
+  {% assign related_products_collection = product.related_products %}
 
+  {% if related_products_collection.size > 0 %}
     <aside class="related-products-container" data-num-products="{{ related_products_limit }}" role="complementary" aria-label="{{ related_products_header }}">
       <div class="related-products-header">
         <h2 class="related-products-title">{{ related_products_header }}</h2>
@@ -261,5 +261,5 @@
         </div>
       </div>
     </aside>
-  {% endif %}    
+  {% endif %}
 {% endif %}
