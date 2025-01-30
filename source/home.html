@@ -117,12 +117,12 @@
         <h2 class="featured-categories-header">{{ theme.home_page_categories_header }}</h2>
       {% endif %}
       {% assign category_list_style = theme.home_page_categories_style %}
-      <div class="product-list product-list--center category-list category-list--{{ category_list_style }}">
+      <div class="product-list product-list--center category-list category-list--{{ category_list_style }} {% if num_results < 3 %}product-list--center{% endif %}">
         {% for category in categories.active limit:theme.featured_categories %}
           {% if theme.home_page_categories_style == "text" %}
             <a class="button button--centered button--secondary" href="{{ category.url }}">{{ category.name }}</a>
           {% else %}
-            <div class="product-list-thumb">
+            <div class="product-list-thumb category">
               <a class="product-list-link category-link category-link--{{ theme.category_image_style }}" href="{{ category.url }}" title="View {{ category.name | escape }}">
                 {% for product in category.products limit:1 %}
                   {% assign image_width = product.image.width | times: 1.0 %}
