@@ -693,6 +693,28 @@
       ]
     },
     {
+      "variable": "featured_categories",
+      "label": "Featured categories",
+      "type": "select",
+      "options": "1..100",
+      "default": 10,
+      "description": "The number of categories displayed on the Home page",
+      "requires": [
+        "show_home_page_categories eq true"
+      ]
+    },
+    {
+      "variable": "home_page_categories_style",
+      "label": "Display style of Home page featured categories",
+      "type": "select",
+      "options": [
+        ["Thumbnails", "thumbnails"],
+        ["Text", "text"]
+      ],
+      "default": "thumbnails",
+      "description": "Sets the display of images in the product grid"
+    },
+    {
       "variable": "category_image_style",
       "label": "Category image style",
       "type": "select",
