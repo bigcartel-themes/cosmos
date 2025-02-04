@@ -173,6 +173,7 @@
         {% endif %}
         <button class="button add-to-cart-button" name="submit" type="submit" data-add-title="Add to cart" data-sold-title="Sold out">Add to cart</button>
         {{ store | instant_checkout_button: 'dark', '44px' }}
+        <div class="inventory-status-message" data-inventory-message></div>
         {% if product.has_option_groups %}
           <div class="reset-selection-button-container">
             <button class="button button--minimal reset-selection-button" type="reset">Reset selection</button>
@@ -187,86 +188,79 @@
   </section>
 </div>
 
-{% assign current_id = product.id %}
-{% if page.full_url contains '/product/' %}
-  {% if theme.show_related_products %}
-    {% if product.categories != blank %}
-      {% for category in product.categories limit: 2 %}
-        {% capture product_divs %}
-          {% for product in category.products limit: 10 %}
-            {% if product.id != current_id %}
-              {% assign image_width = product.image.width | times: 1.0 %}
-              {% assign image_height = product.image.height | times: 1.0 %}
-              {% assign aspect_ratio = image_width | divided_by: image_height %}
-              {% assign product_status = '' %}
-              {% case product.status %}
-                {% when 'active' %}
-                  {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
-                {% when 'sold-out' %}
-                  {% assign product_status = 'Sold out' %}
-                {% when 'coming-soon' %}
-                  {% assign product_status = 'Coming soon' %}
-              {% endcase %}
-              {% capture image_class %}
-                {% if product.image.height > product.image.width %}
-                  image-tall
-                {% elsif product.image.height < product.image.width %}
-                  image-wide
-                {% else %}
-                  image-square
-                {% endif %}
-              {% endcapture %}
-              <div class="product-list-thumb {{ product.css_class }}">
-                <a class="product-list-link" href="{{ product.url }}" title="View {{ product.name | escape }}">
-                  <div class="product-list-image-container product-list-image-container-{{ theme.grid_image_style }}">
-                    <img
-                      alt=""
-                      class="blur-up product-list-image lazyload grid-{{ theme.grid_image_style }}"
-                      src="{{ product.image | product_image_url | constrain: 20 }}"
-                      {% unless theme.grid_image_style == 'default' %}data-aspectratio="{{ aspect_ratio }}"{% endunless %}
-                      data-srcset="
-                        {{ product.image | product_image_url | constrain: 240 }} 240w,
-                        {{ product.image | product_image_url | constrain: 320 }} 320w,
-                        {{ product.image | product_image_url | constrain: 400 }} 400w,
-                        {{ product.image | product_image_url | constrain: 540 }} 540w,
-                        {{ product.image | product_image_url | constrain: 600 }} 600w,
-                        {{ product.image | product_image_url | constrain: 800 }} 800w,
-                        {{ product.image | product_image_url | constrain: 960 }} 960w
-                      "
-                      data-sizes="auto"
-                    >
-                    {% if product_status != blank %}<div class="product-list-thumb-status {{ status_class }}">{{ product_status }}</div>{% endif %}
+{% if theme.show_related_products %}
+  {% assign related_products_header = theme.related_products_header | default: 'You might also like' %}
+  {% assign related_products_collection = product.related_products %}
+
+  {% if related_products_collection.size > 0 %}
+    <aside class="related-products-container" data-num-products="{{ related_products_limit }}" role="complementary" aria-label="{{ related_products_header }}">
+      <div class="related-products-header">
+        <h2 class="related-products-title">{{ related_products_header }}</h2>
+        <a class="related-products-view-all-link" href="/products">View all</a>
+      </div>
+      <div class="product-list-container">
+        <div class="related-product-list product-list">
+          {% for related_product in related_products_collection %}
+            {% assign image_width = related_product.image.width | times: 1.0 %}
+            {% assign image_height = related_product.image.height | times: 1.0 %}
+            {% assign aspect_ratio = image_width | divided_by: image_height %}
+            {% assign related_product_status = '' %}
+            {% case related_product.status %}
+              {% when 'active' %}
+                {% if related_product.on_sale %}{% assign related_product_status = 'On sale' %}{% endif %}
+              {% when 'sold-out' %}
+                {% assign related_product_status = 'Sold out' %}
+              {% when 'coming-soon' %}
+                {% assign related_product_status = 'Coming soon' %}
+            {% endcase %}
+            {% capture related_product_status_class %}{% if related_product.status == 'active' and related_product.on_sale %}status-primary{% else %}status-secondary{% endif %}{% endcapture %}
+            {% capture image_class %}
+              {% if related_product.image.height > related_product.image.width %}
+                image-tall
+              {% elsif related_product.image.height < related_product.image.width %}
+                image-wide
+              {% else %}
+                image-square
+              {% endif %}
+            {% endcapture %}
+            <div class="product-list-thumb {{ related_product.css_class }}">
+              <a class="product-list-link" href="{{ related_product.url }}" title="View {{ related_product.name | escape }}">
+                <div class="product-list-image-container product-list-image-container-{{ theme.grid_image_style }}">
+                  <img
+                    alt=""
+                    class="blur-up product-list-image lazyload grid-{{ theme.grid_image_style }}"
+                    src="{{ related_product.image | product_image_url | constrain: 20 }}"
+                    {% unless theme.grid_image_style == 'default' %}data-aspectratio="{{ aspect_ratio }}"{% endunless %}
+                    data-srcset="
+                      {{ related_product.image | product_image_url | constrain: 240 }} 240w,
+                      {{ related_product.image | product_image_url | constrain: 320 }} 320w,
+                      {{ related_product.image | product_image_url | constrain: 400 }} 400w,
+                      {{ related_product.image | product_image_url | constrain: 540 }} 540w,
+                      {{ related_product.image | product_image_url | constrain: 600 }} 600w,
+                      {{ related_product.image | product_image_url | constrain: 800 }} 800w,
+                      {{ related_product.image | product_image_url | constrain: 960 }} 960w
+                    "
+                    data-sizes="auto"
+                  >
+                  {% if related_product_status != blank %}<div class="product-list-thumb-status {{ related_product_status_class }}">{{ related_product_status }}</div>{% endif %}
+                </div>
+                <div class="product-list-thumb-info">
+                  <div class="product-list-thumb-name">{{ related_product.name }}</div>
+                  <div class="product-list-thumb-price">
+                    {% unless related_product.status == 'sold-out' and theme.show_sold_out_product_prices == false %}
+                      {% if related_product.variable_pricing %}
+                        {{ related_product.min_price | money: theme.money_format }} - {{ related_product.max_price | money: theme.money_format }}
+                      {% else %}
+                        {{ related_product.default_price | money: theme.money_format }}
+                      {% endif %}
+                    {% endunless %}
                   </div>
-                  <div class="product-list-thumb-info">
-                    <div class="product-list-thumb-name">{{ product.name }}</div>
-                    <div class="product-list-thumb-price">
-                      {% unless product.status == 'sold-out' and theme.show_sold_out_product_prices == false %}
-                        {% if product.variable_pricing %}
-                          {{ product.min_price | money: theme.money_format }} - {{ product.max_price | money: theme.money_format }}
-                        {% else %}
-                          {{ product.default_price | money: theme.money_format }}
-                        {% endif %}
-                      {% endunless %}
-                    </div>
-                  </div>
-                </a>
-              </div>
-            {% endif %}
+                </div>
+              </a>
+            </div>
           {% endfor %}
-        {% endcapture %}
-      {% endfor %}
-    {% endif %}
+        </div>
+      </div>
+    </aside>
   {% endif %}
-{% endif %}
-{% if product_divs != blank %}
-  <aside class="related-products-container" data-num-products="4" role="complementary" aria-label="Related Products">
-    <div class="all-related-products" style="display: none">{{ product_divs }}</div>
-    <div class="related-products-header">
-      <h2 class="related-products-title">Related Products</h2>
-      <a class="related-products-view-all-link" href="/products">View All Products</a>
-    </div>
-    <div class="product-list-container">
-      <div class="related-product-list product-list"></div>
-    </div>
-  </aside>
 {% endif %}

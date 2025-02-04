@@ -106,14 +106,30 @@
 
 a.all-products-button
   margin-top: 48px
+  min-width: 200px
+  max-width: 50%
 
 .featured-categories
-
   h2
     text-align: center
     margin-bottom: 48px
-    font-weight: 600
-    font-size: 2rem
+    font-weight: 500
+    font-size: 1.5rem
 
-.category-list
-  --columns: #{"{{ theme.max_categories_per_row }}"}
+  .category-list
+    &--text 
+      gap: 20px
+      --columns: 1
+
+      .button
+        display: block
+        max-width: 300px
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        text-align: center
+        margin: 0
+
+        @media screen and (max-width: $break-small)
+          max-width: 80%
+          min-width: 200px

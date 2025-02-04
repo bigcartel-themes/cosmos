@@ -116,49 +116,54 @@
       {% if theme.home_page_categories_header %}
         <h2 class="featured-categories-header">{{ theme.home_page_categories_header }}</h2>
       {% endif %}
-      <div class="product-list product-list--center category-list">
-        {% for category in categories.active %}
-          <div class="product-list-thumb">
-            <a class="product-list-link category-link category-link--{{ theme.category_image_style }}" href="{{ category.url }}" title="View {{ category.name | escape }}">
-              {% for product in category.products limit:1 %}
-                {% assign image_width = product.image.width | times: 1.0 %}
-                {% assign image_height = product.image.height | times: 1.0 %}
-                {% assign aspect_ratio = image_width | divided_by: image_height %}
+      {% assign category_list_style = theme.home_page_categories_style %}
+      <div class="product-list product-list--center category-list category-list--{{ category_list_style }} {% if num_results < 3 %}product-list--center{% endif %}">
+        {% for category in categories.active limit:theme.featured_categories %}
+          {% if theme.home_page_categories_style == "text" %}
+            <a class="button button--centered button--secondary" href="{{ category.url }}">{{ category.name }}</a>
+          {% else %}
+            <div class="product-list-thumb category">
+              <a class="product-list-link category-link category-link--{{ theme.category_image_style }}" href="{{ category.url }}" title="View {{ category.name | escape }}">
+                {% for product in category.products limit:1 %}
+                  {% assign image_width = product.image.width | times: 1.0 %}
+                  {% assign image_height = product.image.height | times: 1.0 %}
+                  {% assign aspect_ratio = image_width | divided_by: image_height %}
 
-                {% capture image_class %}
-                  {% if product.image.height > product.image.width %}
-                    image-tall
-                  {% elsif product.image.height < product.image.width %}
-                    image-wide
-                  {% else %}
-                    image-square
-                  {% endif %}
-                {% endcapture %}
+                  {% capture image_class %}
+                    {% if product.image.height > product.image.width %}
+                      image-tall
+                    {% elsif product.image.height < product.image.width %}
+                      image-wide
+                    {% else %}
+                      image-square
+                    {% endif %}
+                  {% endcapture %}
 
-                <div class="product-list-image-container product-list-image-container-cover">
-                  <img
-                    alt=""
-                    class="blur-up product-list-image lazyload grid-cover"
-                    src="{{ product.image | product_image_url | constrain: 20 }}"
-                    {% unless theme.grid_image_style == 'default' %}data-aspectratio="{{ aspect_ratio }}"{% endunless %}
-                    data-srcset="
-                      {{ product.image | product_image_url | constrain: 240 }} 240w,
-                      {{ product.image | product_image_url | constrain: 320 }} 320w,
-                      {{ product.image | product_image_url | constrain: 400 }} 400w,
-                      {{ product.image | product_image_url | constrain: 540 }} 540w,
-                      {{ product.image | product_image_url | constrain: 600 }} 600w,
-                      {{ product.image | product_image_url | constrain: 800 }} 800w,
-                      {{ product.image | product_image_url | constrain: 960 }} 960w
-                    "
-                    data-sizes="auto"
-                  >
-                </div>
-                <div class="product-list-thumb-info">
-                  <div class="product-list-thumb-name">{{ category.name }}</div>
-                </div>
-              {% endfor %}
-            </a>
-          </div>
+                  <div class="product-list-image-container product-list-image-container-cover">
+                    <img
+                      alt=""
+                      class="blur-up product-list-image lazyload grid-cover"
+                      src="{{ product.image | product_image_url | constrain: 20 }}"
+                      {% unless theme.grid_image_style == 'default' %}data-aspectratio="{{ aspect_ratio }}"{% endunless %}
+                      data-srcset="
+                        {{ product.image | product_image_url | constrain: 240 }} 240w,
+                        {{ product.image | product_image_url | constrain: 320 }} 320w,
+                        {{ product.image | product_image_url | constrain: 400 }} 400w,
+                        {{ product.image | product_image_url | constrain: 540 }} 540w,
+                        {{ product.image | product_image_url | constrain: 600 }} 600w,
+                        {{ product.image | product_image_url | constrain: 800 }} 800w,
+                        {{ product.image | product_image_url | constrain: 960 }} 960w
+                      "
+                      data-sizes="auto"
+                    >
+                  </div>
+                  <div class="product-list-thumb-info">
+                    <div class="product-list-thumb-name">{{ category.name }}</div>
+                  </div>
+                {% endfor %}
+              </a>
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
     </div>
