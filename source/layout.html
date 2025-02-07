@@ -194,26 +194,44 @@
             <ul class="footer-nav--primary">
               <li><a href="/">{{ pages.home.name }}</a></li>
               <li><a href="/products">{{ pages.products.name }}</a></li>
-              {% if theme.show_categories_in_footer %}
+              
+              {% if theme.show_categories_in_footer and theme.show_custom_pages_in_footer %}
                 {% for category in categories.active %}
                   <li>{{ category | link_to }}</li>
                 {% endfor %}
               {% endif %}
+    
+              {% if theme.show_custom_pages_in_footer == false %}
+                <li><a href="/contact">{{ pages.contact.name }}</a></li>
+              {% endif %}
             </ul>
           </div>
         </nav>
-
-        <nav class="footer-nav footer-nav--links" aria-label="Secondary">
-          <div class="footer-nav--container">
-            <div class="footer-nav-title">Pages</div>
-            <ul class="footer-nav--secondary">
-              {% for page in pages.all %}
-                <li>{{ page | link_to }}</li>
-              {% endfor %}
-              <li><a href="/contact">{{ pages.contact.name }}</a></li>
-            </ul>
-          </div>
-        </nav>
+    
+        {% if theme.show_custom_pages_in_footer and pages.all.size > 0 %}
+          <nav class="footer-nav footer-nav--links" aria-label="Secondary">
+            <div class="footer-nav--container">
+              <div class="footer-nav-title">Pages</div>
+              <ul class="footer-nav--secondary">
+                {% for page in pages.all %}
+                  <li>{{ page | link_to }}</li>
+                {% endfor %}
+                <li><a href="/contact">{{ pages.contact.name }}</a></li>
+              </ul>
+            </div>
+          </nav>
+        {% elsif theme.show_categories_in_footer and categories.active.size > 0 %}
+          <nav class="footer-nav footer-nav--links" aria-label="Secondary">
+            <div class="footer-nav--container">
+              <div class="footer-nav-title">Categories</div>
+              <ul class="footer-nav--secondary">
+                {% for category in categories.active %}
+                  <li>{{ category | link_to }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </nav>
+        {% endif %}
 
         {% if theme.instagram_url != blank
           or theme.tiktok_url != blank
