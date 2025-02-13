@@ -629,6 +629,7 @@
       "variable": "contact_text",
       "label": "Contact page text",
       "type": "text",
+      "max_length": 1024,
       "description": "Displays a message within your contact page"
     },
     {
