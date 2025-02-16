@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "images": [
     {
       "variable": "logo_image",
@@ -629,6 +629,7 @@
       "variable": "contact_text",
       "label": "Contact page text",
       "type": "text",
+      "max_length": 1024,
       "description": "Displays a message within your contact page"
     },
     {
