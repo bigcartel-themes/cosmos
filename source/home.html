@@ -1,6 +1,24 @@
-{% if theme.hero_image != blank or theme.hero_welcome_text != blank %}
-  <div class="home-hero home-hero--{{ theme.hero_image_width }} {% unless theme.hero_image != blank %}home-hero--no-image{% endunless %}">
-    {% if theme.hero_image != blank %}
+{% assign has_slideshow = theme.image_sets.slideshow.size > 0 %}
+{% if theme.hero_image != blank or theme.hero_welcome_text != blank or has_slideshow%}
+  <div class="home-hero home-hero--{{ theme.hero_image_width }} {% if has_slideshow %}home-hero--slideshow{% endif %} {% unless theme.hero_image != blank or has_slideshow %}home-hero--no-image{% endunless %}">
+    {% if theme.image_sets.slideshow.size > 0 %}
+      <div class="{% if theme.image_sets.slideshow.size > 1 %}splide{% endif %} home-slideshow">
+        <div class="splide__track">
+          <div class="splide__list">
+            {% for image in theme.image_sets.slideshow %}
+              <div class="splide__slide">
+                <img
+                  alt="Slideshow image {{ forloop.index }}"
+                  {% if forloop.index == 1 %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+                  class="slideshow-image"
+                  srcset="{{ image.url | constrain: 1068 }}, {{ image.url | constrain: 2136 }} 2x"
+                  src="{{ image.url | constrain: 1068 }}">
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% elsif theme.hero_image != blank %}
       <img
         alt=""
         class="home-hero-image lazyload blur-up"
@@ -14,14 +32,20 @@
         data-sizes="auto"
       >
     {% endif %}
+    {% if theme.image_sets.slideshow.size == 0 %}
     <div class="home-hero-overlay"></div>
+    {% endif %}
     {% if theme.hero_welcome_text != blank or theme.hero_button_text != blank %}
-      <div class="home-hero-content">
+      <div class="home-hero-content {% if theme.image_sets.slideshow.size > 0 %}home-hero-content--slidehshow{% endif %}">
         {% if theme.hero_welcome_text != blank %}<div class="home-hero-text">{{ theme.hero_welcome_text }}</div>{% endif %}
         {% if theme.hero_button_text != blank %}<a href="/products" class="home-hero-button">{{ theme.hero_button_text }}</a>{% endif %}
       </div>
     {% endif %}
   </div>
+{% endif %}
+
+{% if theme.image_sets.slideshow.size > 0 %}
+  
 {% endif %}
 
 <div class="home-content">

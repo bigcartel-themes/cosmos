@@ -10,7 +10,14 @@
     {
       "variable": "hero_image",
       "label": "Hero image",
-      "description": "Minimum image resolution of 1200px by 600px recommended"
+      "description": "Minimum size of 1200 x 600px recommended"
+    }
+  ],
+  "image_sets": [
+    {
+      "variable": "slideshow",
+      "label": "Slideshow",
+      "description": "Adds slideshow to the homepage. Use same-sized images, recommend 1200 × 800px. Overrides hero image if both are set."
     }
   ],
   "preset_styles": {
@@ -682,12 +689,14 @@
       "label": "Hero overlay opacity",
       "type": "select",
       "options": [
+        ["Brightest", "-0.50"],
+        ["Brighter", "-0.25"],
         ["None", "0"],
-        ["25%", ".25"],
-        ["50%", ".5"]
+        ["Darker", "0.25"],
+        ["Darkest", "0.50"]
       ],
-      "default": ".5",
-      "description": "Darkens the Home page hero. Helps legibility of your hero welcome text and button"
+      "default": "0.50",
+      "description": "Adjust the home page slideshow or hero image to enhance the legibility of your hero text and button"
     },
     {
       "variable": "hero_welcome_text",
@@ -701,6 +710,30 @@
       "type": "text",
       "description": "Displays over your hero image and links to your Products page",
       "default": "Shop now"
+    },
+    {
+      "variable": "homepage_slideshow_autoplay",
+      "label": "Auto-play homepage slideshow",
+      "type": "boolean",
+      "default": true,
+      "description": "Automatically advances slides in the homepage slideshow"
+    },
+    {
+      "variable": "homepage_slideshow_speed",
+      "label": "Slideshow speed",
+      "type": "select",
+      "options": [
+        ["Slowest", 6000],
+        ["Slower", 5000],
+        ["Normal", 4000],
+        ["Faster", 3500],
+        ["Fastest", 3000]
+      ],
+      "default": 4000,
+      "description": "Controls how quickly slides advance in the auto-playing slideshow",
+      "requires": [
+        "homepage_slideshow_autoplay eq true"
+      ]
     },
     {
       "variable": "featured_header",
