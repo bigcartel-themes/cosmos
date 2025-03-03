@@ -51,7 +51,7 @@
 <div class="home-content">
   {% if theme.featured_products > 0 %}
     <div class="home-featured-products">
-      <h1 class="page-title">{{ theme.featured_header }}</h1>
+      <h1 class="featured-title">{{ theme.featured_header }}</h1>
       {% paginate products from products.current by theme.featured_products order:theme.featured_order %}
         {% assign num_results = paginate.items %}
         {% if paginate.next.is_link %}
@@ -138,7 +138,7 @@
   {% if theme.show_home_page_categories and categories.active.size > 0 %}
     <div class="featured-categories">
       {% if theme.home_page_categories_header %}
-        <h2 class="featured-categories-header">{{ theme.home_page_categories_header }}</h2>
+        <h2 class="featured-title">{{ theme.home_page_categories_header }}</h2>
       {% endif %}
       {% assign category_list_style = theme.home_page_categories_style %}
       <div class="product-list product-list--center category-list category-list--{{ category_list_style }} {% if num_results < 3 %}product-list--center{% endif %}">
