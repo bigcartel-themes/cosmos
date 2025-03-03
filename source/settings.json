@@ -712,6 +712,20 @@
       "default": "Shop now"
     },
     {
+      "variable": "hero_button_behavior",
+      "label": "Hero Button Behavior",
+      "type": "select",
+      "options": [
+        ["Scroll down page", "scroll"],
+        ["Go to Products Page", "navigate"]
+      ],
+      "default": "scroll",
+      "description": "Controls the behavior of the hero button on the Home page",
+      "requires": [
+        "hero_button_text present"
+      ]
+    },
+    {
       "variable": "homepage_slideshow_autoplay",
       "label": "Auto-play homepage slideshow",
       "type": "boolean",

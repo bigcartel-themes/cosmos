@@ -342,6 +342,7 @@
     {% endif %}
     <script>
       const themeOptions = {
+        heroButtonBehavior: "{{ theme.hero_button_behavior }}",
         showSoldOutOptions: {{ theme.show_sold_out_product_options }},
         showLowInventoryMessages: {{ theme.show_low_inventory_messages }},
         lowInventoryMessage: "{{ theme.low_inventory_message | replace: '"', '\"' | replace: "'", "\\'" }}",
