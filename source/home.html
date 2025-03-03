@@ -1,5 +1,11 @@
-{% assign has_slideshow = theme.image_sets.slideshow.size > 0 %}
-{% if theme.hero_image != blank or theme.hero_welcome_text != blank or has_slideshow%}
+{% comment %}Initialize key template variables{% endcomment %}
+{% assign has_slideshow = false %}
+{% if theme.image_sets.slideshow.size > 0 %}{% assign has_slideshow = true %}{% endif %}
+
+{% assign has_hero_image = false %}
+{% if theme.hero_image %}{% assign has_hero_image = true %}{% endif %}
+
+{% if has_hero_image or has_slideshow %}
   <div class="home-hero home-hero--{{ theme.hero_image_width }} {% if has_slideshow %}home-hero--slideshow{% endif %} {% unless theme.hero_image != blank or has_slideshow %}home-hero--no-image{% endunless %}">
     {% if theme.image_sets.slideshow.size > 0 %}
       <div class="{% if theme.image_sets.slideshow.size > 1 %}splide{% endif %} home-slideshow">
@@ -35,7 +41,7 @@
     {% if theme.image_sets.slideshow.size == 0 %}
     <div class="home-hero-overlay"></div>
     {% endif %}
-    {% if theme.hero_welcome_text != blank or theme.hero_button_text != blank %}
+    {% if has_slideshow or has_hero_image %}
       <div class="home-hero-content {% if theme.image_sets.slideshow.size > 0 %}home-hero-content--slidehshow{% endif %}">
         {% if theme.hero_welcome_text != blank %}<div class="home-hero-text">{{ theme.hero_welcome_text }}</div>{% endif %}
         {% if theme.hero_button_text != blank %}<a href="/products" class="home-hero-button">{{ theme.hero_button_text }}</a>{% endif %}
