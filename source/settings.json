@@ -368,7 +368,7 @@
               "product_status_text_color": "#004643",
               "product_status_background_color": "#F9BC60",
               "product_status_text_color_secondary": "#FFFBE6",
-              "product_status_background_color_secondary": "#006662",
+              "product_status_background_color_secondary": "#8C8C8C",
               "inventory_status_text_color": "#F9BC60",
               "hero_overlay_color": "#003734",
               "hero_text_color": "#FFFBE6",
