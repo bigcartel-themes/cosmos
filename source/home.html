@@ -1,6 +1,30 @@
-{% if theme.hero_image != blank or theme.hero_welcome_text != blank %}
-  <div class="home-hero home-hero--{{ theme.hero_image_width }} {% unless theme.hero_image != blank %}home-hero--no-image{% endunless %}">
-    {% if theme.hero_image != blank %}
+{% comment %}Initialize key template variables{% endcomment %}
+{% assign has_slideshow = false %}
+{% if theme.image_sets.slideshow.size > 0 %}{% assign has_slideshow = true %}{% endif %}
+
+{% assign has_hero_image = false %}
+{% if theme.hero_image %}{% assign has_hero_image = true %}{% endif %}
+
+{% if has_hero_image or has_slideshow %}
+  <div class="home-hero home-hero--{{ theme.hero_image_width }} {% if has_slideshow %}home-hero--slideshow{% endif %} {% unless theme.hero_image != blank or has_slideshow %}home-hero--no-image{% endunless %}">
+    {% if has_slideshow %}
+      <div class="{% if theme.image_sets.slideshow.size > 1 %}splide{% endif %} home-slideshow">
+        <div class="splide__track">
+          <div class="splide__list">
+            {% for image in theme.image_sets.slideshow %}
+              <div class="splide__slide">
+                <img
+                  alt="Slideshow image {{ forloop.index }}"
+                  {% if forloop.index == 1 %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+                  class="slideshow-image"
+                  srcset="{{ image.url | constrain: 1068 }}, {{ image.url | constrain: 2136 }} 2x"
+                  src="{{ image.url | constrain: 1068 }}">
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% elsif has_hero_image %}
       <img
         alt=""
         class="home-hero-image lazyload blur-up"
@@ -14,9 +38,11 @@
         data-sizes="auto"
       >
     {% endif %}
-    <div class="home-hero-overlay"></div>
-    {% if theme.hero_welcome_text != blank or theme.hero_button_text != blank %}
-      <div class="home-hero-content">
+    {% if has_slideshow == false %}
+      <div class="home-hero-overlay"></div>
+    {% endif %}
+    {% if has_slideshow or has_hero_image %}
+      <div class="home-hero-content {% if theme.image_sets.slideshow.size > 0 %}home-hero-content--slideshow{% endif %}">
         {% if theme.hero_welcome_text != blank %}<div class="home-hero-text">{{ theme.hero_welcome_text }}</div>{% endif %}
         {% if theme.hero_button_text != blank %}<a href="/products" class="home-hero-button">{{ theme.hero_button_text }}</a>{% endif %}
       </div>
@@ -27,7 +53,7 @@
 <div class="home-content">
   {% if theme.featured_products > 0 %}
     <div class="home-featured-products">
-      <h1 class="page-title">{{ theme.featured_header }}</h1>
+      <h1 class="featured-title">{{ theme.featured_header }}</h1>
       {% paginate products from products.current by theme.featured_products order:theme.featured_order %}
         {% assign num_results = paginate.items %}
         {% if paginate.next.is_link %}
@@ -114,7 +140,7 @@
   {% if theme.show_home_page_categories and categories.active.size > 0 %}
     <div class="featured-categories">
       {% if theme.home_page_categories_header %}
-        <h2 class="featured-categories-header">{{ theme.home_page_categories_header }}</h2>
+        <h2 class="featured-title">{{ theme.home_page_categories_header }}</h2>
       {% endif %}
       {% assign category_list_style = theme.home_page_categories_style %}
       <div class="product-list product-list--center category-list category-list--{{ category_list_style }} {% if num_results < 3 %}product-list--center{% endif %}">

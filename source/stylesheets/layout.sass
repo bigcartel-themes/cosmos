@@ -105,7 +105,7 @@ header
   @media screen and (max-width: $break-small)
     --side-padding: 16px
     padding: 32px var(--side-padding)
-    font-size: 3rem
+    font-size: 2.75rem
     line-height: normal
 
 .top-nav
@@ -113,10 +113,13 @@ header
   padding: 16px 32px
   gap: 32px
   font-size: 1.25em
-  font-weight: 600
+  font-weight: 500
   line-height: 1em
-  font-family: var(--primary-font)
+  font-family: var(--secondary-font)
 
+  @media screen and (max-width: $break-medium)
+    font-size: 1em
+  
   @media screen and (max-width: $break-small)
     padding: 16px
 
@@ -176,7 +179,7 @@ header
   justify-content: center
   text-align: center
   font-family: var(--primary-font)
-  font-weight: 700
+  font-weight: 500
   overflow-wrap: break-word
   word-break: break-word
   color: var(--shop-name-text-color)
@@ -255,7 +258,7 @@ h1, h2, h3, h4, h5, h6
 
 footer
   padding: 64px 0
-  font-family: var(--primary-font)
+  font-family: var(--secondary-font)
   width: 100%
 
   @media screen and (max-width: $break-small)
@@ -279,11 +282,15 @@ footer
       padding: 30px
 
 .footer-custom-content
-  display: flex
+  display: grid
+  grid-template-columns: 1fr
   justify-content: center
-  align-items: center
   text-align: center
   padding: 10px 50px 20px 50px
+  gap: 20px
+
+  > *
+    justify-self: center
 
 .footer-nav
   display: flex
@@ -462,6 +469,12 @@ footer
   a
     text-decoration: underline
     text-underline-offset: 3px
+
+  img
+    display: inline-block
+    max-width: 100%
+    margin: 0 auto
+    padding-bottom: 16px
 
 .select
   border-radius: var(--border-radius)
