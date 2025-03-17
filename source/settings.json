@@ -95,7 +95,7 @@
             "style_name": "Classic #3",
             "fonts": {
               "primary_font": "Over the Rainbow",
-              "secondary_font": "Nunito"
+              "secondary_font": "Nunito Sans"
             },
             "colors": {
               "background_color": "#F8F9FA",
@@ -284,31 +284,31 @@
           {
             "style_name": "Playful #3",
             "fonts": {
-              "primary_font": "BioRhyme",
-              "secondary_font": "Nunito Sans"
+              "primary_font": "Over the Rainbow",
+              "secondary_font": "Lato"
             },
             "colors": {
-              "background_color": "#794ACF",
+              "background_color": "#1A365D",
               "text_color": "#FFFFFF",
               "link_text_color": "#FFFFFF",
-              "link_hover_color": "#FFB2E6",
-              "shop_name_text_color": "#FFB2E6",
+              "link_hover_color": "#FF9E80",
+              "shop_name_text_color": "#FF9E80",
               "header_text_color": "#FFFFFF",
-              "border_color": "#8B5FD7",
-              "button_background_color": "#FFB2E6",
-              "button_hover_background_color": "#FF99DD",
-              "button_text_color": "#794ACF",
-              "announcement_background_color": "#6837C2",
+              "border_color": "#2C4A7A",
+              "button_background_color": "#FF9E80",
+              "button_hover_background_color": "#FF8966",
+              "button_text_color": "#1A365D",
+              "announcement_background_color": "#15294B",
               "announcement_text_color": "#FFFFFF",
-              "product_status_text_color": "#794ACF",
-              "product_status_background_color": "#FFB2E6",
+              "product_status_text_color": "#1A365D",
+              "product_status_background_color": "#FF9E80",
               "product_status_text_color_secondary": "#FFFFFF",
-              "product_status_background_color_secondary": "#8B5FD7",
-              "inventory_status_text_color": "#FFB2E6",
-              "hero_overlay_color": "#6837C2",
+              "product_status_background_color_secondary": "#2C4A7A",
+              "inventory_status_text_color": "#4ECDC4",
+              "hero_overlay_color": "#15294B",
               "hero_text_color": "#FFFFFF",
-              "product_hover_overlay_color": "#FFB2E6",
-              "product_hover_text_color": "#794ACF"
+              "product_hover_overlay_color": "#FF9E80",
+              "product_hover_text_color": "#1A365D"
             }
           }
         ]
