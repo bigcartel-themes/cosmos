@@ -94,7 +94,7 @@
           {
             "style_name": "Classic #3",
             "fonts": {
-              "primary_font": "Over the Rainbow",
+              "primary_font": "Parkinsans",
               "secondary_font": "Nunito Sans"
             },
             "colors": {
@@ -159,28 +159,28 @@
           {
             "style_name": "Bold #2",
             "fonts": {
-              "primary_font": "Titillium Web",
-              "secondary_font": "DM Sans"
+              "primary_font": "Honk",
+              "secondary_font": "Work Sans"
             },
             "colors": {
-              "background_color": "#FF3B3B",
+              "background_color": "#505050",
               "text_color": "#FFFFFF",
               "link_text_color": "#FFFFFF",
               "link_hover_color": "#FFD700",
               "shop_name_text_color": "#FFFFFF",
               "header_text_color": "#FFFFFF",
-              "border_color": "#FF5252",
+              "border_color": "#FFD700",
               "button_background_color": "#FFD700",
               "button_hover_background_color": "#FFC107",
               "button_text_color": "#000000",
-              "announcement_background_color": "#CC2F2F",
-              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#FFD700",
+              "announcement_text_color": "#FFD700",
               "product_status_text_color": "#000000",
-              "product_status_background_color": "#FFD700",
-              "product_status_text_color_secondary": "#FFFFFF",
-              "product_status_background_color_secondary": "#FF5252",
+              "product_status_background_color": "#121212",
+              "product_status_text_color_secondary": "#444444",
+              "product_status_background_color_secondary": "#CCCCCC",
               "inventory_status_text_color": "#FFD700",
-              "hero_overlay_color": "#CC2F2F",
+              "hero_overlay_color": "#FFD700",
               "hero_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#FFD700",
               "product_hover_text_color": "#000000"
