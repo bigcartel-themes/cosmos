@@ -94,8 +94,8 @@
           {
             "style_name": "Classic #3",
             "fonts": {
-              "primary_font": "Glegoo",
-              "secondary_font": "Karla"
+              "primary_font": "Over the Rainbow",
+              "secondary_font": "Nunito"
             },
             "colors": {
               "background_color": "#F8F9FA",
@@ -129,8 +129,8 @@
           {
             "style_name": "Bold #1",
             "fonts": {
-              "primary_font": "Montserrat",
-              "secondary_font": "Source Sans Pro"
+              "primary_font": "Permanent Marker",
+              "secondary_font": "Open Sans"
             },
             "colors": {
               "background_color": "#000000",
@@ -189,11 +189,11 @@
           {
             "style_name": "Bold #3",
             "fonts": {
-              "primary_font": "Inknut Antiqua",
-              "secondary_font": "Work Sans"
+              "primary_font": "Doto",
+              "secondary_font": "Lato"
             },
             "colors": {
-              "background_color": "#1A1A1A",
+              "background_color": "#626262",
               "text_color": "#FFFFFF",
               "link_text_color": "#FFFFFF",
               "link_hover_color": "#00F5D4",
@@ -254,8 +254,8 @@
           {
             "style_name": "Playful #2",
             "fonts": {
-              "primary_font": "Overlock",
-              "secondary_font": "Quicksand"
+              "primary_font": "Permanent Marker",
+              "secondary_font": "Open Sans"
             },
             "colors": {
               "background_color": "#FF6B6B",
