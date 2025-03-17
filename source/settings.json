@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "images": [
     {
       "variable": "logo_image",
@@ -695,7 +695,7 @@
         ["Dark", "dark"],
         ["Very dark", "very_dark"]
       ],
-      "default": "0.50",
+      "default": "none",
       "description": "Adjust the home page slideshow or hero image to enhance the legibility of your hero text and button"
     },
     {
