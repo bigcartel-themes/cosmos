@@ -666,12 +666,25 @@
       "description": "Controls the maximum height of your logo"
     },
     {
+      "variable": "nav_page_display",
+      "label": "Page links in your shop's header",
+      "type": "select",
+      "options": [
+        ["All pages", "all"],
+        ["Custom pages only", "pages_only"],
+        ["Contact page only", "contact_only"],
+        ["None", "none"]
+      ],
+      "default": "all",
+      "description": "Choose which pages appear in your shop's header alongside the Products link"
+    },
+    {
       "variable": "nav_items",
       "label": "Navigation items",
       "type": "select",
       "options": "0..6",
       "default": 2,
-      "description": "The number of custom page links show in the main navigation"
+      "description": "The number of custom page links show in your shop's header"
     },
     {
       "variable": "hero_image_width",
