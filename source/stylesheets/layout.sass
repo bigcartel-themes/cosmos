@@ -108,6 +108,7 @@ header
     font-size: 2.75rem
     line-height: normal
 
+// Main navigation container
 .top-nav
   display: flex
   padding: 16px 32px
@@ -123,7 +124,8 @@ header
   @media screen and (max-width: $break-small)
     padding: 16px
 
-  a, button.nav-button
+  // Common styles for all interactive elements
+  &__interactive
     border-bottom: 2px solid transparent
     color: inherit
     display: flex
@@ -137,6 +139,11 @@ header
     &:hover
       border-bottom: 1px solid var(--link-hover-color)
 
+  // Regular links and buttons should inherit from interactive
+  a, button.nav-button
+    @extend .top-nav__interactive
+
+  // Links section
   &--links
     @media screen and (max-width: $break-small)
       display: none
@@ -146,32 +153,120 @@ header
       flex-wrap: wrap
       column-gap: 16px
       row-gap: 8px
+      align-items: center
+      margin: 0
+      padding: 0
+      list-style: none
 
-  &--icons
+      li
+        margin: 0
+        padding: 0
+
+  // Dropdown container
+  &__dropdown
+    position: relative
+    width: auto
+    z-index: 4
+
+    // Dropdown button
+    &-button
+      @extend .top-nav__interactive
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 8px
+      outline-offset: 4px
+
+      &:focus
+        color: var(--link-hover-color)
+
+    // Dropdown arrow
+    &-arrow
+      fill: currentColor
+      pointer-events: none
+      width: 12px
+
+    // Dropdown content
+    &-content
+      background: var(--background-color)
+      transition: opacity .2s linear, visibility .2s linear
+      border-radius: var(--border-radius)
+      border: 1px solid var(--text-color)
+      margin: 0 auto
+      min-width: 250px
+      opacity: 0
+      overflow-y: scroll
+      padding: 15px
+      position: absolute
+      text-align: left
+      visibility: hidden
+      height: auto
+      max-height: 70vh
+      z-index: 3
+      top: calc(100% + 16px)
+      scrollbar-width: thin
+      scrollbar-color: #{"rgba(var(--header-text-color-rgb),.5)"} transparent
+      scrollbar-gutter: stable
+
+      ul
+        display: block
+
+        .divider
+          height: 1px
+          width: 10px
+          background-color: var(--text-color)
+          margin: 8px
+          list-style: none
+
+      a
+        &:hover
+          text-decoration: none
+          border-bottom: none
+
+      &[aria-hidden="false"]
+        opacity: 1
+        visibility: visible
+
+      // Scrollbar styling
+      &::-webkit-scrollbar
+        height: .375rem
+        width: .75rem
+
+      &::-webkit-scrollbar-track
+        background-color: transparent
+
+      &::-webkit-scrollbar-thumb
+        border-radius: .375rem
+        border: 3px solid transparent
+        background-color: #{"rgba(var(--primary-text-color-rgb),.5)"}
+        background-clip: content-box
+
+  &__icons
     display: flex
     gap: 32px
     margin-left: auto
     flex-shrink: 0
 
-    .cart-link
+    &-cart
+      @extend .top-nav__interactive
       align-items: center
       gap: 12px
 
-.mobile-menu
-  display: none
+  &__mobile-menu
+    display: none
 
-  @media screen and (max-width: $break-small)
-    display: flex
-    align-items: center
-    justify-content: center
-
-    .open-mobile-navigation
+    @media screen and (max-width: $break-small)
       display: flex
       align-items: center
       justify-content: center
-      height: 36px
-      width: 36px
-      padding: 8px
+
+      .open-mobile-navigation
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 36px
+        width: 36px
+        padding: 8px
 
 .header-store-link
   display: flex

@@ -666,8 +666,42 @@
       "description": "Controls the maximum height of your logo"
     },
     {
+      "variable": "nav_menu_style",
+      "label": "Menu style to use in shop header",
+      "type": "select",
+      "options": [
+        ["Dropdown", "dropdown"],
+        ["Inline", "inline"]
+      ],
+      "default": "dropdown",
+      "upgrade_default": "inline",
+      "description": "Choose how to display shop header menu items"
+    },
+    {
+      "variable": "products_global_nav_dropdown_text",
+      "label": "Product menu dropdown text",
+      "type": "text",
+      "default": "Shop",
+      "max_length": 25,
+      "description": "The label for your dropdown menu containing products and categories. Only applies when using dropdown style",
+      "requires": [
+        "nav_menu_style eq dropdown"
+      ]
+    },
+    {
+      "variable": "pages_global_nav_dropdown_text",
+      "label": "Custom Pages menu dropdown text",
+      "type": "text",
+      "default": "More",
+      "max_length": 25,
+      "description": "The label for your dropdown menu containing custom pages. Only applies when using dropdown style",
+      "requires": [
+        "nav_menu_style eq dropdown"
+      ]
+    },
+    {
       "variable": "nav_page_display",
-      "label": "Page links in your shop's header",
+      "label": "Page to show in shop header",
       "type": "select",
       "options": [
         ["All pages", "all"],
@@ -676,15 +710,21 @@
         ["None", "none"]
       ],
       "default": "all",
-      "description": "Choose which pages appear in your shop's header alongside the Products link"
+      "description": "Select which types of pages appear in your shop's header. Only applies when using inline menu style.",
+      "requires": [
+        "nav_menu_style eq inline"
+      ]
     },
     {
       "variable": "nav_items",
-      "label": "Navigation items",
+      "label": "Maximum custom pages in shop header",
       "type": "select",
       "options": "0..6",
       "default": 2,
-      "description": "The number of custom page links show in your shop's header"
+      "description": "Number of custom pages shown in your shop's header. Only applies when using inline menu style.",
+      "requires": [
+        "nav_menu_style eq inline"
+      ]
     },
     {
       "variable": "hero_image_width",
