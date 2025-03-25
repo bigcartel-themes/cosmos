@@ -727,6 +727,18 @@
       ]
     },
     {
+      "variable": "nav_text_transform",
+      "label": "Transform text in shop header",
+      "type": "select",
+      "options": [
+        ["Normal", "initial"],
+        ["Uppercase", "uppercase"],
+        ["Lowercase", "lowercase"]
+      ],
+      "default": "initial",
+      "description": "Controls the text case styling in your shop header"
+    },
+    {
       "variable": "hero_image_width",
       "label": "Hero image width",
       "type": "select",
