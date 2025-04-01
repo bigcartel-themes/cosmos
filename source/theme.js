@@ -10,3 +10,4 @@
 //= require javascripts/search
 //= require javascripts/overlay
 //= require javascripts/navigation
+//= require javascripts/image-collage

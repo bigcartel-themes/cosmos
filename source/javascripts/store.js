@@ -45,36 +45,27 @@ function setDocHeight() {
   document.documentElement.style.setProperty("--vh", win_height / 100 + "px");
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const heroButton = document.querySelector(".home-hero-button");
-  if (heroButton) {
-    heroButton.addEventListener("click", function (event) {
-      if (themeOptions.heroButtonBehavior === "scroll") {
-        event.preventDefault();
-        const targetElement = document.querySelector("#main");
-        if (targetElement) {
-          smoothScroll(targetElement, 1000, -250);
+document.addEventListener('DOMContentLoaded', () => {
+  const isHomePage = document.body.getAttribute('data-bc-page-type') === 'home';
+  if (isHomePage) {
+    const heroButton = document.querySelector(".home-hero-button");
+    if (heroButton) {
+      heroButton.addEventListener("click", function (event) {
+        if (themeOptions.heroButtonBehavior === "scroll") {
+          event.preventDefault();
+          const targetElement = document.querySelector("#main");
+          if (targetElement) {
+            smoothScroll(targetElement, 1000, -250);
+          }
         }
-      }
+      });
+    }
+
+    setupCategoryCollages({ 
+      collage: { 
+        width: 700, 
+        height: 700 
+      } 
     });
-  }
-  function smoothScroll(target, duration, offset = 0) {
-    const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
-    const startPosition = window.scrollY;
-    let startTime = null;
-    function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const run = ease(timeElapsed, startPosition, targetPosition, duration);
-      window.scrollTo(0, run);
-      if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
-    function ease(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return c / 2 * t * t + b;
-      t--;
-      return -c / 2 * (t * (t - 2) - 1) + b;
-    }
-    requestAnimationFrame(animation);
   }
 });
