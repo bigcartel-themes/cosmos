@@ -701,7 +701,7 @@
     },
     {
       "variable": "nav_page_display",
-      "label": "Page to show in shop header",
+      "label": "Pages to show in shop header",
       "type": "select",
       "options": [
         ["All pages", "all"],
@@ -717,13 +717,15 @@
     },
     {
       "variable": "nav_items",
-      "label": "Maximum custom pages in shop header",
+      "label": "Custom pages in header",
       "type": "select",
       "options": "0..6",
       "default": 2,
       "description": "Number of custom pages shown in your shop's header. Only applies when using inline menu style.",
       "requires": [
-        "nav_menu_style eq inline"
+        "nav_menu_style eq inline",
+        "nav_page_display neq contact_only",
+        "nav_page_display neq none"
       ]
     },
     {
@@ -997,7 +999,7 @@
         ["Crop to square", "cover"]
       ],
       "default": "cover",
-      "description": "Sets the display of images in the product grid"
+      "description": "Control how product images display in product grids"
     },
     {
       "variable": "product_grid_info",
