@@ -825,7 +825,7 @@
       "variable": "featured_products",
       "label": "Featured products",
       "type": "select",
-      "options": "0..100",
+      "options": "0..48",
       "default": 12,
       "description": "The number of products displayed on the Home page"
     },
@@ -897,8 +897,8 @@
       "variable": "featured_categories",
       "label": "Featured categories",
       "type": "select",
-      "options": "1..100",
-      "default": 10,
+      "options": "1..48",
+      "default": 12,
       "description": "The number of categories displayed on the Home page",
       "requires": [
         "show_home_page_categories eq true"
