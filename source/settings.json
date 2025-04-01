@@ -5,11 +5,13 @@
     {
       "variable": "logo_image",
       "label": "Logo image",
+      "section": "global_navigation",
       "description": "Transparent background recommended"
     },
     {
       "variable": "hero_image",
       "label": "Hero image",
+      "section": "homepage",
       "description": "Minimum size of 1200 x 600px recommended"
     }
   ],
@@ -17,6 +19,7 @@
     {
       "variable": "slideshow",
       "label": "Slideshow",
+      "section": "homepage",
       "description": "Adds slideshow to the homepage. Use same-sized images, recommend 1200 × 800px. Overrides hero image if both are set."
     }
   ],
@@ -628,6 +631,7 @@
     {
       "variable": "announcement_message_text",
       "label": "Announcement text",
+      "section": "messaging",
       "max_length": 500,
       "type": "text",
       "description": "Displays an announcement message on the top of every page"
@@ -635,6 +639,7 @@
     {
       "variable": "contact_text",
       "label": "Contact page text",
+      "section": "messaging",
       "type": "text",
       "max_length": 1024,
       "description": "Displays a message within your contact page"
@@ -642,12 +647,14 @@
     {
       "variable": "cart_text",
       "label": "Cart page text",
+      "section": "messaging",
       "type": "text",
       "description": "Displays a message within your cart page"
     },
     {
       "variable": "maintenance_message",
       "label": "Maintenance mode message",
+      "section": "messaging",
       "type": "text",
       "max_length": 2048,
       "description": "A message visitors see when your shop is in Maintenance Mode",
@@ -656,6 +663,7 @@
     {
       "variable": "logo_image_height",
       "label": "Logo image height",
+      "section": "global_navigation",
       "type": "select",
       "options": [
         ["Small", "120"],
@@ -668,6 +676,7 @@
     {
       "variable": "nav_menu_style",
       "label": "Menu style to use in shop header",
+      "section": "global_navigation",
       "type": "select",
       "options": [
         ["Dropdown", "dropdown"],
@@ -680,6 +689,7 @@
     {
       "variable": "products_global_nav_dropdown_text",
       "label": "Product menu dropdown text",
+      "section": "global_navigation",
       "type": "text",
       "default": "Shop",
       "max_length": 25,
@@ -691,6 +701,7 @@
     {
       "variable": "pages_global_nav_dropdown_text",
       "label": "Custom Pages menu dropdown text",
+      "section": "global_navigation",
       "type": "text",
       "default": "More",
       "max_length": 25,
@@ -702,6 +713,7 @@
     {
       "variable": "nav_page_display",
       "label": "Pages to show in shop header",
+      "section": "global_navigation",
       "type": "select",
       "options": [
         ["All pages", "all"],
@@ -718,6 +730,7 @@
     {
       "variable": "nav_items",
       "label": "Custom pages in header",
+      "section": "global_navigation",
       "type": "select",
       "options": "0..6",
       "default": 2,
@@ -731,6 +744,7 @@
     {
       "variable": "nav_text_transform",
       "label": "Transform text in shop header",
+      "section": "global_navigation",
       "type": "select",
       "options": [
         ["Normal", "initial"],
@@ -743,6 +757,7 @@
     {
       "variable": "hero_image_width",
       "label": "Hero image width",
+      "section": "homepage",
       "type": "select",
       "options": [
         ["Full page", "full-page"],
@@ -754,6 +769,7 @@
     {
       "variable": "hero_overlay_opacity",
       "label": "Hero overlay opacity",
+      "section": "homepage",
       "type": "select",
       "options": [
         ["Very bright", "very_bright"],
@@ -768,12 +784,14 @@
     {
       "variable": "hero_welcome_text",
       "label": "Hero welcome text",
+      "section": "homepage",
       "type": "text",
       "description": "Displays a welcome message over your hero image"
     },
     {
       "variable": "hero_button_text",
       "label": "Hero button text",
+      "section": "homepage",
       "type": "text",
       "description": "Displays over your hero image and links to your Products page",
       "default": "Shop now"
@@ -781,6 +799,7 @@
     {
       "variable": "hero_button_behavior",
       "label": "Hero Button Behavior",
+      "section": "homepage",
       "type": "select",
       "options": [
         ["Scroll down page", "scroll"],
@@ -795,6 +814,7 @@
     {
       "variable": "homepage_slideshow_autoplay",
       "label": "Auto-play homepage slideshow",
+      "section": "homepage",
       "type": "boolean",
       "default": true,
       "description": "Automatically advances slides in the homepage slideshow"
@@ -802,6 +822,7 @@
     {
       "variable": "homepage_slideshow_speed",
       "label": "Slideshow speed",
+      "section": "homepage",
       "type": "select",
       "options": [
         ["Slowest", 6000],
@@ -819,6 +840,7 @@
     {
       "variable": "featured_header",
       "label": "Featured products header",
+      "section": "homepage",
       "type": "text",
       "description": "Displays above featured products on the Home page",
       "default": "Featured Products"
@@ -826,6 +848,7 @@
     {
       "variable": "featured_products",
       "label": "Featured products",
+      "section": "homepage",
       "type": "select",
       "options": "0..48",
       "default": 12,
@@ -834,6 +857,7 @@
     {
       "variable": "featured_order",
       "label": "Featured products order",
+      "section": "homepage",
       "type": "select",
       "options": "product_orders",
       "default": "position",
@@ -845,6 +869,7 @@
     {
       "variable": "featured_products_layout",
       "label": "Featured products layout",
+      "section": "homepage",
       "type": "select",
       "options": [
         ["Alternating", "alternating"],
@@ -859,6 +884,7 @@
     {
       "variable": "alternating_product_image_style",
       "label": "Alternating product image style",
+      "section": "homepage",
       "type": "select",
       "options": [
         ["Fixed height", "fixed-height"],
@@ -874,6 +900,7 @@
     {
       "variable": "all_products_button_text",
       "label": "All products button text",
+      "section": "homepage",
       "type": "text",
       "description": "Displays underneath featured products and links to your Products Page",
       "default": "All Products"
@@ -881,6 +908,7 @@
     {
       "variable": "show_home_page_categories",
       "label": "Display categories on Home page",
+      "section": "homepage",
       "type": "boolean",
       "default": true,
       "description": "Displays categories as a grid on the Home page"
@@ -888,6 +916,7 @@
     {
       "variable": "home_page_categories_header",
       "label": "Categories header",
+      "section": "homepage",
       "type": "text",
       "description": "Displays above categories on the Home page",
       "default": "Featured Categories",
@@ -898,6 +927,7 @@
     {
       "variable": "featured_categories",
       "label": "Featured categories",
+      "section": "homepage",
       "type": "select",
       "options": "1..48",
       "default": 12,
@@ -966,6 +996,7 @@
     {
       "variable": "home_page_categories_name_style",
       "label": "Category image style",
+      "section": "homepage",
       "type": "select",
       "options": [
         ["Over image", "hover"],
@@ -981,6 +1012,7 @@
     {
       "variable": "max_categories_per_row",
       "label": "Maximum categories per row",
+      "section": "global_navigation",
       "type": "select",
       "options": "1..4",
       "default": 3,
@@ -992,6 +1024,7 @@
     {
       "variable": "grid_image_style",
       "label": "Product grid image style",
+      "section": "global_navigation",
       "type": "select",
       "options": [
         ["Normal", "default"],
@@ -1004,6 +1037,7 @@
     {
       "variable": "product_grid_info",
       "label": "Product grid info",
+      "section": "global_navigation",
       "type": "select",
       "options": [
         ["Show on hover", "hover"],
@@ -1015,6 +1049,7 @@
     {
       "variable": "max_products_per_row",
       "label": "Maximum products per row",
+      "section": "global_navigation",
       "type": "select",
       "options": "1..4",
       "default": 3,
@@ -1023,6 +1058,7 @@
     {
       "variable": "max_products_per_row_mobile",
       "label": "Maximum products per row (mobile)",
+      "section": "global_navigation",
       "type": "select",
       "options": "1..2",
       "default": 2,
@@ -1031,6 +1067,7 @@
     {
       "variable": "products_per_page",
       "label": "Products per page",
+      "section": "global_navigation",
       "type": "select",
       "options": "1..100",
       "default": 48,
@@ -1039,6 +1076,7 @@
     {
       "variable": "product_image_zoom",
       "label": "Enable product image zoom",
+      "section": "product_page",
       "type": "boolean",
       "default": true,
       "description": "Click to open a larger version of the Product page image"
@@ -1046,6 +1084,7 @@
     {
       "variable": "desktop_product_page_images",
       "label": "Desktop product page images",
+      "section": "product_page",
       "type": "select",
       "options": [
         ["Thumbnails", "thumbnails"],
@@ -1059,6 +1098,7 @@
     {
       "variable": "mobile_product_page_images",
       "label": "Mobile product page image carousel",
+      "section": "product_page",
       "type": "select",
       "options": [
         ["Show thumbnails", "show-thumbnails"],
@@ -1070,6 +1110,7 @@
     {
       "variable": "show_related_products",
       "label": "Show related products",
+      "section": "product_page",
       "type": "boolean",
       "default": true,
       "description": "Displays related products on the Product page"
@@ -1077,6 +1118,7 @@
     {
       "variable": "related_products_header",
       "label": "Related products header",
+      "section": "product_page",
       "type": "text",
       "description": "Displays above related products on Products pages",
       "default": "You might also like",
@@ -1087,6 +1129,7 @@
     {
       "variable": "related_items",
       "label": "Related products",
+      "section": "product_page",
       "type": "select",
       "options": "1..8",
       "default": 4,
@@ -1098,6 +1141,7 @@
     {
       "variable": "related_products_order",
       "label": "Related products order",
+      "section": "product_page",
       "type": "select",
       "options": "product_orders",
       "default": "top-selling",
@@ -1109,6 +1153,7 @@
     {
       "variable": "show_search",
       "label": "Show search",
+      "section": "global_navigation",
       "type": "boolean",
       "default": true,
       "description": "Shows the product search area"
@@ -1116,6 +1161,7 @@
     {
       "variable": "show_sold_out_product_options",
       "label": "Show sold out product variants",
+      "section": "product_page",
       "type": "boolean",
       "default": true,
       "description": "Shows sold out product variants in the Product page dropdowns",
@@ -1124,6 +1170,7 @@
     {
       "variable": "show_sold_out_product_prices",
       "label": "Show prices for sold out products",
+      "section": "general",
       "type": "boolean",
       "default": true,
       "description": "Show the price of sold out products on product grids and product pages",
@@ -1132,6 +1179,7 @@
     {
       "variable": "show_coming_soon_product_prices",
       "label": "Show prices for coming soon products",
+      "section": "general",
       "type": "boolean",
       "default": true,
       "description": "Show the price of coming soon products on product grids and product pages"
@@ -1139,6 +1187,7 @@
     {
       "variable": "show_low_inventory_messages",
       "label": "Show product stock alerts",
+      "section": "product_page",
       "type": "boolean",
       "default": true,
       "description": "Show shoppers alerts on Product pages when it's running low on stock",
@@ -1147,6 +1196,7 @@
     {
       "variable": "low_inventory_threshold",
       "label": "Low stock alert",
+      "section": "product_page",
       "options": "1..100",
       "type": "select",
       "default": "10",
@@ -1159,6 +1209,7 @@
     {
       "variable": "low_inventory_message",
       "label": "Low stock message",
+      "section": "product_page",
       "type": "text",
       "max_length": 50,
       "description": "Message shown when stock drops below your alert level",
@@ -1171,6 +1222,7 @@
     {
       "variable": "almost_sold_out_message",
       "label": "Almost sold out message",
+      "section": "product_page",
       "type": "text",
       "max_length": 50,
       "description": "Message shown when stock drops below half your alert level",
@@ -1184,6 +1236,7 @@
     {
       "variable": "money_format",
       "label": "Price display",
+      "section": "general",
       "type": "select",
       "options": [
         ["Currency sign", "sign"],
@@ -1195,6 +1248,7 @@
     {
       "variable": "show_categories_in_footer",
       "label": "Show categories in footer",
+      "section": "global_navigation",
       "type": "boolean",
       "default": true,
       "description": "Display product category links at the bottom of every page"
@@ -1202,6 +1256,7 @@
     {
       "variable": "show_custom_pages_in_footer",
       "label": "Show custom pages in footer",
+      "section": "global_navigation",
       "type": "boolean",
       "default": true,
       "description": "Display links to your custom pages at the bottom of every page"
@@ -1209,6 +1264,7 @@
     {
       "variable": "footer_text",
       "label": "Footer text",
+      "section": "global_navigation",
       "type": "text",
       "max_length": 2048,
       "description": "Show a custom message in your shop's footer"
@@ -1216,6 +1272,7 @@
     {
       "variable": "footer_text_position",
       "label": "Footer text position",
+      "section": "global_navigation",
       "type": "select",
       "options": [
         ["Start of footer", "start"],
@@ -1230,6 +1287,7 @@
     {
       "variable": "show_bnpl_messaging",
       "label": "Buy Now, Pay Later Messaging",
+      "section": "product_page",
       "type": "boolean",
       "default": true,
       "description": "Show payment options prior to checkout on product and cart pages. Requires paid plan.",
