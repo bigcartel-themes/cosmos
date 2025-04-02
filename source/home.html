@@ -147,7 +147,7 @@
   {% endif %}
   {% if theme.show_home_page_categories and categories.active.size > 0 %}
     {% assign category_collages_enabled = false %}
-    {% if theme.features.opt_ins contains "theme_category_collages" %}
+    {% if theme.features.has_theme_category_collages %}
       {% assign category_collages_enabled = true %}
     {% endif %}
     <div class="featured-categories" data-category-collages-enabled="{{ category_collages_enabled }}">
