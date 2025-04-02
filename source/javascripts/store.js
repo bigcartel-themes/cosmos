@@ -61,11 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    setupCategoryCollages({ 
-      collage: { 
-        width: 700, 
+    const featuredCategoriesContainerSelector = '.featured-categories';
+    const featuredCategoriesContainer = document.querySelector(featuredCategoriesContainerSelector);
+    const categoryCollagesEnabled = featuredCategoriesContainer?.dataset.categoryCollagesEnabled === 'true';
+
+    if (categoryCollagesEnabled) {
+      setupCategoryCollages({ 
+        collage: { 
+          width: 700, 
         height: 700 
-      } 
-    });
+        } 
+      });
+    }
   }
 });
