@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "images": [
     {
       "variable": "logo_image",
@@ -1286,6 +1286,7 @@
       "variable": "cart_text",
       "label": "Cart page text",
       "section": "messaging",
+      "max_length": 1024,
       "type": "text",
       "description": "Displays a message within your cart page"
     },
