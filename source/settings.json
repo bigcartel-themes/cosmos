@@ -680,7 +680,7 @@
     },
     {
       "variable": "nav_page_display",
-      "label": "Pages to show in shop header",
+      "label": "Pages to show in your navigation",
       "section": "global_navigation",
       "type": "select",
       "options": [
@@ -690,7 +690,7 @@
         ["None", "none"]
       ],
       "default": "all",
-      "description": "Select which types of pages appear in your shop header",
+      "description": "Select which types of pages appear in your header and footer",
       "requires": [
         "nav_menu_style eq inline"
       ]

@@ -68,16 +68,23 @@
                   <li>{{ category | link_to }}</li>
                 {% endfor %}
               {% endif %}
-              {% if pages.all.size > 0 %}
-                <li class="divider"></li>
-                {% for page in pages.all %}
-                  <li>{{ page | link_to }}</li>
-                {% endfor %}
+              {% if theme.nav_page_display == "all" or theme.nav_page_display == "pages_only" %}
+                {% if pages.all.size > 0 %}
+                  <li class="divider"></li>
+                  {% for page in pages.all %}
+                    <li>{{ page | link_to }}</li>
+                  {% endfor %}
+                {% endif %}
               {% endif %}
               {% if pages.all.size == 0 and categories.active.size > 3 %}
                 <li class="divider"></li>
               {% endif %}
-              <li><a href="/contact">{{ pages.contact.name }}</a></li>
+              {% if theme.nav_page_display == "all" or theme.nav_page_display == "contact_only" %}
+                <li><a href="/contact">{{ t['navigation.contact'] }}</a></li>
+              {% endif %}
+              {% if store.website != blank %}
+                <li><a href="{{ store.website }}">Back to site</a></li>
+              {% endif %}
             </ul>
           </nav>
           {% if theme.instagram_url != blank
@@ -192,7 +199,7 @@
                 <a href="/products">{{ pages.products.name }}</a>
               {% endif %}
             </li>
-            {% if pages.all.size > 0 %}
+            {% if pages.all.size > 0 and theme.nav_page_display != "none" %}
               <li>
                 <div class="top-nav__dropdown">
                   <button class="top-nav__dropdown-button" aria-label="Open pages navigation" aria-controls="header-dropdown-pages" aria-expanded="false">
@@ -207,7 +214,12 @@
                         {% for page in pages.all %}
                           <li>{{ page | link_to }}</li>
                         {% endfor %}
-                        <li><a href="/contact">{{ pages.contact.name }}</a></li>
+                        {% if theme.nav_page_display == 'all' or theme.nav_page_display == 'contact_only' %}
+                          <li><a href="/contact">{{ t['navigation.contact'] }}</a></li>
+                        {% endif %}
+                        {% if store.website != blank %}
+                          <li><a href="{{ store.website }}">Back to site</a></li>
+                        {% endif %}
                       </ul>
                     {% endif %}
                   </div>
@@ -228,7 +240,10 @@
             {% endif %}
 
             {% if theme.nav_page_display == 'all' or theme.nav_page_display == 'contact_only' %}
-              <li><a href="/contact">{{ pages.contact.name }}</a></li>
+              <li><a href="/contact">{{ t['navigation.contact'] }}</a></li>
+            {% endif %}
+            {% if store.website != blank %}
+              <li><a href="{{ store.website }}">Back to site</a></li>
             {% endif %}
           {% endif %}
           
@@ -290,31 +305,46 @@
               <li><a href="/">{{ pages.home.name }}</a></li>
               <li><a href="/products">{{ pages.products.name }}</a></li>
               
-              {% if theme.show_categories_in_footer and theme.show_custom_pages_in_footer %}
+
+              {% comment %}Include categories with products link to minimize columns if custom pages are shown{% endcomment %}
+              {% if theme.show_categories_in_footer and theme.show_custom_pages_in_footer and pages.all.size > 0 %}
                 {% for category in categories.active %}
                   <li>{{ category | link_to }}</li>
                 {% endfor %}
               {% endif %}
     
               {% if theme.show_custom_pages_in_footer == false %}
-                <li><a href="/contact">{{ pages.contact.name }}</a></li>
+                {% if theme.nav_page_display == "all" or theme.nav_page_display == "contact_only" %}
+                  <li><a href="/contact">{{ t['navigation.contact'] }}</a></li>
+                {% endif %}
               {% endif %}
             </ul>
           </div>
         </nav>
     
         {% if theme.show_custom_pages_in_footer and pages.all.size > 0 %}
-          <nav class="footer-nav footer-nav--links" aria-label="Secondary">
-            <div class="footer-nav--container">
-              <div class="footer-nav-title">Pages</div>
-              <ul class="footer-nav--secondary">
-                {% for page in pages.all %}
-                  <li>{{ page | link_to }}</li>
-                {% endfor %}
-                <li><a href="/contact">{{ pages.contact.name }}</a></li>
-              </ul>
-            </div>
-          </nav>
+          {% if theme.nav_page_display != "none" or theme.show_custom_pages_in_footer %}
+            <nav class="footer-nav footer-nav--links" aria-label="Secondary">
+              <div class="footer-nav--container">
+                  <div class="footer-nav-title">{{ t['navigation.pages'] }}</div>
+                  <ul class="footer-nav--secondary">
+                    {% if theme.nav_page_display == "all" or theme.nav_page_display == "pages_only" or theme.show_custom_pages_in_footer %}
+                      {% for page in pages.all %}
+                        <li>{{ page | link_to }}</li>
+                      {% endfor %}
+                    {% endif %}
+                  
+                    {% if theme.nav_page_display == "all" or theme.nav_page_display == "contact_only" %}
+                      <li><a href="/contact">{{ t['navigation.contact'] }}</a></li>
+                    {% endif %}
+
+                    {% if store.website != blank %}
+                      <li><a href="{{ store.website }}">Back to site</a></li>
+                    {% endif %}
+                  </ul>
+              </div>
+            </nav>
+          {% endif %}
         {% elsif theme.show_categories_in_footer and categories.active.size > 0 %}
           <nav class="footer-nav footer-nav--links" aria-label="Secondary">
             <div class="footer-nav--container">
