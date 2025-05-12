@@ -634,11 +634,14 @@
       "section": "global_navigation",
       "type": "select",
       "options": [
-        ["Small", "120"],
-        ["Medium", "180"],
-        ["Large", "240"]
+        ["Extra small", "120"],
+        ["Small", "180"],
+        ["Medium", "240"],
+        ["Large", "300"],
+        ["Extra Large", "360"],
+        ["XX Large", "420"]
       ],
-      "default": "180",
+      "default": "240",
       "description": "Controls the maximum height of your logo"
     },
     {
