@@ -6,13 +6,13 @@
       "variable": "logo_image",
       "label": "Logo image",
       "section": "global_navigation",
-      "description": "Transparent background recommended"
+      "description": "Transparent background recommended. Ideal height is at least 600px for best results."
     },
     {
       "variable": "hero_image",
       "label": "Hero image",
       "section": "homepage",
-      "description": "Minimum size of 1200 x 600px recommended"
+      "description": "Minimum size of 1200 x 600px recommended."
     }
   ],
   "image_sets": [
