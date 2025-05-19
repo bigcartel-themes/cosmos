@@ -815,7 +815,7 @@
       "section": "global_navigation",
       "type": "boolean",
       "default": true,
-      "description": "Display product category links at the bottom of every page"
+      "description": "Display product category links in your footer"
     },
     {
       "variable": "show_custom_pages_in_footer",
@@ -823,7 +823,7 @@
       "section": "global_navigation",
       "type": "boolean",
       "default": true,
-      "description": "Display links to your custom pages at the bottom of every page"
+      "description": "Display links to your custom pages in your footer"
     },
     {
       "variable": "footer_text",
@@ -831,7 +831,7 @@
       "section": "global_navigation",
       "type": "textarea",
       "max_length": 2048,
-      "description": "Show a custom message in your shop's footer"
+      "description": "Show a custom message in your footer"
     },
     {
       "variable": "footer_text_position",
