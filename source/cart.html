@@ -22,12 +22,12 @@
     <a href="/products" class="button">{{ t['cart.continue_shopping'] }}</a>
   </div>
 {% else %}
+  {% if theme.cart_text != blank %}
+    <div class="message-banner message-banner--cart">{{ theme.cart_text }}</div>
+  {% endif %}
   <form method="post" id="cart_form" class="cart-form" action="/cart" accept-charset="utf8">
     <div class="cart-columns">
       <div class="cart-details">
-        {% if theme.cart_text != blank %}
-          <div class="message-banner message-banner--cart">{{ theme.cart_text }}</div>
-        {% endif %}
         <input type="hidden" name="utf8" value='✓'>
         <ul class="cart-items">
           {% for item in cart.items %}
