@@ -93,6 +93,9 @@
     &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
       display: none
 
+    &:focus
+      outline: 1px solid var(--border-color)
+
   .cart-qty
     display: flex
     align-items: center
@@ -217,3 +220,7 @@
   .button
     max-width: 100%
     width: 100%
+
+.message-banner
+  &--cart
+    text-align: center
