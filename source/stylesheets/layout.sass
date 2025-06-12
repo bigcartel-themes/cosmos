@@ -41,9 +41,22 @@
   --border-radius-sm: 2px
 
   --margin-size: 64px
+  --side-padding: 40px
 
   --logo-max-height: #{"{{ theme.logo_image_height | append: 'px' }}"}
   --logo-max-height-mobile: 120px
+
+  // Video player customization
+  --video-rounded-radius: var(--border-radius)
+  --video-margin-small: calc(var(--margin-size) / 4)
+  --video-margin-large: var(--margin-size)
+  --video-size-small: 500px
+  --video-size-medium: 720px
+  --video-size-large: calc(1080px + calc(var(--side-padding) * 2))
+  --video-container-padding: 0 var(--side-padding)
+
+  @media screen and (max-width: $break-small)
+    --side-padding: 16px
 
 html, body
   height: 100%
@@ -86,7 +99,6 @@ a.skip-link
     top: 20px
 
 header
-  --side-padding: 40px
   display: flex
   align-items: center
   justify-content: center
@@ -103,7 +115,6 @@ header
       text-decoration: none
 
   @media screen and (max-width: $break-small)
-    --side-padding: 16px
     padding: 32px var(--side-padding)
     font-size: 2.75rem
     line-height: normal
@@ -299,27 +310,21 @@ h1, h2, h3, h4, h5, h6
   padding-bottom: var(--margin-size)
 
   .content-wrapper
-    --side-padding: 40px
     margin: 0 auto
     max-width: calc(1080px + calc(var(--side-padding) * 2))
     padding: 0 var(--side-padding)
 
-    @media screen and (max-width: $break-small)
-      --side-padding: 16px
-
     &--home
+      max-width: 100%
+      padding: 0
 
       h1.page-title
         margin-bottom: 48px
 
-      &.full-page
-        max-width: 100%
-        padding: 0
-
-        .home-content
-          margin: 0 auto
-          padding: 0 var(--side-padding)
-          max-width: calc(1080px + calc(var(--side-padding) * 2))
+      .home-content
+        margin: 0 auto
+        padding: 0 var(--side-padding)
+        max-width: calc(1080px + calc(var(--side-padding) * 2))
 
     .custom-page
       margin: 0 auto

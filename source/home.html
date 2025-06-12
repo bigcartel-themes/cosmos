@@ -50,6 +50,16 @@
   </div>
 {% endif %}
 
+{% if theme.home_featured_video_url %}
+  {% assign featured_video_header = t['home.featured_video'] %}
+  <div class="home-featured-video-section">
+    {% if featured_video_header != blank %}
+      <h1 class="page-title">{{ featured_video_header }}</h1>
+    {% endif %}
+    <div id="featured-video"></div>
+  </div>
+{% endif %}
+
 <div class="home-content">
   {% if theme.featured_products > 0 %}
     <div class="home-featured-products">
@@ -139,7 +149,10 @@
             </div>
           </div>
           {% if paginate.pages > 1 %}
-            {% if theme.all_products_button_text != blank %}<a class="button button--centered button--secondary all-products-button" href="/products">{{ t['navigation.all_products'] }}</a>{% endif %}
+            {% assign all_products_button_text = t['navigation.all_products'] %}
+            {% if all_products_button_text != blank %}
+              <a class="button button--centered button--secondary all-products-button" href="/products">{{ all_products_button_text }}</a>  
+            {% endif %}
           {% endif %}
         {% else %}
           <div class="message-banner message-banner--centered message-banner--no-bg">{{ t['products.no_products'] }}</div>

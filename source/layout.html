@@ -273,7 +273,7 @@
       </a>
     </header>
     <main id="main">
-      <div class="content-wrapper content-wrapper--{{ page.permalink }} {{ theme.hero_image_width }}" data-bc-hook="content">
+      <div class="content-wrapper content-wrapper--{{ page.permalink }}" data-bc-hook="content">
         {% if page.category == 'custom' %}
           <div class="custom-page">
             <h1 class="page-title">{{ page.name }}</h1>
@@ -486,6 +486,9 @@
         homepageSlideshowAutoplay: {{ theme.homepage_slideshow_autoplay }},
         homepageSlideshowSpeed: {{ theme.homepage_slideshow_speed }},
         showBnplMessaging: {{ theme.show_bnpl_messaging }} && !themeFeatures.optOuts.includes("theme_bnpl_messaging"),
+        homeFeaturedVideoUrl: "{{ theme.home_featured_video_url }}",
+        homeFeaturedVideoSize: "{{ theme.home_featured_video_size }}",
+        homeFeaturedVideoBorder: "{{ theme.home_featured_video_border }}",
       };
       const themeColors = {
         backgroundColor: '{{ theme.background_color }}',
