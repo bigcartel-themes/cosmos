@@ -50,10 +50,20 @@
   </div>
 {% endif %}
 
+{% if theme.home_featured_video_url %}
+  {% assign featured_video_header = t['home.featured_video'] %}
+  <div class="home-featured-video-section">
+    {% if featured_video_header != blank %}
+      <h1 class="page-title">{{ featured_video_header }}</h1>
+    {% endif %}
+    <div id="featured-video"></div>
+  </div>
+{% endif %}
+
 <div class="home-content">
   {% if theme.featured_products > 0 %}
     <div class="home-featured-products">
-      <h1 class="featured-title">{{ theme.featured_header }}</h1>
+      <h1 class="featured-title">{{ t['home.featured_products'] }}</h1>
       {% paginate products from products.current by theme.featured_products order:theme.featured_order %}
         {% assign num_results = paginate.items %}
         {% if paginate.next.is_link %}
@@ -69,11 +79,13 @@
                 {% assign product_status = '' %}
                 {% case product.status %}
                   {% when 'active' %}
-                    {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+                    {% if product.on_sale %}
+                      {% assign product_status = t['products.on_sale'] %}
+                    {% endif %}
                   {% when 'sold-out' %}
-                    {% assign product_status = 'Sold out' %}
+                    {% assign product_status = t['products.sold_out'] %}
                   {% when 'coming-soon' %}
-                    {% assign product_status = 'Coming soon' %}
+                    {% assign product_status = t['products.coming_soon'] %}
                 {% endcase %}
                 {% capture image_class %}
                   {% if product.image.height > product.image.width %}
@@ -86,7 +98,7 @@
                 {% endcapture %}
                 {% capture status_class %}{% if product.status == 'active' and product.on_sale %}status-primary{% else %}status-secondary{% endif %}{% endcapture %}
                 <div class="product-list-thumb {{ product.css_class }}">
-                  <a class="product-list-link {% if theme.featured_products_layout != 'alternating' %}product-list-link--{{ theme.product_grid_info }}{% endif %} {{ theme.alternating_product_image_style }}" href="{{ product.url }}" title="View {{ product.name | escape }}">
+                  <a class="product-list-link {% if theme.featured_products_layout != 'alternating' %}product-list-link--{{ theme.product_grid_info }}{% endif %} {{ theme.alternating_product_image_style }}" href="{{ product.url }}" title="{{ product.name | escape }}">
                     <div class="product-list-image-container product-list-image-container-{{ theme.grid_image_style }}">
                       <img
                         alt=""
@@ -126,7 +138,7 @@
                         {% endunless %}
                       </div>
                       {% if theme.featured_products_layout == 'alternating' %}
-                        <button class="button product-list-shop-now">Shop Now</button>
+                        <button class="button product-list-shop-now">{{ t['navigation.shop'] }}</button>
                       {% endif %}
 
                       {% if product_status != blank %}<div class="product-list-thumb-status {{ status_class }}">{{ product_status }}</div>{% endif %}
@@ -137,10 +149,13 @@
             </div>
           </div>
           {% if paginate.pages > 1 %}
-            {% if theme.all_products_button_text != blank %}<a class="button button--centered button--secondary all-products-button" href="/products">{{ theme.all_products_button_text }}</a>{% endif %}
+            {% assign all_products_button_text = t['navigation.all_products'] %}
+            {% if all_products_button_text != blank %}
+              <a class="button button--centered button--secondary all-products-button" href="/products">{{ all_products_button_text }}</a>  
+            {% endif %}
           {% endif %}
         {% else %}
-          <div class="message-banner message-banner--centered message-banner--no-bg">No products found.</div>
+          <div class="message-banner message-banner--centered message-banner--no-bg">{{ t['products.no_products'] }}</div>
         {% endif %}
       {% endpaginate %}
     </div>
@@ -151,8 +166,8 @@
       {% assign category_collages_enabled = true %}
     {% endif %}
     <div class="featured-categories" data-category-collages-enabled="{{ category_collages_enabled }}">
-      {% if theme.home_page_categories_header %}
-        <h2 class="featured-title">{{ theme.home_page_categories_header }}</h2>
+      {% if t['home.featured_categories'] %}
+        <h2 class="featured-title">{{ t['home.featured_categories'] }}</h2>
       {% endif %}
       {% assign category_list_style = theme.home_page_categories_style %}
       <div class="product-list product-list--center category-list category-list--{{ category_list_style }} {% if num_results < 3 %}product-list--center{% endif %}">
@@ -161,7 +176,7 @@
             <a class="button button--secondary" href="{{ category.url }}">{{ category.name }}</a>
           {% else %}
             <div class="product-list-thumb category">
-              <a class="product-list-link category-link category-link--{{ theme.home_page_categories_name_style }}" href="{{ category.url }}" title="View {{ category.name | escape }}">
+              <a class="product-list-link category-link category-link--{{ theme.home_page_categories_name_style }}" href="{{ category.url }}" title="{{ category.name | escape }}">
                 {% comment %}Determine if category collages should be enabled based on feature flag setting{% endcomment %}
                 {% if category_collages_enabled == false %}
                   {% for product in category.products limit:1 %}
@@ -241,6 +256,7 @@
                       data-indicator-color="#000000"
                       data-grid-indicator-color="#000000"
                       data-count-display="{{ theme.home_page_categories_product_count_display }}"
+                      data-count-overlay-opacity="{{ theme.home_page_categories_count_overlay_opacity}}"
                     >
                       <!-- Default placeholder while image is being loaded -->
                       <img
