@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "images": [
     {
       "variable": "logo_image",
@@ -1795,6 +1795,7 @@
       "section": "translations",
       "sub_section": "cart",
       "type": "text",
+      "max_length": 250,
       "default": "Your cart is empty",
       "description": "Text for the empty cart message",
       "requires": [ "translation_mode eq manual" ]

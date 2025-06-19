@@ -37,10 +37,16 @@
       max-width: 100%
 
   &--constrained
+    max-width: calc(1080px + calc(var(--side-padding) * 2))
+    margin-left: auto
+    margin-right: auto
     border-radius: var(--border-radius)
 
     @media screen and (max-width: $break-small)
       border-radius: 0
+      margin-left: var(--side-padding)
+      margin-right: var(--side-padding)
+      max-width: none
 
     .home-hero-content, .home-hero-overlay, .home-hero-image
       border-radius: var(--border-radius)
