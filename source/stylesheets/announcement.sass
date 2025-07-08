@@ -12,6 +12,14 @@
   align-items: center
   justify-content: center
 
+  a, a:visited
+    color: var(--announcement-text-color)
+    text-decoration: underline
+    text-underline-offset: 3px
+
+    &:hover, &:focus
+      color: var(--link-hover-color)
+
   @media screen and (max-width: $break-small)
     padding: 14px 64px
 
