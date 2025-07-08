@@ -61,9 +61,24 @@
 {% endif %}
 
 <div class="home-content">
-  {% if theme.featured_products > 0 %}
-    <div class="home-featured-products">
-      <h1 class="featured-title">{{ t['home.featured_products'] }}</h1>
+  <div class="home-featured-products">
+    <div class="featured-container">
+      {% assign featured_header = t['home.featured'] %}
+      {% assign featured_text = theme.homepage_featured_text %}
+      {% assign featured_text_position = theme.homepage_featured_text_position %}
+      
+      {% if featured_text != blank and featured_text_position == "above" %}
+        <div class="featured-message">{{ featured_text }}</div>
+      {% endif %}
+
+      <h1 class="featured-title">{{ featured_header }}</h1>
+
+      {% if featured_text != blank and featured_text_position != "above" %}
+        <div class="featured-message">{{ featured_text }}</div>
+      {% endif %}
+    </div>
+
+    {% if theme.featured_products > 0 %}
       {% paginate products from products.current by theme.featured_products order:theme.featured_order %}
         {% assign num_results = paginate.items %}
         {% if paginate.next.is_link %}
@@ -158,8 +173,8 @@
           <div class="message-banner message-banner--centered message-banner--no-bg">{{ t['products.no_products'] }}</div>
         {% endif %}
       {% endpaginate %}
-    </div>
-  {% endif %}
+    {% endif %}
+  </div>
   {% if theme.show_home_page_categories and categories.active.size > 0 %}
     {% assign category_collages_enabled = false %}
     {% if theme.features.has_theme_category_collages %}
