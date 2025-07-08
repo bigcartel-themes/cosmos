@@ -650,6 +650,14 @@ footer
   &--errors
     background-color: var(--error-background-color)
     color: var(--error-text-color)
+  
+  a, a:visited
+    color: var(--announcement-text-color)
+    text-decoration: underline
+    text-underline-offset: 3px
+
+    &:hover, &:focus
+      color: var(--link-hover-color)
 
 button.button, a.button, div.button
   +appearance(none)
