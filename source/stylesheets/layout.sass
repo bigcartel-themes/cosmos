@@ -130,7 +130,7 @@ header
   font-family: var(--secondary-font)
 
   *
-    text-transform: #{"{{ theme.nav_text_transform }}"}
+    text-transform: #{"{{ theme.nav_text_transform_header }}"}
 
   @media screen and (max-width: $break-medium)
     font-size: 1em
@@ -363,6 +363,9 @@ footer
   padding: 64px 0
   font-family: var(--secondary-font)
   width: 100%
+
+  *
+    text-transform: #{"{{ theme.nav_text_transform_footer }}"}
 
   @media screen and (max-width: $break-small)
     padding: 32px 0
