@@ -4,11 +4,11 @@ if (homeSlideshowContainer) {
     var splide = new Splide( '.splide.home-slideshow', {
       arrows: true,
       pagination: true,
-      type: 'slide',
+      type: themeOptions.homepageSlideshowTransition,
+      rewind: true,
       autoplay: themeOptions.homepageSlideshowAutoplay,
       interval: themeOptions.homepageSlideshowSpeed,
       speed: 1500,
-      rewind: true,
       keyboard: true
     } );
     splide.mount();
