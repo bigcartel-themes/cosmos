@@ -8,7 +8,7 @@
 {% if has_hero_image or has_slideshow %}
   <div class="home-hero home-hero--{{ theme.hero_image_width }} {% if has_slideshow %}home-hero--slideshow{% endif %} {% unless theme.hero_image != blank or has_slideshow %}home-hero--no-image{% endunless %}">
     {% if has_slideshow %}
-      <div class="{% if theme.image_sets.slideshow.size > 1 %}splide{% endif %} home-slideshow" data-autoplay="{{ theme.homepage_slideshow_autoplay }}">
+      <div class="splide home-slideshow" data-autoplay="{{ theme.homepage_slideshow_autoplay }}">
         <div class="splide__track">
           <div class="splide__list">
             {% for image in theme.image_sets.slideshow %}
