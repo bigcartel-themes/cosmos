@@ -849,6 +849,32 @@
       ]
     },
     {
+      "variable": "homepage_slideshow_autoplay",
+      "label": "Auto-play homepage slideshow",
+      "section": "homepage",
+      "type": "boolean",
+      "default": true,
+      "description": "Automatically advances slides in the homepage slideshow"
+    },
+    {
+      "variable": "homepage_slideshow_speed",
+      "label": "Slideshow speed",
+      "section": "homepage",
+      "type": "select",
+      "options": [
+        ["Slowest", 6000],
+        ["Slower", 5000],
+        ["Normal", 4000],
+        ["Faster", 3500],
+        ["Fastest", 3000]
+      ],
+      "default": 4000,
+      "description": "Controls how quickly slides advance in the auto-playing slideshow",
+      "requires": [
+        "homepage_slideshow_autoplay eq true"
+      ]
+    },
+    {
       "variable": "hero_image_width",
       "label": "Hero image width",
       "section": "homepage",
@@ -903,32 +929,6 @@
       "description": "Controls the behavior of the hero button on the Home page",
       "requires": [
         "hero_button_text present"
-      ]
-    },
-    {
-      "variable": "homepage_slideshow_autoplay",
-      "label": "Auto-play homepage slideshow",
-      "section": "homepage",
-      "type": "boolean",
-      "default": true,
-      "description": "Automatically advances slides in the homepage slideshow"
-    },
-    {
-      "variable": "homepage_slideshow_speed",
-      "label": "Slideshow speed",
-      "section": "homepage",
-      "type": "select",
-      "options": [
-        ["Slowest", 6000],
-        ["Slower", 5000],
-        ["Normal", 4000],
-        ["Faster", 3500],
-        ["Fastest", 3000]
-      ],
-      "default": 4000,
-      "description": "Controls how quickly slides advance in the auto-playing slideshow",
-      "requires": [
-        "homepage_slideshow_autoplay eq true"
       ]
     },
     {
