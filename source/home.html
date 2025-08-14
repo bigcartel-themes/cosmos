@@ -12,7 +12,7 @@
         <div class="splide__track">
           <div class="splide__list">
             {% for image in theme.image_sets.slideshow %}
-              <div class="splide__slide">
+              <div class="splide__slide"{% if theme.hero_image_link != blank %} title="{{ theme.hero_image_link }}"{% endif %}>
                 <img
                   alt="Slideshow image {{ forloop.index }}"
                   {% if forloop.index == 1 %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
@@ -36,15 +36,20 @@
           {{ theme.images.hero_image.url | constrain: 2000 }} 2000w,
         "
         data-sizes="auto"
+        {% if theme.hero_image_link != blank %}title="{{ theme.hero_image_link }}"{% endif %}
       >
     {% endif %}
     {% if has_slideshow == false %}
       <div class="home-hero-overlay"></div>
     {% endif %}
-    {% if has_slideshow or has_hero_image %}
-      <div class="home-hero-content {% if theme.image_sets.slideshow.size > 0 %}home-hero-content--slideshow{% endif %}">
-        {% if theme.hero_welcome_text != blank %}<div class="home-hero-text">{{ theme.hero_welcome_text }}</div>{% endif %}
-        {% if theme.hero_button_text != blank %}<a href="/products" class="home-hero-button">{{ theme.hero_button_text }}</a>{% endif %}
+    {% if (has_slideshow or has_hero_image) and (theme.hero_welcome_text != blank or theme.hero_button_text != blank) %}
+      <div class="home-hero-content home-hero-content--slideshow">
+        {% if theme.hero_welcome_text != blank %}
+          <div class="home-hero-text">{{ theme.hero_welcome_text }}</div>
+        {% endif %}
+        {% if theme.hero_button_text != blank %}
+          <a href="{% if theme.hero_button_link != blank and theme.hero_button_behavior == 'navigate' %}{{ theme.hero_button_link }}{% else %}/products{% endif %}" class="home-hero-button">{{ theme.hero_button_text }}</a>
+        {% endif %}
       </div>
     {% endif %}
   </div>

@@ -858,7 +858,10 @@
         ["Fade", "fade"]
       ],
       "default": "slide",
-      "description": "Controls how homepage slideshow transitions between images"
+      "description": "Controls how homepage slideshow transitions between images",
+      "requires": [
+        "slideshow present"
+      ]
     },
     {
       "variable": "homepage_slideshow_autoplay",
@@ -866,7 +869,10 @@
       "section": "homepage",
       "type": "boolean",
       "default": true,
-      "description": "Automatically advances slides in the homepage slideshow"
+      "description": "Automatically advances slides in the homepage slideshow",
+      "requires": [
+        "slideshow present"
+      ]
     },
     {
       "variable": "homepage_slideshow_speed",
@@ -883,12 +889,13 @@
       "default": 4000,
       "description": "Controls how quickly slides advance in the auto-playing slideshow",
       "requires": [
+        "slideshow present",
         "homepage_slideshow_autoplay eq true"
       ]
     },
     {
       "variable": "hero_image_width",
-      "label": "Hero image width",
+      "label": "Hero width",
       "section": "homepage",
       "type": "select",
       "options": [
@@ -896,7 +903,10 @@
         ["Constrained", "constrained"]
       ],
       "default": "constrained",
-      "description": "Sets the width of your hero image"
+      "description": "Sets the width of your hero image or slideshow",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] }
+      ]
     },
     {
       "variable": "hero_overlay_opacity",
@@ -910,23 +920,32 @@
         ["Dark", "dark"],
         ["Very dark", "very_dark"]
       ],
-      "default": "none",
-      "description": "Adjust the home page slideshow or hero image to enhance the legibility of your hero text and button"
+      "default": "dark",
+      "description": "Adjust the home page slideshow or hero image to enhance the legibility of your hero text and button",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] }
+      ]
     },
     {
       "variable": "hero_welcome_text",
       "label": "Hero welcome text",
       "section": "homepage",
       "type": "text",
-      "description": "Displays a welcome message over your hero image"
+      "description": "Displays a welcome message over your hero image or slideshow",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] }
+      ]
     },
     {
       "variable": "hero_button_text",
       "label": "Hero button text",
       "section": "homepage",
       "type": "text",
-      "description": "Displays over your hero image and links to your Products page",
-      "default": "Shop now"
+      "description": "Displays a button over hero image or slideshow",
+      "default": "Shop now",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] }
+      ]
     },
     {
       "variable": "hero_button_behavior",
@@ -935,12 +954,38 @@
       "type": "select",
       "options": [
         ["Scroll down page", "scroll"],
-        ["Go to Products Page", "navigate"]
+        ["Navigate", "navigate"]
       ],
       "default": "scroll",
-      "description": "Controls the behavior of the hero button on the Home page",
+      "description": "Controls the behavior of the hero button on the Home page.",
       "requires": [
+        { "any": ["slideshow present", "hero_image present"] },
         "hero_button_text present"
+      ]
+    },
+    {
+      "variable": "hero_button_link",
+      "label": "Hero button link",
+      "section": "homepage",
+      "type": "text",
+      "default": "/products",
+      "description": "Link destination for the hero button. Accepts relative paths (e.g. /products) or full URLs.",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] },
+        "hero_button_text present",
+        "hero_button_behavior eq navigate"
+      ]
+    },
+    {
+      "variable": "hero_image_link",
+      "label": "Hero image link",
+      "section": "homepage",
+      "type": "text",
+      "default": "",
+      "description": "Optionally makes the hero image or slideshow clickable. Leave blank to disable. Accepts relative paths (e.g. /products) or full URLs.",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] },
+        "hero_button_text neq present"
       ]
     },
     {
