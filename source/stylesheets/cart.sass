@@ -81,7 +81,6 @@
   .option-name
     font-size: 1em
     font-weight: 400
-    margin-top: 12px
 
   input
     border: none
@@ -168,8 +167,12 @@
     min-width: 100px
     min-height: 42px
     display: flex
+    flex-direction: column
     justify-content: flex-end
     text-align: right
+
+    .price-suffix
+      font-size: 0.9rem
 
     @media screen and (max-width: $break-large)
       font-size: 1.2rem
