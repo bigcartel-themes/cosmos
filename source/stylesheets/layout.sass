@@ -463,9 +463,17 @@ footer
         svg
           flex-shrink: 0
           fill: currentColor
-          height: 16px
+          height: 20px
           position: relative
-          width: 16px
+          width: 20px
+
+          &.tumblr-icon
+            width: 14px
+
+          &.reddit-icon,
+          &.discord-icon
+            width: 22px
+            height: 22px
 
 .social-icons
   display: flex
@@ -493,11 +501,16 @@ footer
 
     svg
       fill: currentColor
-      height: 22px
-      width: 22px
+      height: 28px
+      width: 28px
 
       &.tumblr-icon
-        width: 14px
+        width: 15px
+      
+      &.reddit-icon,
+      &.discord-icon
+        height: 30px
+        width: 30px
 
 .credit-container
   margin-left: auto
