@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "1.9.1",
+  "version": "1.10.0",
   "images": [
     {
       "variable": "logo_image",
@@ -646,7 +646,7 @@
     },
     {
       "variable": "nav_menu_style",
-      "label": "Menu style to use in shop header",
+      "label": "Header menu style",
       "section": "global_navigation",
       "type": "select",
       "options": [
@@ -655,11 +655,11 @@
       ],
       "default": "dropdown",
       "upgrade_default": "inline",
-      "description": "Choose how to display shop header menu items"
+      "description": "Display navigation as a dropdown or inline"
     },
     {
       "variable": "nav_page_display",
-      "label": "Pages to show in your navigation",
+      "label": "Pages to show in your header",
       "section": "global_navigation",
       "type": "select",
       "options": [
@@ -669,37 +669,46 @@
         ["None", "none"]
       ],
       "default": "all",
-      "description": "Select which types of pages appear in your header and footer",
-      "requires": [
-        "nav_menu_style eq inline"
-      ]
+      "description": "Select which types of pages appear in your header"
     },
     {
       "variable": "nav_items",
-      "label": "Custom pages in header",
+      "label": "Custom page limit in header",
       "section": "global_navigation",
       "type": "select",
-      "options": "0..6",
-      "default": 2,
-      "description": "Number of custom pages shown in your shop's header",
+      "options": "0..100",
+      "default": 5,
+      "description": "Maximum number of custom pages shown in your header",
       "requires": [
-        "nav_menu_style eq inline",
         "nav_page_display neq contact_only",
         "nav_page_display neq none"
       ]
     },
     {
-      "variable": "nav_text_transform",
+      "variable": "nav_text_transform_header",
       "label": "Transform text in shop header",
       "section": "global_navigation",
       "type": "select",
       "options": [
-        ["Normal", "initial"],
+        ["Default (Sentence case)", "initial"],
         ["Uppercase", "uppercase"],
         ["Lowercase", "lowercase"]
       ],
       "default": "initial",
-      "description": "Controls the text case styling in your shop header"
+      "description": "Controls the text case styling in your main navigation"
+    },
+    {
+      "variable": "nav_text_transform_footer",
+      "label": "Transform text in shop footer",
+      "section": "global_navigation",
+      "type": "select",
+      "options": [
+        ["Default (Sentence case)", "initial"],
+        ["Uppercase", "uppercase"],
+        ["Lowercase", "lowercase"]
+      ],
+      "default": "initial",
+      "description": "Controls the text case styling in the footer, excluding custom footer text"
     },
     {
       "variable": "show_search",
@@ -786,20 +795,39 @@
       }
     },
     {
+      "variable": "nav_page_display_footer",
+      "label": "Pages to show in your footer",
+      "section": "global_navigation",
+      "type": "select",
+      "options": [
+        ["All pages", "all"],
+        ["Custom pages only", "pages_only"],
+        ["Contact page only", "contact_only"],
+        ["None", "none"]
+      ],
+      "default": "all",
+      "description": "Select which types of pages appear in your footer"
+    },
+    {
+      "variable": "nav_items_footer",
+      "label": "Custom page limit in footer",
+      "section": "global_navigation",
+      "type": "select",
+      "options": "0..100",
+      "default": 100,
+      "description": "Maximum number of custom pages shown in your footer",
+      "requires": [
+        "nav_page_display_footer neq contact_only",
+        "nav_page_display_footer neq none"
+      ]
+    },
+    {
       "variable": "show_categories_in_footer",
       "label": "Show categories in footer",
       "section": "global_navigation",
       "type": "boolean",
       "default": true,
       "description": "Display product category links in your footer"
-    },
-    {
-      "variable": "show_custom_pages_in_footer",
-      "label": "Show custom pages in footer",
-      "section": "global_navigation",
-      "type": "boolean",
-      "default": true,
-      "description": "Display links to your custom pages in your footer"
     },
     {
       "variable": "footer_text",
@@ -825,60 +853,18 @@
       ]
     },
     {
-      "variable": "hero_image_width",
-      "label": "Hero image width",
+      "variable": "homepage_slideshow_transition",
+      "label": "Slideshow type",
       "section": "homepage",
       "type": "select",
       "options": [
-        ["Full page", "full-page"],
-        ["Constrained", "constrained"]
+        ["Slide", "slide"],
+        ["Fade", "fade"]
       ],
-      "default": "constrained",
-      "description": "Sets the width of your hero image"
-    },
-    {
-      "variable": "hero_overlay_opacity",
-      "label": "Hero overlay opacity",
-      "section": "homepage",
-      "type": "select",
-      "options": [
-        ["Very bright", "very_bright"],
-        ["Bright", "bright"],
-        ["None", "none"],
-        ["Dark", "dark"],
-        ["Very dark", "very_dark"]
-      ],
-      "default": "none",
-      "description": "Adjust the home page slideshow or hero image to enhance the legibility of your hero text and button"
-    },
-    {
-      "variable": "hero_welcome_text",
-      "label": "Hero welcome text",
-      "section": "homepage",
-      "type": "text",
-      "description": "Displays a welcome message over your hero image"
-    },
-    {
-      "variable": "hero_button_text",
-      "label": "Hero button text",
-      "section": "homepage",
-      "type": "text",
-      "description": "Displays over your hero image and links to your Products page",
-      "default": "Shop now"
-    },
-    {
-      "variable": "hero_button_behavior",
-      "label": "Hero Button Behavior",
-      "section": "homepage",
-      "type": "select",
-      "options": [
-        ["Scroll down page", "scroll"],
-        ["Go to Products Page", "navigate"]
-      ],
-      "default": "scroll",
-      "description": "Controls the behavior of the hero button on the Home page",
+      "default": "slide",
+      "description": "Controls how homepage slideshow transitions between images",
       "requires": [
-        "hero_button_text present"
+        "slideshow present"
       ]
     },
     {
@@ -887,7 +873,10 @@
       "section": "homepage",
       "type": "boolean",
       "default": true,
-      "description": "Automatically advances slides in the homepage slideshow"
+      "description": "Automatically advances slides in the homepage slideshow",
+      "requires": [
+        "slideshow present"
+      ]
     },
     {
       "variable": "homepage_slideshow_speed",
@@ -904,7 +893,103 @@
       "default": 4000,
       "description": "Controls how quickly slides advance in the auto-playing slideshow",
       "requires": [
+        "slideshow present",
         "homepage_slideshow_autoplay eq true"
+      ]
+    },
+    {
+      "variable": "hero_image_width",
+      "label": "Hero width",
+      "section": "homepage",
+      "type": "select",
+      "options": [
+        ["Full page", "full-page"],
+        ["Constrained", "constrained"]
+      ],
+      "default": "constrained",
+      "description": "Sets the width of your hero image or slideshow",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] }
+      ]
+    },
+    {
+      "variable": "hero_overlay_opacity",
+      "label": "Hero overlay opacity",
+      "section": "homepage",
+      "type": "select",
+      "options": [
+        ["Very bright", "very_bright"],
+        ["Bright", "bright"],
+        ["None", "none"],
+        ["Dark", "dark"],
+        ["Very dark", "very_dark"]
+      ],
+      "default": "dark",
+      "description": "Adjust the home page slideshow or hero image to enhance the legibility of your hero text and button",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] }
+      ]
+    },
+    {
+      "variable": "hero_welcome_text",
+      "label": "Hero welcome text",
+      "section": "homepage",
+      "type": "text",
+      "description": "Displays a welcome message over your hero image or slideshow",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] }
+      ]
+    },
+    {
+      "variable": "hero_button_text",
+      "label": "Hero button text",
+      "section": "homepage",
+      "type": "text",
+      "description": "Displays a button over hero image or slideshow",
+      "default": "Shop now",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] }
+      ]
+    },
+    {
+      "variable": "hero_button_behavior",
+      "label": "Hero Button Behavior",
+      "section": "homepage",
+      "type": "select",
+      "options": [
+        ["Scroll down page", "scroll"],
+        ["Navigate", "navigate"]
+      ],
+      "default": "scroll",
+      "description": "Controls the behavior of the hero button on the Home page.",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] },
+        "hero_button_text present"
+      ]
+    },
+    {
+      "variable": "hero_button_link",
+      "label": "Hero button link",
+      "section": "homepage",
+      "type": "text",
+      "default": "/products",
+      "description": "Link destination for the hero button. Accepts relative paths (e.g. /products) or full URLs.",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] },
+        "hero_button_text present",
+        "hero_button_behavior eq navigate"
+      ]
+    },
+    {
+      "variable": "hero_image_link",
+      "label": "Hero image link",
+      "section": "homepage",
+      "type": "text",
+      "default": "",
+      "description": "Optionally makes the hero image or slideshow clickable. Leave blank to disable. Accepts relative paths (e.g. /products) or full URLs.",
+      "requires": [
+        { "any": ["slideshow present", "hero_image present"] },
+        "hero_button_text neq present"
       ]
     },
     {
@@ -1113,10 +1198,13 @@
       "options": [
         ["Currency sign", "sign"],
         ["Currency code", "code"],
-        ["No currency indicator", "none"]
+        ["No currency indicator", "none"],
+        ["Currency sign (rounded)", "sign_rounded"],
+        ["Currency code (rounded)", "code_rounded"],
+        ["No currency indicator (rounded)", "rounded"]
       ],
       "default": "sign",
-      "description": "Sets how prices appear in your shop"
+      "description": "Choose how prices display. Rounded options remove decimals and round up to the next whole number."
     },
     {
       "variable": "show_sold_out_product_prices",
@@ -1133,6 +1221,27 @@
       "type": "boolean",
       "default": true,
       "description": "Show the price of coming soon products on product grids and product pages"
+    },
+    {
+      "variable": "product_variable_pricing_display_format",
+      "label": "Price display for products with varying prices",
+      "section": "product_page",
+      "type": "select",
+      "options": [
+        ["Show price range", "default"],
+        ["Show lowest price only", "min_only"],
+        ["Show highest price only", "max_only"]
+      ],
+      "default": "default",
+      "description": "Choose how to display prices in your product grid when a product's variants have different prices. Individual product pages will always show the full range."
+    },
+    {
+      "variable": "show_product_variant_count_in_grid",
+      "label": "Show product variant count in product grids",
+      "section": "product_page",
+      "type": "boolean",
+      "default": false,
+      "description": "For products with multiple variants, show the variant count in product grids."
     },
     {
       "variable": "product_image_zoom",
@@ -1181,8 +1290,8 @@
       "label": "Related products",
       "section": "product_page",
       "type": "select",
-      "options": "1..8",
-      "default": 4,
+      "options": "1..12",
+      "default": 6,
       "description": "The maximum number of related products to show on Product pages",
       "requires": [
         "show_related_products eq true"
@@ -1261,7 +1370,15 @@
       "section": "messaging",
       "type": "textarea",
       "max_length": 1024,
-      "description": "Displays a message at the top of your contact page. Supports HTML for advanced customization."
+      "description": "Message displayed at the top of your contact page. Supports HTML for advanced customization."
+    },
+    {
+      "variable": "show_contact_form",
+      "label": "Show contact form",
+      "section": "messaging",
+      "type": "boolean",
+      "default": true,
+      "description": "Display contact form on contact page. If disabled, only contact text is shown."
     },
     {
       "variable": "cart_text",
@@ -1302,7 +1419,6 @@
       "description": "Select how text appears throughout your shop. Automatic uses our default translations for your chosen language. Manual lets you customize individual text elements to improve translations or personalize messaging."
     },
 
-    // Manual Navigation Translations
     {
       "variable": "navigation_home_tr_text",
       "label": "'Home'",
@@ -1469,7 +1585,7 @@
       "section": "translations",
       "sub_section": "navigation",
       "type": "text",
-      "default": "Follow us",
+      "default": "Subscribe",
       "description": "Text for links to your Subscribe page if you are using the <a href='/account/payment-options'>Subscriptions Beta</a> feature",
       "requires": [ "translation_mode eq manual" ]
     },
@@ -1514,7 +1630,6 @@
       "requires": [ "translation_mode eq manual" ]
     },
 
-    // Homepage Translations
     {
       "variable": "home_featured_products_tr_text",
       "label": "'Featured products'",
@@ -1570,7 +1685,6 @@
       "requires": [ "translation_mode eq manual" ]
     },
 
-    // Manual Product Translations
     {
       "variable": "products_add_to_cart_tr_text",
       "label": "'Add to cart'",
@@ -1599,6 +1713,26 @@
       "type": "text",
       "default": "Select",
       "description": "Text for the word used before product variant group dropdowns and selections (e.g. 'Select <variant group name>')",
+      "requires": [ "translation_mode eq manual" ]
+    },
+    {
+      "variable": "products_variant_tr_text",
+      "label": "'Option'",
+      "section": "translations",
+      "sub_section": "products",
+      "type": "text",
+      "default": "Option",
+      "description": "Text in some cases to reference the product variant (singular)",
+      "requires": [ "translation_mode eq manual" ]
+    },
+    {
+      "variable": "products_variants_tr_text",
+      "label": "'Options'",
+      "section": "translations",
+      "sub_section": "products",
+      "type": "text",
+      "default": "Options",
+      "description": "Text in some cases to reference product variants (plural)",
       "requires": [ "translation_mode eq manual" ]
     },
     {
@@ -1704,7 +1838,6 @@
       "requires": [ "translation_mode eq manual" ]
     },
 
-    // Manual Cart Translations
     {
       "variable": "cart_checkout_tr_text",
       "label": "'Checkout'",
@@ -1807,7 +1940,6 @@
       "requires": [ "translation_mode eq manual" ]
     },
 
-    // Manual Contact Translations
     {
       "variable": "contact_name_tr_text",
       "label": "'Name'",
@@ -1870,7 +2002,6 @@
       "requires": [ "translation_mode eq manual" ]
     },
 
-    // Social Profile URL Settings
     {
       "variable": "instagram_url",
       "label": "Instagram URL",
@@ -1954,6 +2085,34 @@
       "section": "social",
       "type": "text",
       "description": "Ex: https://twitch.tv/username"
+    },
+    {
+      "variable": "telegram_url",
+      "label": "Telegram URL",
+      "section": "social",
+      "type": "text",
+      "description": "Ex: https://t.me/username"
+    },
+    {
+      "variable": "discord_url",
+      "label": "Discord URL",
+      "section": "social",
+      "type": "text",
+      "description": "Ex: https://discord.gg/username"
+    },
+    {
+      "variable": "reddit_url",
+      "label": "Reddit URL",
+      "section": "social",
+      "type": "text",
+      "description": "Ex: https://reddit.com/r/subreddit"
+    },
+    {
+      "variable": "signal_url",
+      "label": "Signal URL",
+      "section": "social",
+      "type": "text",
+      "description": "Ex: https://signal.group/..."
     },
     {
       "variable": "tumblr_url",

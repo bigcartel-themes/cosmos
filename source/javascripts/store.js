@@ -47,18 +47,74 @@ function setDocHeight() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const isHomePage = document.body.getAttribute('data-bc-page-type') === 'home';
+  const heroButtonLink = themeOptions.heroButtonLink && themeOptions.heroButtonLink.trim() !== '' ? themeOptions.heroButtonLink : null;
+  const heroImageLink = themeOptions.heroImageLink && themeOptions.heroImageLink.trim() !== '' ? themeOptions.heroImageLink : null;
+  const heroButtonBehavior = themeOptions.heroButtonBehavior;
   if (isHomePage) {
     const heroButton = document.querySelector(".home-hero-button");
     if (heroButton) {
       heroButton.addEventListener("click", function (event) {
-        if (themeOptions.heroButtonBehavior === "scroll") {
+        if (heroButtonBehavior === "scroll") {
           event.preventDefault();
           const targetElement = document.querySelector("#main");
           if (targetElement) {
             smoothScroll(targetElement, 1000, -250);
           }
+        } else if (heroButtonBehavior === "navigate") {
+          // Use external link detection for proper tab behavior
+          if (isExternalLink(event.target.href)) {
+            event.preventDefault();
+            event.stopPropagation();
+            window.open(event.target.href, '_blank', 'noopener,noreferrer');
+          }
+          // Let internal links use template's href naturally
         }
       });
+    }
+
+    // Add clickable functionality to hero/slideshow when no button is present
+    // and a URL is configured (button behavior only applies when button exists)
+    if (!heroButton && heroImageLink) {
+      const heroArea = document.querySelector(".home-hero");
+      const slideshow = document.querySelector(".home-slideshow");
+      
+      if (slideshow) {
+        // For slideshow, only make the slides clickable, not the entire hero area
+        // This prevents interfering with splide navigation controls
+        const slides = slideshow.querySelectorAll('.splide__slide');
+        slides.forEach(slide => {
+          slide.classList.add("hero-clickable");
+          slide.setAttribute("role", "button");
+          slide.setAttribute("aria-label", "Navigate to " + heroImageLink);
+        });
+        
+        // Use event delegation: single listener on slideshow container
+        slideshow.addEventListener("click", function(event) {
+          const clickedSlide = event.target.closest('.splide__slide');
+          if (clickedSlide && !event.target.closest('.splide__arrow, .splide__pagination')) {
+            // Don't interfere with splide controls - only handle clicks on slide content
+            event.preventDefault();
+            event.stopPropagation();
+            if (isExternalLink(heroImageLink)) {
+              window.open(heroImageLink, '_blank', 'noopener,noreferrer');
+            } else {
+              window.location.href = heroImageLink;
+            }
+          }
+        });
+      } else if (heroArea) {
+        // For single hero image, make the whole area clickable
+        heroArea.classList.add("hero-clickable");
+        heroArea.setAttribute("role", "button");
+        heroArea.setAttribute("aria-label", "Navigate to " + heroImageLink);
+        heroArea.addEventListener("click", function(event) {
+          if (isExternalLink(heroImageLink)) {
+            window.open(heroImageLink, '_blank', 'noopener,noreferrer');
+          } else {
+            window.location.href = heroImageLink;
+          }
+        });
+      }
     }
 
     const featuredCategoriesContainerSelector = '.featured-categories';
