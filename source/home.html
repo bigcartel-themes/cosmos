@@ -76,9 +76,11 @@
         <div class="featured-message">{{ featured_text }}</div>
       {% endif %}
 
-      <h1 class="featured-title">{{ featured_header }}</h1>
+      {% if theme.featured_products > 0 %}
+        <h1 class="featured-title">{{ featured_header }}</h1>
+      {% endif %}
 
-      {% if featured_text != blank and featured_text_position != "above" %}
+      {% if featured_text != blank and featured_text_position != "above" and theme.featured_products > 0 %}
         <div class="featured-message">{{ featured_text }}</div>
       {% endif %}
     </div>
@@ -205,6 +207,10 @@
     <div class="featured-categories" data-category-collages-enabled="{{ category_collages_enabled }}">
       {% if t['home.featured_categories'] %}
         <h2 class="featured-title">{{ t['home.featured_categories'] }}</h2>
+      {% endif %}
+      {% comment %}Show featured text with "within" position when there are no featured products{% endcomment %}
+      {% if theme.homepage_featured_text != blank and theme.homepage_featured_text_position == "within" and theme.featured_products == 0 %}
+        <div class="featured-message">{{ theme.homepage_featured_text }}</div>
       {% endif %}
       {% assign category_list_style = theme.home_page_categories_style %}
       <div class="product-list product-list--center category-list category-list--{{ category_list_style }} {% if num_results < 3 %}product-list--center{% endif %}">
