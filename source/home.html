@@ -185,21 +185,20 @@
                   </a>
                 </div>
               {% endfor %}
-            </div>
           </div>
-          {% if paginate.pages > 1 %}
-            {% assign all_products_button_text = t['navigation.all_products'] %}
-            {% if all_products_button_text != blank %}
-              <a class="button button--centered button--secondary all-products-button" href="/products">{{ all_products_button_text }}</a>  
-            {% endif %}
-          {% endif %}
+        </div>
         {% else %}
           <div class="message-banner message-banner--centered message-banner--no-bg">{{ t['products.no_products'] }}</div>
         {% endif %}
       {% endpaginate %}
     {% endif %}
   </div>
-  {% if theme.show_home_page_categories and categories.active.size > 0 %}
+  {%- assign fc_num = theme.featured_categories | plus: 0 -%}
+  {%- assign can_show_categories = false -%}
+  {%- if theme.show_home_page_categories and fc_num > 0 and categories.active.size > 0 -%}
+    {%- assign can_show_categories = true -%}
+  {%- endif -%}
+  {% if can_show_categories %}
     {% assign category_collages_enabled = false %}
     {% if theme.features.has_theme_category_collages %}
       {% assign category_collages_enabled = true %}
@@ -321,4 +320,18 @@
       </div>
     </div>
   {% endif %}
+
+  {%- comment -%}
+    All products button should appear after the last featured section
+    - After categories if both are shown
+    - After products if only products are shown
+    - After categories if only categories are shown
+  {%- endcomment -%}
+  {%- assign show_featured_products = theme.featured_products > 0 and products.all.size > 0 -%}
+  {%- if (can_show_categories or show_featured_products) and products.all.size > 0 -%}
+    {%- assign all_products_button_text = t['navigation.all_products'] -%}
+    {%- if all_products_button_text != blank -%}
+      <a class="button button--centered button--secondary all-products-button" href="/products">{{ all_products_button_text }}</a>
+    {%- endif -%}
+  {%- endif -%}
 </div>
