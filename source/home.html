@@ -141,7 +141,7 @@
                       {% if product_status != blank %}<div class="product-list-thumb-status {{ status_class }}">{{ product_status }}</div>{% endif %}
                     </div>
                     <div class="product-list-thumb-info">
-                      <div class="product-list-thumb-name">{{ product.name }}</div>
+                      <div class="product-list-thumb-name{% if theme.truncate_product_names_two_lines %} product-list-thumb-name--truncate{% endif %}">{{ product.name }}</div>
                       <div class="product-list-thumb-price">
                         {% assign hide_price = false %}
                         {% if product.status == 'sold-out' and theme.show_sold_out_product_prices == false %}
@@ -255,7 +255,7 @@
                       >
                     </div>
                     <div class="product-list-thumb-info">
-                      <div class="product-list-thumb-name">{{ category.name }}</div>
+                      <div class="product-list-thumb-name{% if theme.truncate_product_names_two_lines %} product-list-thumb-name--truncate{% endif %}">{{ category.name }}</div>
                     </div>
                   {% endfor %}
                 {% else %}
@@ -305,7 +305,7 @@
                       >
                     </div>
                     <div class="product-list-thumb-info">
-                      <div class="product-list-thumb-name">{{ category.name }}</div>
+                      <div class="product-list-thumb-name{% if theme.truncate_product_names_two_lines %} product-list-thumb-name--truncate{% endif %}">{{ category.name }}</div>
                       {% if theme.home_page_categories_product_count_display %}
                         <div class="product-list-thumb-price category-count">
                           {{ category.products.size | pluralize: t['products.product'], t['products.products'] }}

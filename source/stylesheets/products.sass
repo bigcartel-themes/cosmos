@@ -290,17 +290,15 @@ a.product-list-link
   @media screen and (max-width: $break-small)
     font-size: 1rem
 
-{% if theme.truncate_product_names_two_lines %}
-.product-list-thumb .product-list-thumb-name
-  line-height: 1.4
-  display: -webkit-box
-  -webkit-box-orient: vertical
-  overflow: hidden
-  text-overflow: ellipsis
-  -webkit-line-clamp: 2
-  padding-bottom: 2px
-  white-space: normal
-{% endif %}
+  &--truncate
+    line-height: 1.4
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    overflow: hidden
+    text-overflow: ellipsis
+    -webkit-line-clamp: 2
+    padding-bottom: 2px
+    white-space: normal
 
 .product-list-thumb-price
   font-size: 0.9rem
