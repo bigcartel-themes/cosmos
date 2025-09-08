@@ -756,6 +756,15 @@
       "description": "Shows a product's name & price on hover, or under the image"
     },
     {
+      "variable": "truncate_product_names_two_lines",
+      "label": "Limit product names to 2 lines",
+      "section": "global_navigation",
+      "type": "boolean",
+      "default": true,
+      "upgrade_default": false,
+      "description": "Truncate product names to two lines with an ellipsis in product grids"
+    },
+    {
       "variable": "max_products_per_row",
       "label": "Maximum products per row",
       "section": "global_navigation",
