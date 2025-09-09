@@ -193,9 +193,8 @@
       {% endpaginate %}
     {% endif %}
   </div>
-  {%- assign fc_num = theme.featured_categories | plus: 0 -%}
   {%- assign can_show_categories = false -%}
-  {%- if theme.show_home_page_categories and fc_num > 0 and categories.active.size > 0 -%}
+  {%- if theme.show_home_page_categories and theme.featured_categories > 0 and categories.active.size > 0 -%}
     {%- assign can_show_categories = true -%}
   {%- endif -%}
   {% if can_show_categories %}
@@ -329,10 +328,17 @@
     - After categories if only categories are shown
   {%- endcomment -%}
   {%- assign show_featured_products = theme.featured_products > 0 and products.all.size > 0 -%}
-  {%- if (can_show_categories or show_featured_products) and products.all.size > 0 -%}
-    {%- assign all_products_button_text = t['navigation.all_products'] -%}
-    {%- if all_products_button_text != blank -%}
-      <a class="button button--centered button--secondary all-products-button" href="/products">{{ all_products_button_text }}</a>
+  {%- comment -%}
+    Hide the All Products button when both featured sections are disabled.
+  {%- endcomment -%}
+  {%- if products.all.size > 0 -%}
+    {%- if can_show_categories or show_featured_products -%}
+      {%- unless theme.featured_products == 0 and theme.featured_categories == 0 -%}
+        {%- assign all_products_button_text = t['navigation.all_products'] -%}
+        {%- if all_products_button_text != blank -%}
+          <a class="button button--centered button--secondary all-products-button" href="/products">{{ all_products_button_text }}</a>
+        {%- endif -%}
+      {%- endunless -%}
     {%- endif -%}
   {%- endif -%}
 </div>
