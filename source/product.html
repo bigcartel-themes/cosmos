@@ -286,7 +286,7 @@
                   {% if related_product_status != blank %}<div class="product-list-thumb-status {{ related_product_status_class }}">{{ related_product_status }}</div>{% endif %}
                 </div>
                 <div class="product-list-thumb-info">
-                  <div class="product-list-thumb-name">{{ related_product.name }}</div>
+                  <div class="product-list-thumb-name{% if theme.truncate_product_names_two_lines %} product-list-thumb-name--truncate{% endif %}">{{ related_product.name }}</div>
                   <div class="product-list-thumb-price">
                     {% assign hide_price = false %}
                     {% if related_product.status == 'sold-out' and theme.show_sold_out_product_prices == false %}

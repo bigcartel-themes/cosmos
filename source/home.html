@@ -141,7 +141,7 @@
                       {% if product_status != blank %}<div class="product-list-thumb-status {{ status_class }}">{{ product_status }}</div>{% endif %}
                     </div>
                     <div class="product-list-thumb-info">
-                      <div class="product-list-thumb-name">{{ product.name }}</div>
+                      <div class="product-list-thumb-name{% if theme.truncate_product_names_two_lines %} product-list-thumb-name--truncate{% endif %}">{{ product.name }}</div>
                       <div class="product-list-thumb-price">
                         {% assign hide_price = false %}
                         {% if product.status == 'sold-out' and theme.show_sold_out_product_prices == false %}
@@ -193,9 +193,8 @@
       {% endpaginate %}
     {% endif %}
   </div>
-  {%- assign fc_num = theme.featured_categories | plus: 0 -%}
   {%- assign can_show_categories = false -%}
-  {%- if theme.show_home_page_categories and fc_num > 0 and categories.active.size > 0 -%}
+  {%- if theme.show_home_page_categories and theme.featured_categories > 0 and categories.active.size > 0 -%}
     {%- assign can_show_categories = true -%}
   {%- endif -%}
   {% if can_show_categories %}
@@ -255,7 +254,7 @@
                       >
                     </div>
                     <div class="product-list-thumb-info">
-                      <div class="product-list-thumb-name">{{ category.name }}</div>
+                      <div class="product-list-thumb-name{% if theme.truncate_product_names_two_lines %} product-list-thumb-name--truncate{% endif %}">{{ category.name }}</div>
                     </div>
                   {% endfor %}
                 {% else %}
@@ -283,7 +282,8 @@
                       {% capture image_urls %}
                         [{% for product in category.products limit:4 %}"{{ product.image | product_image_url | constrain: 400 }}"{% unless forloop.last %},{% endunless %}{% endfor %}]
                       {% endcapture %}
-                    {% elsif theme.home_page_categories_image_style == "single" %}
+                    {% else %}
+                      {% comment %} Fallback to single image (first product) {% endcomment %}
                       {% capture image_urls %}
                         ["{{ first_product.image | product_image_url | constrain: 800 }}"]
                       {% endcapture %}
@@ -304,12 +304,12 @@
                       >
                     </div>
                     <div class="product-list-thumb-info">
-                      <div class="product-list-thumb-name">
-                        {{ category.name }}
-                        {% if theme.home_page_categories_product_count_display %}
-                          <span class="category-count">({{ category.products.size }})</span>
-                        {% endif %}
-                      </div>
+                      <div class="product-list-thumb-name{% if theme.truncate_product_names_two_lines %} product-list-thumb-name--truncate{% endif %}">{{ category.name }}</div>
+                      {% if theme.home_page_categories_product_count_display %}
+                        <div class="product-list-thumb-price category-count">
+                          {{ category.products.size | pluralize: t['products.product'], t['products.products'] }}
+                        </div>
+                      {% endif %}
                     </div>
                   {% endif %}
                 {% endif %}
@@ -328,10 +328,17 @@
     - After categories if only categories are shown
   {%- endcomment -%}
   {%- assign show_featured_products = theme.featured_products > 0 and products.all.size > 0 -%}
-  {%- if (can_show_categories or show_featured_products) and products.all.size > 0 -%}
-    {%- assign all_products_button_text = t['navigation.all_products'] -%}
-    {%- if all_products_button_text != blank -%}
-      <a class="button button--centered button--secondary all-products-button" href="/products">{{ all_products_button_text }}</a>
+  {%- comment -%}
+    Hide the All Products button when both featured sections are disabled.
+  {%- endcomment -%}
+  {%- if products.all.size > 0 -%}
+    {%- if can_show_categories or show_featured_products -%}
+      {%- unless theme.featured_products == 0 and theme.featured_categories == 0 -%}
+        {%- assign all_products_button_text = t['navigation.all_products'] -%}
+        {%- if all_products_button_text != blank -%}
+          <a class="button button--centered button--secondary all-products-button" href="/products">{{ all_products_button_text }}</a>
+        {%- endif -%}
+      {%- endunless -%}
     {%- endif -%}
   {%- endif -%}
 </div>
