@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "1.10.4",
+  "version": "1.10.5",
   "images": [
     {
       "variable": "logo_image",
@@ -727,7 +727,7 @@
       "default": 3,
       "description": "The maximum number of Home page categories displayed per row",
       "requires": [
-        "show_home_page_categories eq true"
+        "featured_categories gt 0"
       ]
     },
     {
@@ -1116,24 +1116,13 @@
       ]
     },
     {
-      "variable": "show_home_page_categories",
-      "label": "Display categories on Home page",
-      "section": "homepage",
-      "type": "boolean",
-      "default": true,
-      "description": "Displays categories as a grid on the Home page"
-    },
-    {
       "variable": "featured_categories",
       "label": "Featured categories",
       "section": "homepage",
       "type": "select",
-      "options": "1..48",
-      "default": 12,
-      "description": "The number of categories displayed on the Home page",
-      "requires": [
-        "show_home_page_categories eq true"
-      ]
+      "options": "0..48",
+      "default": 0,
+      "description": "The number of categories displayed on the Home page"
     },
     {
       "variable": "home_page_categories_style",
@@ -1147,7 +1136,7 @@
       "default": "thumbnails",
       "description": "Sets the display of images in the product grid",
       "requires": [
-        "show_home_page_categories eq true"
+        "featured_categories gt 0"
       ]
     },
     {
@@ -1166,7 +1155,7 @@
       "description": "Choose layout style for category images on the Home page",
       "requires": [
         "feature:theme_category_collages eq visible",
-        "show_home_page_categories eq true",
+        "featured_categories gt 0",
         "home_page_categories_style eq thumbnails"
       ]
     },
@@ -1179,7 +1168,7 @@
       "description": "Display the number of products next to each category name",
       "requires": [
         "feature:theme_category_collages eq visible",
-        "show_home_page_categories eq true",
+        "featured_categories gt 0",
         "home_page_categories_style eq thumbnails"
       ]
     },
@@ -1195,9 +1184,17 @@
       "default": "under_image",
       "description": "Shows a category’s name over the image with an overlay, or under the image",
       "requires": [
-        "show_home_page_categories eq true",
+        "featured_categories gt 0",
         "home_page_categories_style eq thumbnails"
       ]
+    },
+    {
+      "variable": "homepage_show_all_items_link",
+      "label": "Show all items link",
+      "section": "homepage",
+      "type": "boolean",
+      "default": true,
+      "description": "Display link to view all products when applicable"
     },
     {
       "variable": "money_format",
