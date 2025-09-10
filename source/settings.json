@@ -1190,11 +1190,11 @@
     },
     {
       "variable": "homepage_show_all_items_link",
-      "label": "Show all items link",
+      "label": "Show all products button",
       "section": "homepage",
       "type": "boolean",
       "default": true,
-      "description": "Display link to view all products when applicable"
+      "description": "Allow the 'All products' button to show on the Home page when eligible"
     },
     {
       "variable": "money_format",
