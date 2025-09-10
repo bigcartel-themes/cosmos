@@ -194,7 +194,7 @@
     {% endif %}
   </div>
   {%- assign can_show_categories = false -%}
-  {%- if theme.show_home_page_categories and theme.featured_categories > 0 and categories.active.size > 0 -%}
+  {%- if theme.featured_categories > 0 and categories.active.size > 0 -%}
     {%- assign can_show_categories = true -%}
   {%- endif -%}
   {% if can_show_categories %}
@@ -334,9 +334,11 @@
   {%- if products.all.size > 0 -%}
     {%- if can_show_categories or show_featured_products -%}
       {%- unless theme.featured_products == 0 and theme.featured_categories == 0 -%}
-        {%- assign all_products_button_text = t['navigation.all_products'] -%}
-        {%- if all_products_button_text != blank -%}
-          <a class="button button--centered button--secondary all-products-button" href="/products">{{ all_products_button_text }}</a>
+        {%- if theme.homepage_show_all_items_link -%}
+          {%- assign all_products_button_text = t['navigation.all_products'] -%}
+          {%- if all_products_button_text != blank -%}
+            <a class="button button--centered button--secondary all-products-button" href="/products">{{ all_products_button_text }}</a>
+          {%- endif -%}
         {%- endif -%}
       {%- endunless -%}
     {%- endif -%}
