@@ -326,12 +326,15 @@
     <header data-bc-hook="header">
       <a href="/" title="{{ store.name | escape }}" class="header-store-link header-store-link--{% if theme.header_logo != blank %}logo{% else %}text{% endif %}">
         {% if theme.logo_image != blank %}
-          {% assign logo_image_height_1x = theme.logo_image_height %}
-          {% assign logo_image_height_2x = logo_image_height_1x | times: 2 %}
+          {% comment %} Calculate optimal image size with width and height constraints for DPI optimization {% endcomment %}
+          {% assign display_height = theme.logo_image_size %}
+          {% assign optimal_width = display_height | times: 6 %}
+          {% assign display_height_2x = display_height | times: 2 %}
+          {% assign optimal_width_2x = optimal_width | times: 2 %}
           <img
             class="store-logo"
-            srcset="{{ theme.images.logo_image.url | constrain: '', logo_image_height_1x }}, {{ theme.images.logo_image.url | constrain: '', logo_image_height_2x }} 2x"
-            src="{{ theme.images.logo_image.url | constrain: '', logo_image_height_1x }}"
+            srcset="{{ theme.images.logo_image.url | constrain: optimal_width, display_height }} 1x, {{ theme.images.logo_image.url | constrain: optimal_width_2x, display_height_2x }} 2x"
+            src="{{ theme.images.logo_image.url | constrain: optimal_width, display_height }}"
             alt="{{ store.name }} Home"
           >
         {% else %}

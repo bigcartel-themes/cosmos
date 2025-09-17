@@ -43,8 +43,8 @@
   --margin-size: 64px
   --side-padding: 40px
 
-  --logo-max-height: #{"{{ theme.logo_image_height | append: 'px' }}"}
-  --logo-max-height-mobile: 120px
+  --logo-size-setting: #{"{{ theme.logo_image_size }}"}
+  --logo-size-mobile-factor: 0.6
 
   // Video player customization
   --video-rounded-radius: var(--border-radius)
@@ -294,10 +294,12 @@ header
   color: var(--shop-name-text-color)
 
 .store-logo
-  max-height: var(--logo-max-height)
+  height: calc(var(--logo-size-setting) * 1px)
+  width: auto
+  object-fit: contain
 
   @media screen and (max-width: $break-small)
-    max-height: var(--logo-max-height-mobile)
+    height: calc(var(--logo-size-setting) * var(--logo-size-mobile-factor) * 1px)
 
 h1, h2, h3, h4, h5, h6
   color: var(--header-text-color)

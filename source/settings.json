@@ -629,20 +629,20 @@
   ],
   "options": [
     {
-      "variable": "logo_image_height",
-      "label": "Logo image height",
+      "variable": "logo_image_size",
+      "label": "Logo image size",
       "section": "global_navigation",
       "type": "select",
       "options": [
-        ["Extra small", "120"],
-        ["Small", "180"],
-        ["Medium", "240"],
-        ["Large", "300"],
-        ["Extra Large", "360"],
-        ["XX Large", "420"]
+        ["Extra small", "60"],
+        ["Small", "90"],
+        ["Medium", "120"],
+        ["Large", "150"],
+        ["Extra Large", "180"],
+        ["XX Large", "210"]
       ],
-      "default": "240",
-      "description": "Controls the maximum height of your logo"
+      "default": "120",
+      "description": "Controls the size of your logo"
     },
     {
       "variable": "nav_menu_style",
