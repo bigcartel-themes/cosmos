@@ -81,14 +81,14 @@
         grid-template-columns: 1fr
 
     .product-list-thumb-name
-      font-size: 1.5rem
+      font-size: calc(1.5rem * var(--product-grid-scale, 1))
 
       // Reduce earlier to avoid layout stretch around ~480px
       @media screen and (max-width: $break-small)
-        font-size: 1.25rem
+        font-size: calc(1.25rem * var(--product-grid-scale, 1))
 
       @media screen and (max-width: $break-extra-small)
-        font-size: 1rem
+        font-size: calc(1rem * var(--product-grid-scale, 1))
 
     .product-list-thumb-info
       display: flex
@@ -254,7 +254,7 @@ a.product-list-link
   border-radius: var(--border-radius-sm)
   top: 16px
   right: 16px
-  font-size: .925rem
+  font-size: calc(0.925rem * var(--product-grid-scale, 1))
   line-height: 1em
   letter-spacing: 1.12px
   font-weight: 500
@@ -284,11 +284,11 @@ a.product-list-link
 
 .product-list-thumb-name
   word-break: break-word
-  font-size: 1.1rem
+  font-size: calc(1rem * var(--product-grid-scale, 1))
   font-weight: 700
 
   @media screen and (max-width: $break-small)
-    font-size: 1rem
+    font-size: calc(0.9rem * var(--product-grid-scale, 1))
 
   &--truncate
     line-height: 1.4
@@ -301,11 +301,11 @@ a.product-list-link
     white-space: normal
 
 .product-list-thumb-price
-  font-size: 0.9rem
+  font-size: calc(0.8rem * var(--product-grid-scale, 1))
   font-weight: 400
 
 .product-list-thumb-options-description
-  font-size: 0.9rem
+  font-size: calc(0.8rem * var(--product-grid-scale, 1))
   font-style: italic
   margin-top: -6px
 
