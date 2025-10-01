@@ -27,13 +27,12 @@
     display: flex
 
   &--scrolling
-    min-height: 64px
-    padding: 22px 0px
+    padding: 0
     overflow: hidden
+    min-height: fit-content
 
     @media screen and (max-width: $break-small)
-      min-height: 50px
-      padding: 14px 0px
+      min-height: fit-content
 
     // Pause scrolling on hover for accessibility
     &:hover .announcement-message__scroll-content
@@ -46,12 +45,16 @@
   &__scroll-wrapper
     width: 100%
     overflow: hidden
-    white-space: nowrap
+    padding: 22px 0
+
+    @media screen and (max-width: $break-small)
+      padding: 14px 0
 
   &__scroll-content
     display: inline-flex
     white-space: nowrap
     animation: scroll-announcement var(--scroll-duration, 15s) linear infinite
+    padding-left: 5em
 
   &__text
     display: inline-block
