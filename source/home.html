@@ -3,16 +3,16 @@
 {% if theme.image_sets.slideshow.size > 0 %}{% assign has_slideshow = true %}{% endif %}
 
 {% assign has_hero_image = false %}
-{% if theme.hero_image %}{% assign has_hero_image = true %}{% endif %}
+{% if theme.welcome_image %}{% assign has_hero_image = true %}{% endif %}
 
 {% if has_hero_image or has_slideshow %}
-  <div class="home-hero home-hero--{{ theme.hero_image_width }} {% if has_slideshow %}home-hero--slideshow{% endif %} {% unless theme.hero_image != blank or has_slideshow %}home-hero--no-image{% endunless %}">
+  <div class="home-hero home-hero--{{ theme.welcome_image_width }} {% if has_slideshow %}home-hero--slideshow{% endif %} {% unless theme.welcome_image != blank or has_slideshow %}home-hero--no-image{% endunless %}">
     {% if has_slideshow %}
       <div class="splide home-slideshow" data-autoplay="{{ theme.homepage_slideshow_autoplay }}">
         <div class="splide__track">
           <div class="splide__list">
             {% for image in theme.image_sets.slideshow %}
-              <div class="splide__slide"{% if theme.hero_image_link != blank %} title="{{ theme.hero_image_link }}"{% endif %}>
+              <div class="splide__slide"{% if theme.welcome_image_link != blank %} title="{{ theme.welcome_image_link }}"{% endif %}>
                 <img
                   alt="Slideshow image {{ forloop.index }}"
                   {% if forloop.index == 1 %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
@@ -28,27 +28,27 @@
       <img
         alt=""
         class="home-hero-image lazyload blur-up"
-        src="{{ theme.images.hero_image.url | constrain: 400 }}"
+        src="{{ theme.images.welcome_image.url | constrain: 400 }}"
         data-srcset="
-          {{ theme.images.hero_image.url | constrain: 800 }} 800w,
-          {{ theme.images.hero_image.url | constrain: 1200 }} 1200w,
-          {{ theme.images.hero_image.url | constrain: 1600 }} 1600w,
-          {{ theme.images.hero_image.url | constrain: 2000 }} 2000w,
+          {{ theme.images.welcome_image.url | constrain: 800 }} 800w,
+          {{ theme.images.welcome_image.url | constrain: 1200 }} 1200w,
+          {{ theme.images.welcome_image.url | constrain: 1600 }} 1600w,
+          {{ theme.images.welcome_image.url | constrain: 2000 }} 2000w,
         "
         data-sizes="auto"
-        {% if theme.hero_image_link != blank %}title="{{ theme.hero_image_link }}"{% endif %}
+        {% if theme.welcome_image_link != blank %}title="{{ theme.welcome_image_link }}"{% endif %}
       >
     {% endif %}
     {% if has_slideshow == false %}
       <div class="home-hero-overlay"></div>
     {% endif %}
-    {% if (has_slideshow or has_hero_image) and (theme.hero_welcome_text != blank or theme.hero_button_text != blank) %}
+    {% if (has_slideshow or has_hero_image) and (theme.welcome_text != blank or theme.welcome_button_text != blank) %}
       <div class="home-hero-content home-hero-content--slideshow">
-        {% if theme.hero_welcome_text != blank %}
-          <div class="home-hero-text">{{ theme.hero_welcome_text }}</div>
+        {% if theme.welcome_text != blank %}
+          <div class="home-hero-text">{{ theme.welcome_text }}</div>
         {% endif %}
-        {% if theme.hero_button_text != blank %}
-          <a href="{% if theme.hero_button_link != blank and theme.hero_button_behavior == 'navigate' %}{{ theme.hero_button_link }}{% else %}/products{% endif %}" class="home-hero-button">{{ theme.hero_button_text }}</a>
+        {% if theme.welcome_button_text != blank %}
+          <a href="{% if theme.welcome_button_link != blank and theme.welcome_button_behavior == 'navigate' %}{{ theme.welcome_button_link }}{% else %}/products{% endif %}" class="home-hero-button">{{ theme.welcome_button_text }}</a>
         {% endif %}
       </div>
     {% endif %}
