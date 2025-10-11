@@ -8,7 +8,7 @@
   position: relative
   text-align: center
   width: 100%
-  z-index: 1
+  z-index: 500
   align-items: center
   justify-content: center
 
@@ -27,6 +27,7 @@
     display: flex
 
   &--scrolling
+    cursor: pointer
     padding: 0
     overflow: hidden
     min-height: fit-content
@@ -34,8 +35,16 @@
     @media screen and (max-width: $break-small)
       min-height: fit-content
 
-    // Pause scrolling on hover for accessibility
-    &:hover .announcement-message__scroll-content
+    // Pause scrolling on hover (desktop) and focus (keyboard) for accessibility
+    @media (hover: hover)
+      &:hover .announcement-message__scroll-content
+        animation-play-state: paused
+
+    &:focus-visible .announcement-message__scroll-content
+      animation-play-state: paused
+
+    // Pause when user taps on mobile (via JS class toggle)
+    &.is-paused .announcement-message__scroll-content
       animation-play-state: paused
 
     // Hide close button when scrolling
