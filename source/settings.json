@@ -929,18 +929,18 @@
     },
     {
       "variable": "welcome_overlay_opacity",
-      "label": "Welcome image overlay opacity",
+      "label": "Welcome overlay opacity",
       "section": "homepage",
       "type": "select",
       "options": [
-        ["Very bright", "very_bright"],
-        ["Bright", "bright"],
         ["None", "none"],
-        ["Dark", "dark"],
-        ["Very dark", "very_dark"]
+        ["Light", "bright"],
+        ["Medium", "dark"],
+        ["Strong", "very_dark"],
+        ["Very strong", "very_bright"]
       ],
       "default": "dark",
-      "description": "Adjust the home page slideshow or welcome image to enhance the legibility of your welcome image text and button",
+      "description": "Adjust the home page slideshow or welcome image overlay to enhance text legibility. Customize the overlay color in <a href='/account/design/settings/colors'>color palette settings</a>.",
       "requires": [
         { "any": ["slideshow present", "welcome_image present"] }
       ]

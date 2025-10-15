@@ -5,7 +5,17 @@
 {% assign has_hero_image = false %}
 {% if theme.welcome_image %}{% assign has_hero_image = true %}{% endif %}
 
-{% if has_hero_image or has_slideshow %}
+{% assign has_image = false %}
+{% if has_slideshow or has_hero_image %}
+  {% assign has_image = true %}
+{% endif %}
+
+{% assign has_welcome_content = false %}
+{% if theme.welcome_text != blank or theme.welcome_button_text != blank %}
+  {% assign has_welcome_content = true %}
+{% endif %}
+
+{% if has_image %}
   <div class="home-hero home-hero--{{ theme.welcome_image_width }} {% if has_slideshow %}home-hero--slideshow{% endif %} {% unless theme.welcome_image != blank or has_slideshow %}home-hero--no-image{% endunless %}">
     {% if has_slideshow %}
       <div class="splide home-slideshow" data-autoplay="{{ theme.homepage_slideshow_autoplay }}">
@@ -42,7 +52,7 @@
     {% if has_slideshow == false %}
       <div class="home-hero-overlay"></div>
     {% endif %}
-    {% if (has_slideshow or has_hero_image) and (theme.welcome_text != blank or theme.welcome_button_text != blank) %}
+    {% if has_image and has_welcome_content %}
       <div class="home-hero-content home-hero-content--slideshow">
         {% if theme.welcome_text != blank %}
           <div class="home-hero-text">{{ theme.welcome_text }}</div>

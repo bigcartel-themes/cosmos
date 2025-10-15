@@ -70,21 +70,16 @@
     height: 100%
 
 .home-hero-overlay
-  background-color: var(--welcome-overlay-color)
   content: ""
   height: 100%
   position: relative
   width: 100%
   z-index: 2
   pointer-events: none
-  // Background color based on brightening or darkening
-  background: #{"{% if theme.welcome_overlay_opacity == 'very_bright' or theme.welcome_overlay_opacity == 'bright' %} white {% else %} black {% endif %}"}
-  // Handle each specific case
-  opacity: #{"{% if theme.welcome_overlay_opacity == 'very_bright' %} 0.8 {% endif %}"}
-  opacity: #{"{% if theme.welcome_overlay_opacity == 'bright' %} 0.3 {% endif %}"}
-  opacity: #{"{% if theme.welcome_overlay_opacity == 'none' %} 0 {% endif %}"}
-  opacity: #{"{% if theme.welcome_overlay_opacity == 'dark' %} 0.4 {% endif %}"}
-  opacity: #{"{% if theme.welcome_overlay_opacity == 'very_dark' %} 0.7 {% endif %}"}
+  // Use custom color if set, otherwise fall back to black for automatic darkening
+  background-color: #{"{% if theme.welcome_overlay_color == 'transparent' %}black{% else %}{{ theme.welcome_overlay_color }}{% endif %}"}
+  // Set opacity based on setting: none=0, bright=0.3, dark=0.4, very_dark=0.7, very_bright=0.8, invalid=0
+  opacity: #{"{% case theme.welcome_overlay_opacity %}{% when 'none' %}0{% when 'bright' %}0.3{% when 'dark' %}0.4{% when 'very_dark' %}0.7{% when 'very_bright' %}0.8{% else %}0{% endcase %}"}
 
 .home-hero-content
   color: var(--welcome-text-color)
@@ -200,14 +195,10 @@
       width: 100%
       height: 100%
       z-index: 1
-      // Background color based on brightening or darkening
-      background: #{"{% if theme.welcome_overlay_opacity == 'very_bright' or theme.welcome_overlay_opacity == 'bright' %} white {% else %} black {% endif %}"}
-      // Handle each specific case
-      opacity: #{"{% if theme.welcome_overlay_opacity == 'very_bright' %} 0.8 {% endif %}"}
-      opacity: #{"{% if theme.welcome_overlay_opacity == 'bright' %} 0.3 {% endif %}"}
-      opacity: #{"{% if theme.welcome_overlay_opacity == 'none' %} 0 {% endif %}"}
-      opacity: #{"{% if theme.welcome_overlay_opacity == 'dark' %} 0.4 {% endif %}"}
-      opacity: #{"{% if theme.welcome_overlay_opacity == 'very_dark' %} 0.7 {% endif %}"}
+      // Use custom color if set, otherwise fall back to black for automatic darkening
+      background-color: #{"{% if theme.welcome_overlay_color == 'transparent' %}black{% else %}{{ theme.welcome_overlay_color }}{% endif %}"}
+      // Set opacity based on setting: none=0, bright=0.3, dark=0.4, very_dark=0.7, very_bright=0.8, invalid=0
+      opacity: #{"{% case theme.welcome_overlay_opacity %}{% when 'none' %}0{% when 'bright' %}0.3{% when 'dark' %}0.4{% when 'very_dark' %}0.7{% when 'very_bright' %}0.8{% else %}0{% endcase %}"}
 
   .slideshow-image
     border-radius: var(--border-radius)
