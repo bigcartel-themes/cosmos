@@ -10,6 +10,14 @@
   @media screen and (max-width: $break-small)
     grid-template-columns: minmax(0, 1fr)
 
+.product-password-form-container
+  margin: 60px auto
+  padding: 0 20px
+
+  h1
+    font-size: 1.5rem
+    font-weight: 400
+
 .product-breadcrumb
   margin-bottom: 24px
 
@@ -56,7 +64,7 @@
   &__status
     border-radius: var(--border-radius-sm)
     text-transform: uppercase
-    font-size: .875rem
+    font-size: calc(.875rem * min(var(--product-title-scale, 1), 1.3))
     line-height: normal
     font-weight: 500
     display: inline-block
@@ -73,9 +81,22 @@
 
   h1
     margin-bottom: 0 !important
+  
+  &__title
+    font-size: calc(2rem * var(--product-title-scale, 1))
+
+  &__pricing
+    font-size: calc(1em * var(--product-title-scale, 1))
+
+#main h1.product-detail__title
+  font-size: calc(2rem * var(--product-title-scale, 1))
+  font-weight: 700
 
 #instant-checkout-button
   margin-top: 12px
+
+.product-detail__description
+  font-size: calc(1rem * var(--product-description-scale, 1))
 
 .inventory-status-message
   color: var(--inventory-status-text-color)

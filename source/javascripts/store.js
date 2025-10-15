@@ -47,20 +47,20 @@ function setDocHeight() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const isHomePage = document.body.getAttribute('data-bc-page-type') === 'home';
-  const heroButtonLink = themeOptions.heroButtonLink && themeOptions.heroButtonLink.trim() !== '' ? themeOptions.heroButtonLink : null;
-  const heroImageLink = themeOptions.heroImageLink && themeOptions.heroImageLink.trim() !== '' ? themeOptions.heroImageLink : null;
-  const heroButtonBehavior = themeOptions.heroButtonBehavior;
+  const welcomeButtonLink = themeOptions.welcomeButtonLink && themeOptions.welcomeButtonLink.trim() !== '' ? themeOptions.welcomeButtonLink : null;
+  const welcomeImageLink = themeOptions.welcomeImageLink && themeOptions.welcomeImageLink.trim() !== '' ? themeOptions.welcomeImageLink : null;
+  const welcomeButtonBehavior = themeOptions.welcomeButtonBehavior;
   if (isHomePage) {
-    const heroButton = document.querySelector(".home-hero-button");
-    if (heroButton) {
-      heroButton.addEventListener("click", function (event) {
-        if (heroButtonBehavior === "scroll") {
+    const welcomeButton = document.querySelector(".home-welcome-button");
+    if (welcomeButton) {
+      welcomeButton.addEventListener("click", function (event) {
+        if (welcomeButtonBehavior === "scroll") {
           event.preventDefault();
           const targetElement = document.querySelector("#main");
           if (targetElement) {
             smoothScroll(targetElement, 1000, -250);
           }
-        } else if (heroButtonBehavior === "navigate") {
+        } else if (welcomeButtonBehavior === "navigate") {
           // Use external link detection for proper tab behavior
           if (isExternalLink(event.target.href)) {
             event.preventDefault();
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add clickable functionality to hero/slideshow when no button is present
     // and a URL is configured (button behavior only applies when button exists)
-    if (!heroButton && heroImageLink) {
+    if (!welcomeButton && welcomeImageLink) {
       const heroArea = document.querySelector(".home-hero");
       const slideshow = document.querySelector(".home-slideshow");
       
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slides.forEach(slide => {
           slide.classList.add("hero-clickable");
           slide.setAttribute("role", "button");
-          slide.setAttribute("aria-label", "Navigate to " + heroImageLink);
+          slide.setAttribute("aria-label", "Navigate to " + welcomeImageLink);
         });
         
         // Use event delegation: single listener on slideshow container
@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Don't interfere with splide controls - only handle clicks on slide content
             event.preventDefault();
             event.stopPropagation();
-            if (isExternalLink(heroImageLink)) {
-              window.open(heroImageLink, '_blank', 'noopener,noreferrer');
+            if (isExternalLink(welcomeImageLink)) {
+              window.open(welcomeImageLink, '_blank', 'noopener,noreferrer');
             } else {
-              window.location.href = heroImageLink;
+              window.location.href = welcomeImageLink;
             }
           }
         });
@@ -106,12 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // For single hero image, make the whole area clickable
         heroArea.classList.add("hero-clickable");
         heroArea.setAttribute("role", "button");
-        heroArea.setAttribute("aria-label", "Navigate to " + heroImageLink);
+        heroArea.setAttribute("aria-label", "Navigate to " + welcomeImageLink);
         heroArea.addEventListener("click", function(event) {
-          if (isExternalLink(heroImageLink)) {
-            window.open(heroImageLink, '_blank', 'noopener,noreferrer');
+          if (isExternalLink(welcomeImageLink)) {
+            window.open(welcomeImageLink, '_blank', 'noopener,noreferrer');
           } else {
-            window.location.href = heroImageLink;
+            window.location.href = welcomeImageLink;
           }
         });
       }
@@ -130,4 +130,49 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+});
+
+// Hybrid announcement pause: hover on desktop, tap-to-toggle on mobile, focus for keyboard
+document.addEventListener('DOMContentLoaded', () => {
+  const announcement = document.querySelector('.announcement-message--scrolling');
+
+  if (!announcement) return;
+
+  const scrollContent = announcement.querySelector('.announcement-message__scroll-content');
+  const firstText = announcement.querySelector('.announcement-message__text');
+
+  // Calculate exact scroll distance for seamless looping
+  function updateScrollDistance() {
+    if (scrollContent && firstText) {
+      // Get the width of one text block including its spacing
+      const textWidth = firstText.offsetWidth;
+
+      // Set CSS variable with exact pixel distance to scroll
+      // This ensures perfectly seamless looping regardless of content length
+      scrollContent.style.setProperty('--scroll-distance', `-${textWidth}px`);
+    }
+  }
+
+  // Initial calculation
+  updateScrollDistance();
+
+  // Recalculate on resize (debounced to avoid performance issues)
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(updateScrollDistance, 150);
+  });
+
+  // Add tap-to-toggle for all devices (primarily for touch devices)
+  // Desktop users can still use hover (handled by CSS), but click also works as backup
+  let isPaused = false;
+
+  announcement.addEventListener('click', (e) => {
+    // Don't toggle if user clicked a link - let the link work normally
+    if (e.target.closest('a')) return;
+
+    // Toggle pause state
+    isPaused = !isPaused;
+    announcement.classList.toggle('is-paused', isPaused);
+  });
 });

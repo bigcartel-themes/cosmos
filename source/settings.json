@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "1.10.5",
+  "version": "1.11.0",
   "images": [
     {
       "variable": "logo_image",
@@ -9,10 +9,16 @@
       "description": "Transparent background recommended. Ideal height is at least 600px for best results."
     },
     {
-      "variable": "hero_image",
-      "label": "Hero image",
+      "variable": "welcome_image",
+      "label": "Welcome image",
       "section": "homepage",
       "description": "Minimum size of 1200 x 600px recommended."
+    },
+    {
+      "variable": "maintenance_image",
+      "label": "Maintenance mode image",
+      "section": "messaging",
+      "description": "Adds an image to your Maintenance page. Recommend an image at least 800px wide."
     }
   ],
   "image_sets": [
@@ -20,7 +26,7 @@
       "variable": "slideshow",
       "label": "Slideshow",
       "section": "homepage",
-      "description": "Adds slideshow to the homepage. Use same-sized images, recommend 1200 × 800px. Overrides hero image if both are set."
+      "description": "Adds slideshow to the homepage. Use same-sized images, recommend 1200 × 800px. Overrides welcome image if both are set."
     }
   ],
   "preset_styles": {
@@ -58,8 +64,8 @@
               "product_status_text_color_secondary": "#4E4E4E",
               "product_status_background_color_secondary": "#FFE8D6",
               "inventory_status_text_color": "#E15C2A",
-              "hero_overlay_color": "#4E4E4E",
-              "hero_text_color": "#FFFBF5",
+              "welcome_overlay_color": "#4E4E4E",
+              "welcome_text_color": "#FFFBF5",
               "product_hover_overlay_color": "#B84C22",
               "product_hover_text_color": "#FFFBF5"
             }
@@ -88,8 +94,8 @@
               "product_status_text_color_secondary": "#F3F4F6",
               "product_status_background_color_secondary": "#3D4B59",
               "inventory_status_text_color": "#FFC107",
-              "hero_overlay_color": "#1F2937",
-              "hero_text_color": "#FFFFFF",
+              "welcome_overlay_color": "#1F2937",
+              "welcome_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#FFC107",
               "product_hover_text_color": "#2B3A4A"
             }
@@ -118,8 +124,8 @@
               "product_status_text_color_secondary": "#2C3E50",
               "product_status_background_color_secondary": "#F0F2F9",
               "inventory_status_text_color": "#D53F8C",
-              "hero_overlay_color": "#2C3E50",
-              "hero_text_color": "#FFFFFF",
+              "welcome_overlay_color": "#2C3E50",
+              "welcome_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#805AD5",
               "product_hover_text_color": "#FFFFFF"
             }
@@ -153,8 +159,8 @@
               "product_status_text_color_secondary": "#FFFFFF",
               "product_status_background_color_secondary": "#333333",
               "inventory_status_text_color": "#FF3D00",
-              "hero_overlay_color": "#000000",
-              "hero_text_color": "#FFFFFF",
+              "welcome_overlay_color": "#000000",
+              "welcome_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#FF3D00",
               "product_hover_text_color": "#000000"
             }
@@ -183,8 +189,8 @@
               "product_status_text_color_secondary": "#444444",
               "product_status_background_color_secondary": "#CCCCCC",
               "inventory_status_text_color": "#FFD700",
-              "hero_overlay_color": "#FFD700",
-              "hero_text_color": "#FFFFFF",
+              "welcome_overlay_color": "#FFD700",
+              "welcome_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#FFD700",
               "product_hover_text_color": "#000000"
             }
@@ -213,8 +219,8 @@
               "product_status_text_color_secondary": "#FFFFFF",
               "product_status_background_color_secondary": "#333333",
               "inventory_status_text_color": "#00F5D4",
-              "hero_overlay_color": "#262626",
-              "hero_text_color": "#FFFFFF",
+              "welcome_overlay_color": "#262626",
+              "welcome_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#00F5D4",
               "product_hover_text_color": "#000000"
             }
@@ -248,8 +254,8 @@
               "product_status_text_color_secondary": "#FFFFFF",
               "product_status_background_color_secondary": "#00A483",
               "inventory_status_text_color": "#FFEC4A",
-              "hero_overlay_color": "#009B7F",
-              "hero_text_color": "#FFFFFF",
+              "welcome_overlay_color": "#009B7F",
+              "welcome_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#FFEC4A",
               "product_hover_text_color": "#00B894"
             }
@@ -278,8 +284,8 @@
               "product_status_text_color_secondary": "#FFFFFF",
               "product_status_background_color_secondary": "#FF8787",
               "inventory_status_text_color": "#FFEC4A",
-              "hero_overlay_color": "#FF5252",
-              "hero_text_color": "#FFFFFF",
+              "welcome_overlay_color": "#FF5252",
+              "welcome_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#4ECDC4",
               "product_hover_text_color": "#FF6B6B"
             }
@@ -308,8 +314,8 @@
               "product_status_text_color_secondary": "#FFFFFF",
               "product_status_background_color_secondary": "#2C4A7A",
               "inventory_status_text_color": "#4ECDC4",
-              "hero_overlay_color": "#15294B",
-              "hero_text_color": "#FFFFFF",
+              "welcome_overlay_color": "#15294B",
+              "welcome_text_color": "#FFFFFF",
               "product_hover_overlay_color": "#FF9E80",
               "product_hover_text_color": "#1A365D"
             }
@@ -343,8 +349,8 @@
               "product_status_text_color_secondary": "#344E41",
               "product_status_background_color_secondary": "#CCC9BF",
               "inventory_status_text_color": "#A15737",
-              "hero_overlay_color": "#344E41",
-              "hero_text_color": "#DAD7CD",
+              "welcome_overlay_color": "#344E41",
+              "welcome_text_color": "#DAD7CD",
               "product_hover_overlay_color": "#A15737",
               "product_hover_text_color": "#FFFFFF"
             }
@@ -373,8 +379,8 @@
               "product_status_text_color_secondary": "#FFFBE6",
               "product_status_background_color_secondary": "#8C8C8C",
               "inventory_status_text_color": "#F9BC60",
-              "hero_overlay_color": "#003734",
-              "hero_text_color": "#FFFBE6",
+              "welcome_overlay_color": "#003734",
+              "welcome_text_color": "#FFFBE6",
               "product_hover_overlay_color": "#F9BC60",
               "product_hover_text_color": "#004643"
             }
@@ -403,8 +409,8 @@
               "product_status_text_color_secondary": "#283618",
               "product_status_background_color_secondary": "#E9E6C9",
               "inventory_status_text_color": "#BC6C25",
-              "hero_overlay_color": "#283618",
-              "hero_text_color": "#FEFAE0",
+              "welcome_overlay_color": "#283618",
+              "welcome_text_color": "#FEFAE0",
               "product_hover_overlay_color": "#BC6C25",
               "product_hover_text_color": "#FEFAE0"
             }
@@ -438,8 +444,8 @@
               "product_status_text_color_secondary": "#427AA1",
               "product_status_background_color_secondary": "#D5E3F0",
               "inventory_status_text_color": "#A679C7",
-              "hero_overlay_color": "#427AA1",
-              "hero_text_color": "#EBF2FA",
+              "welcome_overlay_color": "#427AA1",
+              "welcome_text_color": "#EBF2FA",
               "product_hover_overlay_color": "#A679C7",
               "product_hover_text_color": "#FFFFFF"
             }
@@ -468,8 +474,8 @@
               "product_status_text_color_secondary": "#806B88",
               "product_status_background_color_secondary": "#E4D6E3",
               "inventory_status_text_color": "#C79AB7",
-              "hero_overlay_color": "#806B88",
-              "hero_text_color": "#F0E6EF",
+              "welcome_overlay_color": "#806B88",
+              "welcome_text_color": "#F0E6EF",
               "product_hover_overlay_color": "#B799B2",
               "product_hover_text_color": "#FFFFFF"
             }
@@ -498,8 +504,8 @@
               "product_status_text_color_secondary": "#48466D",
               "product_status_background_color_secondary": "#E6E7F0",
               "inventory_status_text_color": "#46CDCF",
-              "hero_overlay_color": "#48466D",
-              "hero_text_color": "#F6F7FB",
+              "welcome_overlay_color": "#48466D",
+              "welcome_text_color": "#F6F7FB",
               "product_hover_overlay_color": "#3D84A8",
               "product_hover_text_color": "#FFFFFF"
             }
@@ -607,13 +613,13 @@
       "default": "#E15C2A"
     },
     {
-      "variable": "hero_overlay_color",
-      "label": "Hero overlay",
+      "variable": "welcome_overlay_color",
+      "label": "Welcome overlay",
       "default": "#4E4E4E"
     },
     {
-      "variable": "hero_text_color",
-      "label": "Hero text",
+      "variable": "welcome_text_color",
+      "label": "Welcome text",
       "default": "#FFFBF5"
     },
     {
@@ -907,8 +913,8 @@
       ]
     },
     {
-      "variable": "hero_image_width",
-      "label": "Hero width",
+      "variable": "welcome_image_width",
+      "label": "Welcome image width",
       "section": "homepage",
       "type": "select",
       "options": [
@@ -916,53 +922,53 @@
         ["Constrained", "constrained"]
       ],
       "default": "constrained",
-      "description": "Sets the width of your hero image or slideshow",
+      "description": "Sets the width of your welcome image or slideshow",
       "requires": [
-        { "any": ["slideshow present", "hero_image present"] }
+        { "any": ["slideshow present", "welcome_image present"] }
       ]
     },
     {
-      "variable": "hero_overlay_opacity",
-      "label": "Hero overlay opacity",
+      "variable": "welcome_overlay_opacity",
+      "label": "Welcome overlay opacity",
       "section": "homepage",
       "type": "select",
       "options": [
-        ["Very bright", "very_bright"],
-        ["Bright", "bright"],
         ["None", "none"],
-        ["Dark", "dark"],
-        ["Very dark", "very_dark"]
+        ["Light", "bright"],
+        ["Medium", "dark"],
+        ["Strong", "very_dark"],
+        ["Very strong", "very_bright"]
       ],
       "default": "dark",
-      "description": "Adjust the home page slideshow or hero image to enhance the legibility of your hero text and button",
+      "description": "Adjust the home page slideshow or welcome image overlay to enhance text legibility. Customize the overlay color in <a href='/account/design/settings/colors'>color palette settings</a>.",
       "requires": [
-        { "any": ["slideshow present", "hero_image present"] }
+        { "any": ["slideshow present", "welcome_image present"] }
       ]
     },
     {
-      "variable": "hero_welcome_text",
-      "label": "Hero welcome text",
+      "variable": "welcome_text",
+      "label": "Welcome text",
       "section": "homepage",
       "type": "text",
-      "description": "Displays a welcome message over your hero image or slideshow",
+      "description": "Displays a welcome message over your welcome image or slideshow",
       "requires": [
-        { "any": ["slideshow present", "hero_image present"] }
+        { "any": ["slideshow present", "welcome_image present"] }
       ]
     },
     {
-      "variable": "hero_button_text",
-      "label": "Hero button text",
+      "variable": "welcome_button_text",
+      "label": "Welcome image button text",
       "section": "homepage",
       "type": "text",
-      "description": "Displays a button over hero image or slideshow",
+      "description": "Displays a button over welcome image or slideshow",
       "default": "Shop now",
       "requires": [
-        { "any": ["slideshow present", "hero_image present"] }
+        { "any": ["slideshow present", "welcome_image present"] }
       ]
     },
     {
-      "variable": "hero_button_behavior",
-      "label": "Hero Button Behavior",
+      "variable": "welcome_button_behavior",
+      "label": "Welcome image button behavior",
       "section": "homepage",
       "type": "select",
       "options": [
@@ -970,35 +976,35 @@
         ["Navigate", "navigate"]
       ],
       "default": "scroll",
-      "description": "Controls the behavior of the hero button on the Home page.",
+      "description": "Controls the behavior of the welcome button on the Home page.",
       "requires": [
-        { "any": ["slideshow present", "hero_image present"] },
-        "hero_button_text present"
+        { "any": ["slideshow present", "welcome_image present"] },
+        "welcome_button_text present"
       ]
     },
     {
-      "variable": "hero_button_link",
-      "label": "Hero button link",
+      "variable": "welcome_button_link",
+      "label": "Welcome image button link",
       "section": "homepage",
       "type": "text",
       "default": "/products",
-      "description": "Link destination for the hero button. Accepts relative paths (e.g. /products) or full URLs.",
+      "description": "Link destination for the welcome button. Accepts relative paths (e.g. /products) or full URLs.",
       "requires": [
-        { "any": ["slideshow present", "hero_image present"] },
-        "hero_button_text present",
-        "hero_button_behavior eq navigate"
+        { "any": ["slideshow present", "welcome_image present"] },
+        "welcome_button_text present",
+        "welcome_button_behavior eq navigate"
       ]
     },
     {
-      "variable": "hero_image_link",
-      "label": "Hero image link",
+      "variable": "welcome_image_link",
+      "label": "Welcome image link",
       "section": "homepage",
       "type": "text",
       "default": "",
-      "description": "Optionally makes the hero image or slideshow clickable. Leave blank to disable. Accepts relative paths (e.g. /products) or full URLs.",
+      "description": "Optionally makes the welcome image or slideshow clickable. Leave blank to disable. Accepts relative paths (e.g. /products) or full URLs.",
       "requires": [
-        { "any": ["slideshow present", "hero_image present"] },
-        "hero_button_text neq present"
+        { "any": ["slideshow present", "welcome_image present"] },
+        "welcome_button_text neq present"
       ]
     },
     {
@@ -1096,7 +1102,8 @@
       "default": "within",
       "description": "Sets position of the featured message",
       "requires": [
-        "homepage_featured_text present"
+        "homepage_featured_text present",
+        "featured_products gt 0"
       ]
     },
     {
@@ -1227,6 +1234,18 @@
       "type": "boolean",
       "default": true,
       "description": "Show the price of coming soon products on product grids and product pages"
+    },
+    {
+      "variable": "show_password_protected_product_prices",
+      "label": "Show prices for password protected products",
+      "section": "product_page",
+      "type": "boolean",
+      "default": true,
+      "description": "Show the price of password protected products on product grids. <a href='https://www.bigcartel.com/resources/help/article/password-protected-products' target='_blank'>Learn more</a>",
+      "requires_upgrade": {
+        "unless": "feature:product_passwords",
+        "analytics_label": "Password Protected Products"
+      }
     },
     {
       "variable": "product_variable_pricing_display_format",
@@ -1364,12 +1383,56 @@
       }
     },
     {
+      "variable": "maintenance_message",
+      "label": "Maintenance mode message",
+      "section": "messaging",
+      "type": "textarea",
+      "max_length": 2048,
+      "description": "A message visitors see when your shop is in Maintenance Mode. Supports HTML for advanced customization.",
+      "default": "We’re getting things ready. Check back soon!"
+    },
+    {
+      "variable": "show_shop_name_on_maintenance_page",
+      "label": "Show shop name on Maintenance Mode page",
+      "section": "messaging",
+      "type": "boolean",
+      "default": true,
+      "description": "Display your shop name on the Maintenance Mode page. Turn this off if your maintenance image already includes your shop name to avoid duplication."
+    },
+    {
       "variable": "announcement_message_text",
       "label": "Announcement banner",
       "section": "messaging",
       "max_length": 500,
       "type": "textarea",
       "description": "Displays an announcement message on the top of every page. Supports HTML for advanced customization."
+    },
+    {
+      "variable": "announcement_message_scroll",
+      "label": "Scroll announcement banner",
+      "section": "messaging",
+      "type": "boolean",
+      "default": false,
+      "description": "Enable smooth scrolling animation. Works best with messages of 40+ characters for a continuous, eye-catching effect."
+    },
+    {
+      "variable": "announcement_scroll_speed",
+      "label": "Announcement scroll speed",
+      "section": "messaging",
+      "type": "select",
+      "options": [
+        ["Slowest", "50s"],
+        ["Slow", "30s"],
+        ["Medium", "15s"],
+        ["Fast", "7s"],
+        ["Fastest", "3s"]
+      ],
+      "default": "15s",
+      "description": "Controls how quickly the announcement scrolls across the screen",
+      "requires": [
+        "announcement_message_text present",
+        "announcement_message_scroll eq true"
+      ]
     },
     {
       "variable": "contact_text",
@@ -1396,13 +1459,197 @@
       "description": "Displays a message at the top your cart page when there are items in the cart. Supports HTML for advanced customization."
     },
     {
-      "variable": "maintenance_message",
-      "label": "Maintenance mode message",
-      "section": "messaging",
-      "type": "textarea",
-      "max_length": 2048,
-      "description": "A message visitors see when your shop is in Maintenance Mode. Supports HTML for advanced customization.",
-      "default": "We're working on our shop right now.<br /><br />Please check back soon."
+      "variable": "global_text_scale",
+      "label": "Global text size",
+      "section": "text_sizing",
+      "type": "select",
+      "options": [
+        ["50%", "0.5"],
+        ["60%", "0.6"],
+        ["70%", "0.7"],
+        ["80%", "0.8"],
+        ["90%", "0.9"],
+        ["Default", "1"],
+        ["110%", "1.1"],
+        ["120%", "1.2"],
+        ["130%", "1.3"],
+        ["140%", "1.4"],
+        ["150%", "1.5"]
+      ],
+      "default": "1",
+      "description": "Set the base text size for your entire shop. All text will scale from this setting"
+    },
+    {
+      "variable": "header_text_scale",
+      "label": "Header and sidebar text size",
+      "section": "text_sizing",
+      "type": "select",
+      "options": [
+        ["50%", "0.5"],
+        ["60%", "0.6"],
+        ["70%", "0.7"],
+        ["80%", "0.8"],
+        ["90%", "0.9"],
+        ["Default", "1"],
+        ["110%", "1.1"],
+        ["120%", "1.2"],
+        ["130%", "1.3"],
+        ["140%", "1.4"],
+        ["150%", "1.5"]
+      ],
+      "default": "1",
+      "description": "Fine-tune header and sidebar navigation text size (applies on top of global setting)"
+    },
+    {
+      "variable": "footer_text_scale",
+      "label": "Footer text size",
+      "section": "text_sizing",
+      "type": "select",
+      "options": [
+        ["50%", "0.5"],
+        ["60%", "0.6"],
+        ["70%", "0.7"],
+        ["80%", "0.8"],
+        ["90%", "0.9"],
+        ["Default", "1"],
+        ["110%", "1.1"],
+        ["120%", "1.2"],
+        ["130%", "1.3"],
+        ["140%", "1.4"],
+        ["150%", "1.5"]
+      ],
+      "default": "1",
+      "description": "Fine-tune footer text size (applies on top of global setting)"
+    },
+    {
+      "variable": "shop_name_text_scale",
+      "label": "Shop name text size",
+      "section": "text_sizing",
+      "type": "select",
+      "options": [
+        ["50%", "0.5"],
+        ["60%", "0.6"],
+        ["70%", "0.7"],
+        ["80%", "0.8"],
+        ["90%", "0.9"],
+        ["Default", "1"],
+        ["110%", "1.1"],
+        ["120%", "1.2"],
+        ["130%", "1.3"],
+        ["140%", "1.4"],
+        ["150%", "1.5"]
+      ],
+      "default": "1",
+      "description": "Fine-tune your shop name size (applies on top of global and header settings)"
+    },
+    {
+      "variable": "product_grid_scale",
+      "label": "Product grid text size",
+      "section": "text_sizing",
+      "type": "select",
+      "options": [
+        ["50%", "0.5"],
+        ["60%", "0.6"],
+        ["70%", "0.7"],
+        ["80%", "0.8"],
+        ["90%", "0.9"],
+        ["Default", "1"],
+        ["110%", "1.1"],
+        ["120%", "1.2"],
+        ["130%", "1.3"],
+        ["140%", "1.4"],
+        ["150%", "1.5"]
+      ],
+      "default": "1",
+      "description": "Fine-tune product grid text size (applies on top of global setting)"
+    },
+    {
+      "variable": "product_page_heading_scale",
+      "label": "Product page heading area size",
+      "section": "text_sizing",
+      "type": "select",
+      "options": [
+        ["50%", "0.5"],
+        ["60%", "0.6"],
+        ["70%", "0.7"],
+        ["80%", "0.8"],
+        ["90%", "0.9"],
+        ["Default", "1"],
+        ["110%", "1.1"],
+        ["120%", "1.2"],
+        ["130%", "1.3"],
+        ["140%", "1.4"],
+        ["150%", "1.5"]
+      ],
+      "default": "1",
+      "description": "Fine-tune product title, price, and status text size (applies on top of global setting)"
+    },
+    {
+      "variable": "product_page_description_scale",
+      "label": "Product page description size",
+      "section": "text_sizing",
+      "type": "select",
+      "options": [
+        ["50%", "0.5"],
+        ["60%", "0.6"],
+        ["70%", "0.7"],
+        ["80%", "0.8"],
+        ["90%", "0.9"],
+        ["Default", "1"],
+        ["110%", "1.1"],
+        ["120%", "1.2"],
+        ["130%", "1.3"],
+        ["140%", "1.4"],
+        ["150%", "1.5"]
+      ],
+      "default": "1",
+      "description": "Fine-tune product description text size (applies on top of global setting)"
+    },
+    {
+      "variable": "shop_sprinkles_animation",
+      "label": "Shop sprinkles animation",
+      "section": "general",
+      "type": "select",
+      "options": [
+        ["Drift", "shake"],
+        ["Orbit", "orbit"],
+        ["Tumble", "tumble"]
+      ],
+      "default": "shake",
+      "description": "Adjust the falling animation style of the shop sprinkles. You must select an emoji to turn on sprinkles."
+    },
+    {
+      "variable": "shop_sprinkles_size",
+      "label": "Shop sprinkles size",
+      "section": "general",
+      "type": "select",
+      "options": [
+        ["Smallest", "0.75em"],
+        ["Small", "1.25em"],
+        ["Smaller", "1.5em"],
+        ["Default", "2em"],
+        ["Bigger", "2.75em"],
+        ["Big", "3.5em"],
+        ["Biggest", "4.25em"],
+        ["Jumbo", "5em"]
+      ],
+      "default": "2em",
+      "description": "Adjust the size of the shop sprinkles"
+    },
+    {
+      "variable": "shop_sprinkles_density",
+      "label": "Shop sprinkles density",
+      "section": "general",
+      "type": "select",
+      "options": [
+        ["Very subtle", "4"],
+        ["Subtle", "8"],
+        ["Balanced", "14"],
+        ["Festive", "20"],
+        ["Party", "28"]        
+      ],
+      "default": "14",
+      "description": "Adjust the density of shop sprinkles"
     },
     {
       "variable": "translation_locale",
