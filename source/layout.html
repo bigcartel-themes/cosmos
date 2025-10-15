@@ -602,9 +602,9 @@
         optOuts: [{% if theme.features.opt_outs %}{% for opt in theme.features.opt_outs %}"{{ opt }}"{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}],
       };
       const themeOptions = {
-        heroButtonBehavior: "{{ theme.welcome_button_behavior }}",
-        heroButtonLink: "{{ theme.welcome_button_link }}",
-        heroImageLink: "{{ theme.welcome_image_link }}",
+        welcomeButtonBehavior: "{{ theme.welcome_button_behavior }}",
+        welcomeButtonLink: "{{ theme.welcome_button_link }}",
+        welcomeImageLink: "{{ theme.welcome_image_link }}",
         showSoldOutOptions: {{ theme.show_sold_out_product_options }},
         showLowInventoryMessages: {{ theme.show_low_inventory_messages }},
         lowInventoryMessage: "{{ t['products.low_inventory'] | replace: '"', '\"' | replace: "'", "\\'" }}",
