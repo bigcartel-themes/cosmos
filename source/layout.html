@@ -336,8 +336,8 @@
       </div>
     </div>
     <header data-bc-hook="header">
-      <a href="/" title="{{ store.name | escape }}" class="header-store-link header-store-link--{% if theme.logo_image != blank %}logo{% else %}text{% endif %}">
-        {% if theme.logo_image != blank %}
+      <a href="/" title="{{ store.name | escape }}" class="header-store-link header-store-link--{% if theme.images.logo_image != blank %}logo{% else %}text{% endif %}">
+        {% if theme.images.logo_image != blank %}
           {% assign logo_image_height_1x = theme.logo_image_height %}
           {% assign logo_image_height_2x = logo_image_height_1x | times: 2 %}
           <img
