@@ -3,7 +3,7 @@
 {% if theme.image_sets.slideshow.size > 0 %}{% assign has_slideshow = true %}{% endif %}
 
 {% assign has_hero_image = false %}
-{% if theme.welcome_image %}{% assign has_hero_image = true %}{% endif %}
+{% if theme.images.welcome_image != blank %}{% assign has_hero_image = true %}{% endif %}
 
 {% assign has_image = false %}
 {% if has_slideshow or has_hero_image %}
@@ -16,7 +16,7 @@
 {% endif %}
 
 {% if has_image %}
-  <div class="home-hero home-hero--{{ theme.welcome_image_width }} {% if has_slideshow %}home-hero--slideshow{% endif %} {% unless theme.welcome_image != blank or has_slideshow %}home-hero--no-image{% endunless %}">
+  <div class="home-hero home-hero--{{ theme.welcome_image_width }} {% if has_slideshow %}home-hero--slideshow{% endif %} {% unless theme.images.welcome_image != blank or has_slideshow %}home-hero--no-image{% endunless %}">
     {% if has_slideshow %}
       <div class="splide home-slideshow" data-autoplay="{{ theme.homepage_slideshow_autoplay }}">
         <div class="splide__track">
