@@ -2,8 +2,11 @@
   background-color: var(--announcement-background-color)
   color: var(--announcement-text-color)
   display: none
-  font-size: calc(1rem * var(--header-text-scale, 1))
+  font-size: calc(1.25em * var(--header-text-scale, 1))
   padding: 22px 96px
+
+  @media screen and (max-width: $break-medium)
+    font-size: calc(1em * var(--header-text-scale, 1))
   line-height: 1.25em
   position: relative
   text-align: center
@@ -77,6 +80,9 @@
 
     .announcement-message--scrolling &
       padding: 0 5em
+      // Prevent iOS Safari text inflation
+      -webkit-text-size-adjust: 100%
+      text-size-adjust: 100%
 
   &__close-button
     transform: translateY(-50%)
