@@ -66,6 +66,11 @@
               "inventory_status_text_color": "#E15C2A",
               "welcome_overlay_color": "#4E4E4E",
               "welcome_text_color": "#FFFBF5",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#FFFBF5",
+              "welcome_button_border_color": "#FFFBF5",
+              "welcome_button_hover_background_color": "#FFFBF5",
+              "welcome_button_hover_text_color": "#4E4E4E",
               "product_hover_overlay_color": "#B84C22",
               "product_hover_text_color": "#FFFBF5"
             }
@@ -96,6 +101,11 @@
               "inventory_status_text_color": "#FFC107",
               "welcome_overlay_color": "#1F2937",
               "welcome_text_color": "#FFFFFF",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#FFFFFF",
+              "welcome_button_border_color": "#FFFFFF",
+              "welcome_button_hover_background_color": "#FFFFFF",
+              "welcome_button_hover_text_color": "#1F2937",
               "product_hover_overlay_color": "#FFC107",
               "product_hover_text_color": "#2B3A4A"
             }
@@ -126,6 +136,11 @@
               "inventory_status_text_color": "#D53F8C",
               "welcome_overlay_color": "#2C3E50",
               "welcome_text_color": "#FFFFFF",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#FFFFFF",
+              "welcome_button_border_color": "#FFFFFF",
+              "welcome_button_hover_background_color": "#FFFFFF",
+              "welcome_button_hover_text_color": "#2C3E50",
               "product_hover_overlay_color": "#805AD5",
               "product_hover_text_color": "#FFFFFF"
             }
@@ -161,6 +176,11 @@
               "inventory_status_text_color": "#FF3D00",
               "welcome_overlay_color": "#000000",
               "welcome_text_color": "#FFFFFF",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#FFFFFF",
+              "welcome_button_border_color": "#FFFFFF",
+              "welcome_button_hover_background_color": "#FFFFFF",
+              "welcome_button_hover_text_color": "#000000",
               "product_hover_overlay_color": "#FF3D00",
               "product_hover_text_color": "#000000"
             }
@@ -191,6 +211,11 @@
               "inventory_status_text_color": "#FFD700",
               "welcome_overlay_color": "#FFD700",
               "welcome_text_color": "#FFFFFF",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#FFFFFF",
+              "welcome_button_border_color": "#FFFFFF",
+              "welcome_button_hover_background_color": "#FFFFFF",
+              "welcome_button_hover_text_color": "#FFD700",
               "product_hover_overlay_color": "#FFD700",
               "product_hover_text_color": "#000000"
             }
@@ -221,6 +246,11 @@
               "inventory_status_text_color": "#00F5D4",
               "welcome_overlay_color": "#262626",
               "welcome_text_color": "#FFFFFF",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#FFFFFF",
+              "welcome_button_border_color": "#FFFFFF",
+              "welcome_button_hover_background_color": "#FFFFFF",
+              "welcome_button_hover_text_color": "#262626",
               "product_hover_overlay_color": "#00F5D4",
               "product_hover_text_color": "#000000"
             }
@@ -256,6 +286,11 @@
               "inventory_status_text_color": "#FFEC4A",
               "welcome_overlay_color": "#009B7F",
               "welcome_text_color": "#FFFFFF",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#FFFFFF",
+              "welcome_button_border_color": "#FFFFFF",
+              "welcome_button_hover_background_color": "#FFFFFF",
+              "welcome_button_hover_text_color": "#009B7F",
               "product_hover_overlay_color": "#FFEC4A",
               "product_hover_text_color": "#00B894"
             }
@@ -286,6 +321,11 @@
               "inventory_status_text_color": "#FFEC4A",
               "welcome_overlay_color": "#FF5252",
               "welcome_text_color": "#FFFFFF",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#FFFFFF",
+              "welcome_button_border_color": "#FFFFFF",
+              "welcome_button_hover_background_color": "#FFFFFF",
+              "welcome_button_hover_text_color": "#FF5252",
               "product_hover_overlay_color": "#4ECDC4",
               "product_hover_text_color": "#FF6B6B"
             }
@@ -316,6 +356,11 @@
               "inventory_status_text_color": "#4ECDC4",
               "welcome_overlay_color": "#15294B",
               "welcome_text_color": "#FFFFFF",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#FFFFFF",
+              "welcome_button_border_color": "#FFFFFF",
+              "welcome_button_hover_background_color": "#FFFFFF",
+              "welcome_button_hover_text_color": "#15294B",
               "product_hover_overlay_color": "#FF9E80",
               "product_hover_text_color": "#1A365D"
             }
@@ -351,6 +396,11 @@
               "inventory_status_text_color": "#A15737",
               "welcome_overlay_color": "#344E41",
               "welcome_text_color": "#DAD7CD",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#DAD7CD",
+              "welcome_button_border_color": "#DAD7CD",
+              "welcome_button_hover_background_color": "#DAD7CD",
+              "welcome_button_hover_text_color": "#344E41",
               "product_hover_overlay_color": "#A15737",
               "product_hover_text_color": "#FFFFFF"
             }
@@ -381,6 +431,11 @@
               "inventory_status_text_color": "#F9BC60",
               "welcome_overlay_color": "#003734",
               "welcome_text_color": "#FFFBE6",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#FFFBE6",
+              "welcome_button_border_color": "#FFFBE6",
+              "welcome_button_hover_background_color": "#FFFBE6",
+              "welcome_button_hover_text_color": "#003734",
               "product_hover_overlay_color": "#F9BC60",
               "product_hover_text_color": "#004643"
             }
@@ -411,6 +466,11 @@
               "inventory_status_text_color": "#BC6C25",
               "welcome_overlay_color": "#283618",
               "welcome_text_color": "#FEFAE0",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#FEFAE0",
+              "welcome_button_border_color": "#FEFAE0",
+              "welcome_button_hover_background_color": "#FEFAE0",
+              "welcome_button_hover_text_color": "#283618",
               "product_hover_overlay_color": "#BC6C25",
               "product_hover_text_color": "#FEFAE0"
             }
@@ -446,6 +506,11 @@
               "inventory_status_text_color": "#A679C7",
               "welcome_overlay_color": "#427AA1",
               "welcome_text_color": "#EBF2FA",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#EBF2FA",
+              "welcome_button_border_color": "#EBF2FA",
+              "welcome_button_hover_background_color": "#EBF2FA",
+              "welcome_button_hover_text_color": "#427AA1",
               "product_hover_overlay_color": "#A679C7",
               "product_hover_text_color": "#FFFFFF"
             }
@@ -476,6 +541,11 @@
               "inventory_status_text_color": "#C79AB7",
               "welcome_overlay_color": "#806B88",
               "welcome_text_color": "#F0E6EF",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#F0E6EF",
+              "welcome_button_border_color": "#F0E6EF",
+              "welcome_button_hover_background_color": "#F0E6EF",
+              "welcome_button_hover_text_color": "#806B88",
               "product_hover_overlay_color": "#B799B2",
               "product_hover_text_color": "#FFFFFF"
             }
@@ -506,6 +576,11 @@
               "inventory_status_text_color": "#46CDCF",
               "welcome_overlay_color": "#48466D",
               "welcome_text_color": "#F6F7FB",
+              "welcome_button_background_color": "transparent",
+              "welcome_button_text_color": "#F6F7FB",
+              "welcome_button_border_color": "#F6F7FB",
+              "welcome_button_hover_background_color": "#F6F7FB",
+              "welcome_button_hover_text_color": "#48466D",
               "product_hover_overlay_color": "#3D84A8",
               "product_hover_text_color": "#FFFFFF"
             }
@@ -621,6 +696,31 @@
       "variable": "welcome_text_color",
       "label": "Welcome text",
       "default": "#FFFBF5"
+    },
+    {
+      "variable": "welcome_button_background_color",
+      "label": "Welcome button background",
+      "default": "transparent"
+    },
+    {
+      "variable": "welcome_button_text_color",
+      "label": "Welcome button text",
+      "default": "#FFFBF5"
+    },
+    {
+      "variable": "welcome_button_border_color",
+      "label": "Welcome button border",
+      "default": "#FFFBF5"
+    },
+    {
+      "variable": "welcome_button_hover_background_color",
+      "label": "Welcome button hover background",
+      "default": "#FFFBF5"
+    },
+    {
+      "variable": "welcome_button_hover_text_color",
+      "label": "Welcome button hover text",
+      "default": "#4E4E4E"
     },
     {
       "variable": "product_hover_overlay_color",
