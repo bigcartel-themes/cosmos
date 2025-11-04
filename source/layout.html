@@ -311,10 +311,6 @@
             {% if show_contact_in_header %}
               <li><a href="/contact">{{ t['navigation.contact'] }}</a></li>
             {% endif %}
-
-            {% if store.website != blank %}
-              <li><a href="{{ store.website }}">{{ t['navigation.back_to_site'] }}</a></li>
-            {% endif %}
           {% endif %}
           
         </ul>
@@ -666,7 +662,18 @@
     <script src="{{ theme | theme_js_url }}"></script>
     {% if page.full_url contains '/product/' %}
       <script>
-        Product.find('{{ product.permalink }}', processProduct)
+        // Initialize product data: fetch fresh on back/forward navigation (cache timing fix),
+        // use window.bigcartel.product on normal loads, or fetch as fallback
+        var navEntry = performance.getEntriesByType('navigation')[0];
+        var isBackForward = navEntry && navEntry.type === 'back_forward';
+
+        if (isBackForward) {
+          Product.find('{{ product.permalink }}', processProduct);
+        } else if (window.bigcartel?.product) {
+          processProduct(window.bigcartel.product);
+        } else {
+          Product.find('{{ product.permalink }}', processProduct);
+        }
       </script>
     {% endif %}
   </body>
