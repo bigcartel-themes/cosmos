@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const welcomeImageLink = themeOptions.welcomeImageLink && themeOptions.welcomeImageLink.trim() !== '' ? themeOptions.welcomeImageLink : null;
   const welcomeButtonBehavior = themeOptions.welcomeButtonBehavior;
   if (isHomePage) {
-    const welcomeButton = document.querySelector(".home-welcome-button");
+    const welcomeButton = document.querySelector(".home-hero-button");
     if (welcomeButton) {
       welcomeButton.addEventListener("click", function (event) {
         if (welcomeButtonBehavior === "scroll") {
