@@ -230,16 +230,21 @@
             {% assign show_contact_in_header = true %}
           {% endif %}
 
-          {% assign show_pages_in_header = false %}
+          {% assign show_custom_pages_in_header = false %}
           {% if pages.custom_pages.size > 0 and theme.nav_items > 0 %}
             {% if theme.nav_page_display == 'all' or theme.nav_page_display == 'pages_only' %}
-              {% assign show_pages_in_header = true %}
+              {% assign show_custom_pages_in_header = true %}
             {% endif %}
           {% endif %}
 
           {% assign show_subscribe_in_header = false %}
           {% if pages.subscribe_page %}
             {% assign show_subscribe_in_header = true %}
+          {% endif %}
+
+          {% assign show_pages_in_header = false %}
+          {% if show_custom_pages_in_header or show_subscribe_in_header or show_contact_in_header %}
+            {% assign show_pages_in_header = true %}
           {% endif %}
 
           {% if theme.nav_menu_style == 'dropdown' %}
@@ -279,7 +284,7 @@
                   </button>
                   <div class="top-nav__dropdown-content" id="header-dropdown-pages" aria-hidden="true">
                     <ul class="top-nav__dropdown-list">
-                      {% if show_pages_in_header %}
+                      {% if show_custom_pages_in_header %}
                         {% for custom_page in pages.custom_pages limit: theme.nav_items %}
                           <li>{{ custom_page | link_to }}</li>
                         {% endfor %}
