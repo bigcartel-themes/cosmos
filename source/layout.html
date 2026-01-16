@@ -313,6 +313,10 @@
               {% endfor %}
             {% endif %}
 
+            {% if show_subscribe_in_header %}
+              <li class="artist-support"><a href="{{ pages.subscribe_page.url }}">{{ t['navigation.subscribe'] }}</a></li>
+            {% endif %}
+
             {% if show_contact_in_header %}
               <li><a href="/contact">{{ t['navigation.contact'] }}</a></li>
             {% endif %}
