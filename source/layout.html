@@ -307,7 +307,7 @@
           {% else %}
             <li><a href="/products">{{ t['navigation.products'] }}</a></li>
 
-            {% if show_pages_in_header %}
+            {% if show_custom_pages_in_header %}
               {% for custom_page in pages.custom_pages limit: theme.nav_items %}
                 <li>{{ custom_page | link_to }}</li>
               {% endfor %}
