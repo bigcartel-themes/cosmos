@@ -98,6 +98,9 @@
 .product-detail__description
   font-size: calc(1rem * var(--product-description-scale, 1))
 
+  &:empty
+    display: none
+
 .inventory-status-message
   color: var(--inventory-status-text-color)
   margin: 10px 0 auto
