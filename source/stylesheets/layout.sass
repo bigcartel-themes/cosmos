@@ -57,7 +57,7 @@
   --side-padding: 40px
 
   --logo-max-height: #{"{{ theme.logo_image_height | append: 'px' }}"}
-  --logo-max-height-mobile: 120px
+  --logo-max-height-mobile: clamp(60px, calc(var(--logo-max-height) * 0.4), 150px)
 
   --shop-sprinkles-size: #{"{{ theme.shop_sprinkles_size | default: '2em' }}"}
   --shop-sprinkles-animation: #{"{% case theme.shop_sprinkles_animation %}{% when 'orbit' %}orbit{% when 'tumble' %}tumble{% else %}shake{% endcase %}"}
@@ -483,6 +483,7 @@ footer
       display: flex
       align-items: flex-start
       justify-content: flex-start
+      break-inside: avoid
 
       @media screen and (max-width: $break-small)
         padding-bottom: 16px

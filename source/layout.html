@@ -307,10 +307,14 @@
           {% else %}
             <li><a href="/products">{{ t['navigation.products'] }}</a></li>
 
-            {% if show_pages_in_header %}
+            {% if show_custom_pages_in_header %}
               {% for custom_page in pages.custom_pages limit: theme.nav_items %}
                 <li>{{ custom_page | link_to }}</li>
               {% endfor %}
+            {% endif %}
+
+            {% if show_subscribe_in_header %}
+              <li class="artist-support"><a href="{{ pages.subscribe_page.url }}">{{ t['navigation.subscribe'] }}</a></li>
             {% endif %}
 
             {% if show_contact_in_header %}
@@ -620,6 +624,7 @@
         homeFeaturedVideoUrl: "{{ theme.home_featured_video_url }}",
         homeFeaturedVideoSize: "{{ theme.home_featured_video_size }}",
         homeFeaturedVideoBorder: "{{ theme.home_featured_video_border }}",
+        showStrikethroughPricing: {{ theme.show_strikethrough_pricing }},
       };
       const themeColors = {
         backgroundColor: '{{ theme.background_color }}',
