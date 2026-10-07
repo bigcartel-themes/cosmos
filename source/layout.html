@@ -263,9 +263,6 @@
                       {% for category in categories.active %}
                         <li>{{ category | link_to }}</li>
                       {% endfor %}
-                      {% if pages.subscribe_page %}
-                        <li class="artist-support"><a href="{{ pages.subscribe_page.url }}">{{ t['navigation.subscribe'] }}</a></li>
-                      {% endif %}
                     </ul>
                   </div>
                 </div>
