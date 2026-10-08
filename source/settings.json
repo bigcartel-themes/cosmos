@@ -1,6 +1,6 @@
 {
   "name": "Cosmos",
-  "version": "1.11.8",
+  "version": "1.11.9",
   "images": [
     {
       "variable": "logo_image",
