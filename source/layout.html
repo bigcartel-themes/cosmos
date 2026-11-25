@@ -85,6 +85,10 @@
                 {% endfor %}
               {% endif %}
 
+              {% if pages.subscribe_page %}
+                <li class="artist-support"><a href="{{ pages.subscribe_page.url }}">{{ t['navigation.subscribe'] }}</a></li>
+              {% endif %}
+
               {% if theme.nav_page_display == "all" or theme.nav_page_display == "pages_only" %}
                 {% if pages.custom_pages.size > 0 %}
                   {% if show_divider %}
@@ -95,10 +99,6 @@
                     <li>{{ custom_page | link_to }}</li>
                   {% endfor %}
                 {% endif %}
-              {% endif %}
-
-              {% if pages.subscribe_page %}
-                <li class="artist-support"><a href="{{ pages.subscribe_page.url }}">{{ t['navigation.subscribe'] }}</a></li>
               {% endif %}
 
 
@@ -243,7 +243,7 @@
           {% endif %}
 
           {% assign show_pages_in_header = false %}
-          {% if show_custom_pages_in_header or show_subscribe_in_header or show_contact_in_header %}
+          {% if show_custom_pages_in_header or show_contact_in_header %}
             {% assign show_pages_in_header = true %}
           {% endif %}
 
@@ -270,6 +270,9 @@
                 <a href="/products">{{ t['navigation.products'] }}</a>
               {% endif %}
             </li>
+            {% if show_subscribe_in_header %}
+              <li class="artist-support"><a href="{{ pages.subscribe_page.url }}">{{ t['navigation.subscribe'] }}</a></li>
+            {% endif %}
             {% if show_pages_in_header %}
               <li>
                 <div class="top-nav__dropdown">
@@ -286,9 +289,6 @@
                           <li>{{ custom_page | link_to }}</li>
                         {% endfor %}
                       {% endif %}
-                      {% if show_subscribe_in_header %}
-                        <li class="artist-support"><a href="{{ pages.subscribe_page.url }}">{{ t['navigation.subscribe'] }}</a></li>
-                      {% endif %}
                       {% if show_contact_in_header %}
                         <li><a href="/contact">{{ t['navigation.contact'] }}</a></li>
                       {% endif %}
@@ -304,14 +304,14 @@
           {% else %}
             <li><a href="/products">{{ t['navigation.products'] }}</a></li>
 
+            {% if show_subscribe_in_header %}
+              <li class="artist-support"><a href="{{ pages.subscribe_page.url }}">{{ t['navigation.subscribe'] }}</a></li>
+            {% endif %}
+
             {% if show_custom_pages_in_header %}
               {% for custom_page in pages.custom_pages limit: theme.nav_items %}
                 <li>{{ custom_page | link_to }}</li>
               {% endfor %}
-            {% endif %}
-
-            {% if show_subscribe_in_header %}
-              <li class="artist-support"><a href="{{ pages.subscribe_page.url }}">{{ t['navigation.subscribe'] }}</a></li>
             {% endif %}
 
             {% if show_contact_in_header %}

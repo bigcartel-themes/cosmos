@@ -4,8 +4,8 @@
 {% assign page_title = t['navigation.products'] %}
 {% if page.full_url contains "search=" %}
   {% assign page_title = t['products.search_results'] %}
-{% elsif page.name != 'Products' %}
-  {% assign page_title = page.name %}
+{% elsif pages.products.name != 'Products' %}
+  {% assign page_title = pages.products.name %}
 {% endif %}
 
 {% assign product_status = '' %}
